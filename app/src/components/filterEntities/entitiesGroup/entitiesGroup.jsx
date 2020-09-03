@@ -17,7 +17,7 @@
 import { Component } from 'react';
 import track from 'react-tracking';
 import classNames from 'classnames/bind';
-import PropTypes from 'prop-types';
+import PropTypes, { element } from 'prop-types';
 import { EntitiesSelector } from 'components/filterEntities/entitiesSelector';
 import { filterEntityShape } from '../propTypes';
 import styles from './entitiesGroup.scss';
@@ -39,10 +39,12 @@ export class EntitiesGroup extends Component {
     }).isRequired,
     events: PropTypes.object,
     staticMode: PropTypes.bool,
+    noMoreDisplay: PropTypes.bool,
     vertical: PropTypes.bool,
   };
 
   static defaultProps = {
+    noMoreDisplay: false,
     entities: [],
     errors: {},
     onAdd: () => {},
@@ -61,7 +63,13 @@ export class EntitiesGroup extends Component {
 
   getEntity = (id) => this.props.entities.find((entity) => entity.id === id);
 
-  getActiveEntities = () => this.props.entities.filter((entity) => entity.active);
+  getActiveEntities = () => (this.props.entities.length > 3) ? this.props.entities.filter((entity) => entity.active) : this.handleRemovable(this.props.entities);
+
+  handleRemovable = (entities) => {
+    entities.forEach((element) => element.removable = false)
+    this.props.noMoreDisplay = true;
+    return entities;
+  }
 
   handleChange = (entity, value, isConditionChange = false) => {
     this.props.tracking.trackEvent(entity.eventInfo);
@@ -95,7 +103,7 @@ export class EntitiesGroup extends Component {
   };
 
   render() {
-    const { entities, entitySmallSize, errors, staticMode, vertical, events } = this.props;
+    const { entities, entitySmallSize, errors, staticMode, vertical, events, noMoreDisplay } = this.props;
     return (
       <div className={cx('entities-group')}>
         {this.getActiveEntities().map((entity) => {

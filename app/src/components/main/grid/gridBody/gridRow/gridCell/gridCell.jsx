@@ -71,6 +71,7 @@ export class GridCell extends PureComponent {
       expanded,
       toggleExpand,
     } = this.props;
+
     const CellComponent = component;
     return (
       <CellComponent

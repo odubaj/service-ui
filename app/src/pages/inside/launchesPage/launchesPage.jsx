@@ -762,85 +762,90 @@ export class LaunchesPage extends Component {
         level={LEVEL_LAUNCH}
         entities={activeFilterConditions}
         onChange={onChangeFilter}
-        render={({ onFilterAdd, ...rest }) => (
-          <PageLayout>
-            <PageSection>
-              {!debugMode && !selectedLaunches.length && (
-                <LaunchFiltersToolbar
-                  filters={launchFilters}
-                  activeFilterId={activeFilterId}
-                  activeFilter={activeFilter}
-                  onRemoveFilter={onRemoveFilter}
-                  onFilterAdd={onFilterAdd}
-                  onResetFilter={onResetFilter}
+        render={({ onFilterAdd, ...rest }) => {
+          console.log("rest");
+          console.log(rest);
+          console.log(onFilterAdd);
+          console.log("onFilterAdd");
+          console.log(activeFilterConditions);
+          console.log("filterEntities");
+
+
+          return (
+            <PageLayout>
+              <PageSection>
+                {!debugMode && !selectedLaunches.length && (
+                  <LaunchFiltersToolbar
+                    filters={launchFilters}
+                    activeFilterId={activeFilterId}
+                    activeFilter={activeFilter}
+                    onRemoveFilter={onRemoveFilter}
+                    onFilterAdd={onFilterAdd}
+                    onResetFilter={onResetFilter}
+                    onChangeSorting={onChangeSorting}
+                    sortingString={sortingColumn}
+                    {...rest} />
+                )}
+              </PageSection>
+              <PageSection>
+                <LaunchToolbar
+                  errors={this.props.validationErrors}
+                  onRefresh={this.refreshLaunch}
+                  selectedLaunches={selectedLaunches}
+                  onUnselect={this.unselectItem}
+                  onUnselectAll={this.unselectAllItems}
+                  onProceedValidItems={this.proceedWithValidItems}
+                  onMove={this.moveLaunches}
+                  onEditItem={this.openEditModal}
+                  onEditItems={this.openEditItemsModal}
+                  onMerge={this.mergeLaunches}
+                  onForceFinish={this.finishForceLaunches}
+                  onCompare={this.compareLaunches}
+                  onImportLaunch={this.openImportModal}
+                  debugMode={debugMode}
+                  onDelete={this.deleteItems}
+                  activeFilterId={debugMode ? ALL : activeFilterId}
+                  onAddNewWidget={this.showWidgetWizard}
+                  finishedLaunchesCount={finishedLaunchesCount} />
+                {debugMode && (
+                  <RefineFiltersPanel
+                    filterEntities={activeFilterConditions}
+                    onFilterAdd={onFilterAdd}
+                    {...rest} />
+                )}
+                <LaunchSuiteGrid
+                  data={launches}
+                  sortingColumn={sortingColumn}
+                  sortingDirection={sortingDirection}
                   onChangeSorting={onChangeSorting}
-                  sortingString={sortingColumn}
-                  {...rest}
-                />
-              )}
-            </PageSection>
-            <PageSection>
-              <LaunchToolbar
-                errors={this.props.validationErrors}
-                onRefresh={this.refreshLaunch}
-                selectedLaunches={selectedLaunches}
-                onUnselect={this.unselectItem}
-                onUnselectAll={this.unselectAllItems}
-                onProceedValidItems={this.proceedWithValidItems}
-                onMove={this.moveLaunches}
-                onEditItem={this.openEditModal}
-                onEditItems={this.openEditItemsModal}
-                onMerge={this.mergeLaunches}
-                onForceFinish={this.finishForceLaunches}
-                onCompare={this.compareLaunches}
-                onImportLaunch={this.openImportModal}
-                debugMode={debugMode}
-                onDelete={this.deleteItems}
-                activeFilterId={debugMode ? ALL : activeFilterId}
-                onAddNewWidget={this.showWidgetWizard}
-                finishedLaunchesCount={finishedLaunchesCount}
-              />
-              {debugMode && (
-                <RefineFiltersPanel
-                  filterEntities={activeFilterConditions}
-                  onFilterAdd={onFilterAdd}
-                  {...rest}
-                />
-              )}
-              <LaunchSuiteGrid
-                data={launches}
-                sortingColumn={sortingColumn}
-                sortingDirection={sortingDirection}
-                onChangeSorting={onChangeSorting}
-                onDeleteItem={this.deleteItem}
-                onMove={this.moveLaunches}
-                onEditItem={this.openEditModal}
-                onForceFinish={this.finishForceLaunches}
-                selectedItems={selectedLaunches}
-                onItemSelect={this.handleOneLaunchSelection}
-                onItemsSelect={this.props.selectLaunchesAction}
-                onAllItemsSelect={this.handleAllLaunchesSelection}
-                withHamburger
-                loading={loading}
-                onFilterClick={onFilterAdd}
-                events={LAUNCHES_PAGE_EVENTS}
-                onAnalysis={this.onAnalysis}
-                onPatternAnalysis={this.onPatternAnalysis}
-                rowHighlightingConfig={rowHighlightingConfig}
-              />
-              {!!pageCount && !loading && (
-                <PaginationToolbar
-                  activePage={activePage}
-                  itemCount={itemCount}
-                  pageCount={pageCount}
-                  pageSize={pageSize}
-                  onChangePage={onChangePage}
-                  onChangePageSize={onChangePageSize}
-                />
-              )}
-            </PageSection>
-          </PageLayout>
-        )}
+                  onDeleteItem={this.deleteItem}
+                  onMove={this.moveLaunches}
+                  onEditItem={this.openEditModal}
+                  onForceFinish={this.finishForceLaunches}
+                  selectedItems={selectedLaunches}
+                  onItemSelect={this.handleOneLaunchSelection}
+                  onItemsSelect={this.props.selectLaunchesAction}
+                  onAllItemsSelect={this.handleAllLaunchesSelection}
+                  withHamburger
+                  loading={loading}
+                  onFilterClick={onFilterAdd}
+                  events={LAUNCHES_PAGE_EVENTS}
+                  onAnalysis={this.onAnalysis}
+                  onPatternAnalysis={this.onPatternAnalysis}
+                  rowHighlightingConfig={rowHighlightingConfig} />
+                {!!pageCount && !loading && (
+                  <PaginationToolbar
+                    activePage={activePage}
+                    itemCount={itemCount}
+                    pageCount={pageCount}
+                    pageSize={pageSize}
+                    onChangePage={onChangePage}
+                    onChangePageSize={onChangePageSize} />
+                )}
+              </PageSection>
+            </PageLayout>
+          );
+        }}
       />
     );
   };

@@ -43,6 +43,9 @@ import styles from './historyTable.scss';
 
 const cx = classNames.bind(styles);
 
+//var headerline = new Array();
+var headerlineLaunch = new Array();
+
 const messages = defineMessages({
   loadMoreHistoryItemsTitle: {
     id: 'HistoryTable.loadMoreHistoryItemsTitle',
@@ -54,7 +57,7 @@ const messages = defineMessages({
   },
   executionNumberTitle: {
     id: 'HistoryTable.launchNumberTitle',
-    defaultMessage: 'Execution #',
+    defaultMessage: 'RHEL #',
   },
   noHistoryItems: {
     id: 'HistoryTable.noHistoryItems',
@@ -180,11 +183,16 @@ export class HistoryTable extends Component {
     const historyResourcesLength = history[0].resources.length;
     const maxRowItemsCount = selectedFilter ? historyResourcesLength - 1 : historyResourcesLength;
     const headerItems = [];
+    //console.log("rederheader: "+history[0].resources)
+    //console.log("filter: "+ selectedFilter);
 
     for (let index = maxRowItemsCount; index > 0; index -= 1) {
+      let distro = "";
+      history[0].resources[maxRowItemsCount-index].attributes.forEach(element => (element.key === "distro") ? distro = element.value : "");
+      headerlineLaunch[maxRowItemsCount-index] = history[0].resources[maxRowItemsCount-index].launchId;
       headerItems.push(
         <HistoryCell key={index} header>
-          {`${formatMessage(messages.executionNumberTitle)}${index}`}
+          {history[0].resources[maxRowItemsCount-index].pathNames.launchPathName.name} #{history[0].resources[maxRowItemsCount-index].pathNames.launchPathName.number}
         </HistoryCell>,
       );
     }
@@ -214,6 +222,48 @@ export class HistoryTable extends Component {
     return history.map((item, index) => {
       const isLastRow = index === history.length - 1;
 
+      console.log(headerlineLaunch);
+
+      var k = 0;
+      var tmp = Array();
+      console.log("pole na zaciatku");
+      console.log(item.resources);
+      for (let i = 0; i < item.resources.length;) {
+        console.log("i: "+i);
+        if(item.resources[i].status == "NOT_FOUND" || item.resources[i].status == "RESETED") {
+          console.log("nenajdene, pokracujem");
+          i++;
+          continue;
+        }
+
+        if (item.resources[i].launchId === headerlineLaunch[k]) {
+          tmp[k] = item.resources[i];
+          i++;
+          console.log("rovnake, pokracujem");
+        } else {
+          console.log("prazdne pole, zaciatok")
+          let emptyObj = { status: "NOT_FOUND", id: "NOT_FOUND_-1694763521_6" };
+          tmp.splice(k, 0, emptyObj);
+          console.log("prazdne pole, koniec")
+        }
+        k++;
+        console.log("porovnavam");
+        console.log(item.resources.length);
+        console.log(k);
+        if (k == item.resources.length) {
+          console.log("breakujem");
+          break;
+        }
+      }
+
+      console.log("priradujem");
+      console.log(tmp);
+      item.resources = tmp;
+
+
+      console.log("vysledne pole: ");
+      console.log(item.resources);
+
       return (
         <tr key={item.groupingField}>
           <HistoryCell first>
@@ -221,6 +271,7 @@ export class HistoryTable extends Component {
               <ItemNameBlock
                 data={itemsHistory[index].resources[0]}
                 ownLinkParams={this.calculateItemOwnLinkParams(itemsHistory[index].resources[0])}
+                //{ `${ this.renderRow(longestRow, item.resources, line, isLastRow) } `}
               />
             </div>
           </HistoryCell>

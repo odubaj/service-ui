@@ -15,7 +15,7 @@
  */
 
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { element } from 'prop-types';
 import { HISTORY_PAGE_EVENTS } from 'components/main/analytics/events';
 import { RefineFiltersPanel } from 'pages/inside/common/refineFiltersPanel';
 import { ActionPanel } from './actionPanel';
@@ -35,32 +35,72 @@ export const HistoryToolbar = ({
   infoLine,
   withGroupOperations,
   userId,
-}) => (
-  <Fragment>
-    {withGroupOperations ? (
-      <ActionPanelWithGroupOperations
-        onRefresh={onRefresh}
-        selectedItems={selectedItems}
-        onUnselect={onUnselect}
-        onUnselectAll={onUnselectAll}
-        userId={userId}
-      />
-    ) : (
-      <ActionPanel onRefresh={onRefresh} selectedItems={selectedItems} />
-    )}
-    {infoLine}
-    <RefineFiltersPanel
-      onFilterAdd={onFilterAdd}
-      onFilterRemove={onFilterRemove}
-      onFilterValidate={onFilterValidate}
-      onFilterChange={onFilterChange}
-      filterErrors={filterErrors}
-      filterEntities={filterEntities}
-      events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS}
-    />
-  </Fragment>
-);
+}) => {
+  console.log("onFilterAdd");
+  console.log(onFilterAdd)
+  console.log("onFilterRemove")
+  console.log(onFilterRemove)
+  console.log("onFilterValidate")
+  console.log(onFilterValidate)
+  console.log("onFilterChange")
+  console.log(onFilterChange)
+  console.log("filterErrors")
+  console.log(filterErrors)
+  console.log("events")
+  console.log(HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS)
+
+  var myFilterEntities;
+  myFilterEntities =  filterEntities.slice(0, 5);
+  myFilterEntities.splice(0, 3);
+
+  //myFilterEntities.forEach(element => element.active = true);
+
+  console.log("myfilterEntities")
+  console.log(myFilterEntities)
+  console.log("filterEntities")
+  console.log(filterEntities)
+
+    return (
+      <Fragment>
+        {withGroupOperations ? (
+          <ActionPanelWithGroupOperations
+            onRefresh={onRefresh}
+            selectedItems={selectedItems}
+            onUnselect={onUnselect}
+            onUnselectAll={onUnselectAll}
+            userId={userId} />
+        ) : (
+            <ActionPanel onRefresh={onRefresh} selectedItems={selectedItems} />
+          )}
+        {infoLine}
+        <RefineFiltersPanel
+          onFilterAdd={onFilterAdd}
+          onFilterRemove={onFilterRemove}
+          onFilterValidate={onFilterValidate}
+          onFilterChange={onFilterChange}
+          filterErrors={filterErrors}
+          filterEntities={filterEntities}
+          events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS} />
+        <RefineFiltersPanel
+          onFilterAdd={onFilterAdd}
+          onFilterRemove={onFilterRemove}
+          onFilterValidate={onFilterValidate}
+          onFilterChange={onFilterChange}
+          filterErrors={filterErrors}
+          filterEntities={myFilterEntities}
+          events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS} />
+      </Fragment>
+    );
+  };
 HistoryToolbar.propTypes = {
+  /*
+          <RefineFiltersPanel
+          onFilterAdd={FilterEntitiesContainer.handleAdd}
+          onFilterRemove={FilterEntitiesContainer.handleRemove}
+          onFilterValidate={FilterEntitiesContainer.handleValidate}
+          onFilterChange={FilterEntitiesContainer.handleChange}
+          filterErrors={FilterEntitiesContainer.state.error}/>
+   */
   selectedItems: PropTypes.arrayOf(PropTypes.object),
   userId: PropTypes.string,
   infoLine: PropTypes.node,

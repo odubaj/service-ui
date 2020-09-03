@@ -137,6 +137,16 @@ export const SUITES_PAGE_EVENTS = {
     action: 'Click on icon "sorting" on Failed',
     label: 'Sort items by Failed',
   },
+  MANUAL_FILTER: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "filter" on Manual',
+    label: 'Arises active "Manual" input',
+  },
+  MANUAL_SORTING: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "sorting" on Manual',
+    label: 'Sort items by Manual',
+  },
   SKIPPED_FILTER: {
     category: SUITE_PAGE,
     action: 'Click on icon "filter" on Skipped',

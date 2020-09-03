@@ -26,7 +26,7 @@ import {
 import { connect } from 'react-redux';
 import { statisticsLinkSelector } from 'controllers/testItem';
 import { activeProjectSelector } from 'controllers/user';
-import { FAILED, SKIPPED, INTERRUPTED } from 'common/constants/testStatuses';
+import { FAILED, SKIPPED, INTERRUPTED, MANUAL } from 'common/constants/testStatuses';
 import { getConfig } from './config/getConfig';
 import styles from './nonPassedTestCasesTrendChart.scss';
 
@@ -67,7 +67,7 @@ export class NonPassedTestCasesTrendChart extends Component {
     const { widget, getStatisticsLink, project } = this.props;
     const launchIds = widget.content.result.map((item) => item.id);
     const link = getStatisticsLink({
-      statuses: [FAILED, SKIPPED, INTERRUPTED],
+      statuses: [FAILED, SKIPPED, INTERRUPTED, MANUAL],
     });
     const navigationParams = getDefaultTestItemLinkParams(
       project,

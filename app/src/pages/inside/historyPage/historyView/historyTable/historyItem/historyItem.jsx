@@ -17,7 +17,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { SKIPPED, FAILED, INTERRUPTED } from 'common/constants/testStatuses';
+import { SKIPPED, FAILED, INTERRUPTED, MANUAL } from 'common/constants/testStatuses';
 import CommentIcon from 'common/img/comment-inline.svg';
 import TagIcon from 'common/img/tag-inline.svg';
 import {
@@ -45,7 +45,7 @@ const defectsTitleMap = {
   [TO_INVESTIGATE]: 'ti',
 };
 
-const statusesWithDefect = [FAILED, SKIPPED, INTERRUPTED];
+const statusesWithDefect = [FAILED, SKIPPED, INTERRUPTED, MANUAL];
 
 @withTooltip({
   TooltipComponent: ItemPathTooltip,

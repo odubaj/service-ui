@@ -61,6 +61,13 @@ $LEVEL_OFFSET_STEP: 20px;
     }
   }
 }
+.grid-row-wrapper-hiddenMine {
+  display: none;
+}
+
+.grid-row-log-cell {
+  display: table-cell;
+}
 
 .grid-row-wrapper {
   display: table-row-group;

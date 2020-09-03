@@ -26,6 +26,10 @@ export const statusLocalization = defineMessages({
     id: 'TestStatuses.failed',
     defaultMessage: 'Failed',
   },
+  [statuses.MANUAL]: {
+    id: 'TestStatuses.manual',
+    defaultMessage: 'Manual',
+  },
   [statuses.IN_PROGRESS]: {
     id: 'TestStatuses.inProgress',
     defaultMessage: 'In progress',

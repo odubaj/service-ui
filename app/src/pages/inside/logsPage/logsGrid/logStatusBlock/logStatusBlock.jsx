@@ -20,7 +20,7 @@ import classNames from 'classnames/bind';
 import { injectIntl, defineMessages } from 'react-intl';
 import Parser from 'html-react-parser';
 import { InputCheckbox } from 'components/inputs/inputCheckbox';
-import { PASSED, FAILED, SKIPPED, ALL_STATUSES, WARN, INFO } from 'common/constants/testStatuses';
+import { PASSED, FAILED, SKIPPED, ALL_STATUSES, WARN, INFO, MANUAL } from 'common/constants/testStatuses';
 import { formatStatus } from 'common/utils/localizationUtils';
 import ArrowIcon from 'common/img/arrow-down-inline.svg';
 
@@ -34,6 +34,10 @@ const messages = defineMessages({
   [`status${FAILED}`]: {
     id: 'LogStatusBlock.statusFailed',
     defaultMessage: 'Failed',
+  },
+  [`status${MANUAL}`]: {
+    id: 'LogStatusBlock.statusManual',
+    defaultMessage: 'Manual',
   },
   [`status${SKIPPED}`]: {
     id: 'LogStatusBlock.statusSkipped',
@@ -99,7 +103,7 @@ export class LogStatusBlock extends Component {
 
   node = React.createRef();
 
-  statusArray = [PASSED, FAILED, SKIPPED, WARN, INFO];
+  statusArray = [PASSED, FAILED, SKIPPED, WARN, INFO, MANUAL];
 
   toggleDropdown = () => {
     this.setState((prevState) => ({

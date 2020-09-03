@@ -21,6 +21,7 @@ import {
   STATS_PASSED,
   STATS_FAILED,
   STATS_SKIPPED,
+  STATS_MANUAL,
 } from 'common/constants/statistics';
 import {
   PRODUCT_BUG,

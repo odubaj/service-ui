@@ -79,6 +79,7 @@
 
 .status-FAILED,
 .status-STOPPED,
+.status-MANUAL,
 .status-INTERRUPTED {
   &:before {
     background-color: $COLOR--blush;
@@ -160,6 +161,7 @@
   }
 
   &.status-FAILED,
+  &.status-MANUAL,
   &.status-STOPPED,
   &.status-INTERRUPTED {
     &:before {

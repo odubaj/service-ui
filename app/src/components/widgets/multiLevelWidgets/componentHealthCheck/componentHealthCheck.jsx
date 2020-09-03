@@ -29,7 +29,7 @@ import {
   COLOR_DULL_GREEN,
 } from 'common/constants/colors';
 import { formatAttribute } from 'common/utils';
-import { PASSED, FAILED, SKIPPED, INTERRUPTED, IN_PROGRESS } from 'common/constants/testStatuses';
+import { PASSED, FAILED, SKIPPED, INTERRUPTED, IN_PROGRESS, MANUAL } from 'common/constants/testStatuses';
 import {
   statisticsLinkSelector,
   TEST_ITEMS_TYPE_LIST,
@@ -184,7 +184,7 @@ export class ComponentHealthCheck extends Component {
     type: TEST_ITEM_PAGE,
   });
 
-  getLinkParametersStatuses = () => [PASSED, FAILED, SKIPPED, INTERRUPTED, IN_PROGRESS];
+  getLinkParametersStatuses = () => [PASSED, FAILED, SKIPPED, INTERRUPTED, IN_PROGRESS, MANUAL];
 
   getNewActiveAttributes = (key, value) => {
     const { activeAttributes } = this.state;

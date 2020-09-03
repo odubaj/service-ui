@@ -116,6 +116,11 @@ export const LAUNCHES_PAGE_EVENTS = {
     action: getActionTableFilter('FAILED'),
     label: getDescriptionTableFilter(),
   },
+  MANUAL_FILTER: {
+    category: LAUNCHES_PAGE,
+    action: getActionTableFilter('MANUAL'),
+    label: getDescriptionTableFilter(),
+  },
   SKIPPED_FILTER: {
     category: LAUNCHES_PAGE,
     action: getActionTableFilter('SKIPPED'),

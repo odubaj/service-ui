@@ -34,6 +34,7 @@ import {
 } from 'components/widgets/common/utils';
 import { getConfig } from './config/getConfig';
 import styles from './testCasesGrowthTrendChart.scss';
+import { MANUAL } from '../../../../../common/constants/launchStatuses';
 
 const cx = classNames.bind(styles);
 
@@ -127,7 +128,7 @@ export class TestCasesGrowthTrendChart extends Component {
     const id = widget.content.result[data.index].id;
     const defaultParams = getDefaultTestItemLinkParams(projectId, ALL, id);
     const statisticsLink = getStatisticsLink({
-      statuses: [STATUSES.PASSED, STATUSES.FAILED, STATUSES.SKIPPED, STATUSES.INTERRUPTED],
+      statuses: [STATUSES.PASSED, STATUSES.FAILED, STATUSES.SKIPPED, STATUSES.INTERRUPTED, STATUSES.MANUAL],
     });
     this.props.navigate(Object.assign(statisticsLink, defaultParams));
   };

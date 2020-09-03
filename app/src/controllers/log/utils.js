@@ -56,9 +56,16 @@ export const normalizeHistoryItem = (historyItem, index) => {
     };
   }
 
+  let distro = '';
+  historyItem.attributes.forEach((element) =>
+    element.key === 'distro' ? (distro = element.value) : '',
+  );
+
   return {
     ...historyItem,
     launchNumber: historyItem.pathNames.launchPathName.number,
+    launchName: historyItem.pathNames.launchPathName.name,
+    launchDistro: distro,
   };
 };
 

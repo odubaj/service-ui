@@ -16,7 +16,7 @@
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { FAILED, INTERRUPTED, SKIPPED, PASSED } from 'common/constants/testStatuses';
+import { FAILED, INTERRUPTED, SKIPPED, PASSED, MANUAL } from 'common/constants/testStatuses';
 import styles from './progressBar.scss';
 
 const cx = classNames.bind(styles);
@@ -41,7 +41,7 @@ export class ProgressBar extends React.PureComponent {
           className={cx('passed')}
         />
         <div
-          onClick={() => this.props.onChartClick(FAILED, INTERRUPTED)}
+          onClick={() => this.props.onChartClick(FAILED, INTERRUPTED, MANUAL)}
           style={{ width: getPercentage(failed, total) }}
           className={cx('failed')}
         />

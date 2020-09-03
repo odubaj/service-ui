@@ -41,6 +41,8 @@ export class HistoryLineItem extends Component {
     projectId: PropTypes.string.isRequired,
     defectTypes: PropTypes.object.isRequired,
     launchNumber: PropTypes.number,
+    launchName: PropTypes.string,
+    launchDistro: PropTypes.string,
     path: PropTypes.string,
     launchId: PropTypes.number,
     id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -59,6 +61,8 @@ export class HistoryLineItem extends Component {
   static defaultProps = {
     path: '',
     launchNumber: null,
+    launchName: '',
+    launchDistro: '',
     launchId: 0,
     id: 0,
     status: '',
@@ -90,7 +94,7 @@ export class HistoryLineItem extends Component {
   };
 
   render() {
-    const { launchNumber, active, ...rest } = this.props;
+    const { launchNumber, launchName, launchDistro, active, ...rest } = this.props;
 
     return (
       <div className={cx('history-line-item', { active })}>
@@ -101,8 +105,10 @@ export class HistoryLineItem extends Component {
           to={this.checkIfTheLinkIsActive() ? this.createHistoryLineItemLink() : ''}
           onClick={() => this.props.tracking.trackEvent(LOG_PAGE_EVENTS.HISTORY_LINE_ITEM)}
         >
-          <span className={cx('launch-title')}>{'launch '}</span>
-          <span>#{launchNumber}</span>
+          <span className={cx('launch-title')} />
+          <span>
+            {launchName} #{launchNumber}
+          </span>
         </Link>
         <HistoryLineItemContent
           active={active}
