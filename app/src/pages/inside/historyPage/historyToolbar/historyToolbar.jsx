@@ -36,62 +36,65 @@ export const HistoryToolbar = ({
   withGroupOperations,
   userId,
 }) => {
-  console.log("onFilterAdd");
-  console.log(onFilterAdd)
-  console.log("onFilterRemove")
-  console.log(onFilterRemove)
-  console.log("onFilterValidate")
-  console.log(onFilterValidate)
-  console.log("onFilterChange")
-  console.log(onFilterChange)
-  console.log("filterErrors")
-  console.log(filterErrors)
-  console.log("events")
-  console.log(HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS)
+  console.log('onFilterAdd');
+  console.log(onFilterAdd);
+  console.log('onFilterRemove');
+  console.log(onFilterRemove);
+  console.log('onFilterValidate');
+  console.log(onFilterValidate);
+  console.log('onFilterChange');
+  console.log(onFilterChange);
+  console.log('filterErrors');
+  console.log(filterErrors);
+  console.log('events');
+  console.log(HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS);
 
-  var myFilterEntities;
-  myFilterEntities =  filterEntities.slice(0, 5);
+  let myFilterEntities;
+  myFilterEntities = filterEntities.slice(0, 5);
   myFilterEntities.splice(0, 3);
 
-  //myFilterEntities.forEach(element => element.active = true);
+  // myFilterEntities.forEach(element => element.active = true);
 
-  console.log("myfilterEntities")
-  console.log(myFilterEntities)
-  console.log("filterEntities")
-  console.log(filterEntities)
+  console.log('myfilterEntities');
+  console.log(myFilterEntities);
+  console.log('filterEntities');
+  console.log(filterEntities);
 
-    return (
-      <Fragment>
-        {withGroupOperations ? (
-          <ActionPanelWithGroupOperations
-            onRefresh={onRefresh}
-            selectedItems={selectedItems}
-            onUnselect={onUnselect}
-            onUnselectAll={onUnselectAll}
-            userId={userId} />
-        ) : (
-            <ActionPanel onRefresh={onRefresh} selectedItems={selectedItems} />
-          )}
-        {infoLine}
-        <RefineFiltersPanel
-          onFilterAdd={onFilterAdd}
-          onFilterRemove={onFilterRemove}
-          onFilterValidate={onFilterValidate}
-          onFilterChange={onFilterChange}
-          filterErrors={filterErrors}
-          filterEntities={filterEntities}
-          events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS} />
-        <RefineFiltersPanel
-          onFilterAdd={onFilterAdd}
-          onFilterRemove={onFilterRemove}
-          onFilterValidate={onFilterValidate}
-          onFilterChange={onFilterChange}
-          filterErrors={filterErrors}
-          filterEntities={myFilterEntities}
-          events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS} />
-      </Fragment>
-    );
-  };
+  return (
+    <Fragment>
+      {withGroupOperations ? (
+        <ActionPanelWithGroupOperations
+          onRefresh={onRefresh}
+          selectedItems={selectedItems}
+          onUnselect={onUnselect}
+          onUnselectAll={onUnselectAll}
+          userId={userId}
+        />
+      ) : (
+        <ActionPanel onRefresh={onRefresh} selectedItems={selectedItems} />
+      )}
+      {infoLine}
+      <RefineFiltersPanel
+        onFilterAdd={onFilterAdd}
+        onFilterRemove={onFilterRemove}
+        onFilterValidate={onFilterValidate}
+        onFilterChange={onFilterChange}
+        filterErrors={filterErrors}
+        filterEntities={filterEntities}
+        events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS}
+      />
+      <RefineFiltersPanel
+        onFilterAdd={onFilterAdd}
+        onFilterRemove={onFilterRemove}
+        onFilterValidate={onFilterValidate}
+        onFilterChange={onFilterChange}
+        filterErrors={filterErrors}
+        filterEntities={myFilterEntities}
+        events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS}
+      />
+    </Fragment>
+  );
+};
 HistoryToolbar.propTypes = {
   /*
           <RefineFiltersPanel

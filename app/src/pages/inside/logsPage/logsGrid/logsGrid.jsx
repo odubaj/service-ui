@@ -305,23 +305,23 @@ export class LogsGrid extends Component {
       onChangeSorting,
     } = this.props;
 
-    console.log("columns: ");
+    console.log('columns: ');
     console.log(this.getColumns());
-    console.log("logitems: ");
+    console.log('logitems: ');
     console.log(logItems);
-    console.log("rowClassMapper: ");
+    console.log('rowClassMapper: ');
     console.log(this.getLogRowClasses);
-    console.log("loading: ");
+    console.log('loading: ');
     console.log(loading);
-    console.log("sortingcolumn: ");
+    console.log('sortingcolumn: ');
     console.log(sortingColumn);
-    console.log("sortingdirection: ");
+    console.log('sortingdirection: ');
     console.log(sortingDirection);
-    console.log("onchangesorting: ");
+    console.log('onchangesorting: ');
     console.log(onChangeSorting);
-    console.log("nestedstepheader: ");
+    console.log('nestedstepheader: ');
     console.log(this.renderNestedStepHeader);
-    //povypisovat si tieto veci, skusit to nahodit do gridRow a uvidime co sa stane
+    // povypisovat si tieto veci, skusit to nahodit do gridRow a uvidime co sa stane
 
     return (
       <div className={cx('logs-grid')}>

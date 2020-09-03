@@ -20,7 +20,15 @@ import classNames from 'classnames/bind';
 import { injectIntl, defineMessages } from 'react-intl';
 import Parser from 'html-react-parser';
 import { InputCheckbox } from 'components/inputs/inputCheckbox';
-import { PASSED, FAILED, SKIPPED, ALL_STATUSES, WARN, INFO, MANUAL } from 'common/constants/testStatuses';
+import {
+  PASSED,
+  FAILED,
+  SKIPPED,
+  ALL_STATUSES,
+  WARN,
+  INFO,
+  MANUAL,
+} from 'common/constants/testStatuses';
 import { formatStatus } from 'common/utils/localizationUtils';
 import ArrowIcon from 'common/img/arrow-down-inline.svg';
 

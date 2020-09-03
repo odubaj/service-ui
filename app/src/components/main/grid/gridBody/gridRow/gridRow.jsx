@@ -168,83 +168,79 @@ export class GridRow extends Component {
       level,
     } = this.props;
 
-    console.log("columns");
+    console.log('columns');
     console.log(columns);
-    console.log("value");
+    console.log('value');
     console.log(value);
-    console.log("level");
+    console.log('level');
     console.log(level);
 
     const { expanded } = this.state;
     const customClasses = (rowClassMapper && rowClassMapper(value)) || {};
 
-    console.log("custom classes");
+    console.log('custom classes');
     console.log(customClasses);
-    if(value.name == "LOGS" && value.hasOwnProperty('parameters')) {
-      return (
-        value.parameters.map(element => {
-          return (
-            <div
-              className={cx("grid-row-wrapper", {
-                selected: this.isItemSelected(),
-                ...customClasses,
-              })}
-              data-id={value.id}
-              ref={this.rowRef}
-              onClick={onClickRow ? this.handleRowClick : null}
-            >
-              {this.state.withAccordion && (
-                <div className={cx('accordion-wrapper-mobile')}>
-                  <div
-                    className={cx('accordion-toggler-mobile', { rotated: this.state.expanded })}
-                    onClick={this.toggleAccordion}
-                  />
-                </div>
-              )}
-              <div
-                className={cx(
-                  'grid-row',
-                  { 'change-mobile': true, [`level-${level}`]: level !== 0 },
-                  gridRowClassName,
-                  this.getHighlightBlockClasses(),
-                )}
-              >
-              <div className={cx("grid-row-log-cell")}></div>
-              <div className={cx("grid-row-log-cell")}></div>
-              <GridRowLog
-                element = {element}
-              />
-              <div className={cx("grid-row-log-cell")}></div>
-              <div className={cx("grid-row-log-cell")}></div>
-              <div className={cx("grid-row-log-cell")}></div>
-              <div className={cx("grid-row-log-cell")}></div>
+    if (value.name == 'LOGS' && value.hasOwnProperty('parameters')) {
+      return value.parameters.map((element) => {
+        return (
+          <div
+            className={cx('grid-row-wrapper', {
+              selected: this.isItemSelected(),
+              ...customClasses,
+            })}
+            data-id={value.id}
+            ref={this.rowRef}
+            onClick={onClickRow ? this.handleRowClick : null}
+          >
+            {this.state.withAccordion && (
+              <div className={cx('accordion-wrapper-mobile')}>
+                <div
+                  className={cx('accordion-toggler-mobile', { rotated: this.state.expanded })}
+                  onClick={this.toggleAccordion}
+                />
               </div>
-              {this.state.withAccordion && (
-                <div className={cx('grid-row')}>
-                  <div className={cx('accordion-wrapper', { [`level-${level}`]: level !== 0 })}>
+            )}
+            <div
+              className={cx(
+                'grid-row',
+                { 'change-mobile': true, [`level-${level}`]: level !== 0 },
+                gridRowClassName,
+                this.getHighlightBlockClasses(),
+              )}
+            >
+              <div className={cx('grid-row-log-cell')} />
+              <div className={cx('grid-row-log-cell')} />
+              <GridRowLog element={element} />
+              <div className={cx('grid-row-log-cell')} />
+              <div className={cx('grid-row-log-cell')} />
+              <div className={cx('grid-row-log-cell')} />
+              <div className={cx('grid-row-log-cell')} />
+            </div>
+            {this.state.withAccordion && (
+              <div className={cx('grid-row')}>
+                <div className={cx('accordion-wrapper', { [`level-${level}`]: level !== 0 })}>
+                  <div
+                    className={cx(
+                      'accordion-block',
+                      { expanded: this.state.expanded },
+                      this.getHighlightBlockClasses(),
+                    )}
+                  >
                     <div
-                      className={cx(
-                        'accordion-block',
-                        { expanded: this.state.expanded },
-                        this.getHighlightBlockClasses(),
-                      )}
-                    >
-                      <div
-                        className={cx('accordion-toggler', { rotated: this.state.expanded })}
-                        onClick={this.toggleAccordion}
-                      />
-                    </div>
+                      className={cx('accordion-toggler', { rotated: this.state.expanded })}
+                      onClick={this.toggleAccordion}
+                    />
                   </div>
                 </div>
-              )}
-            </div>
-          )
-        })
-      );
+              </div>
+            )}
+          </div>
+        );
+      });
     } else {
       return (
         <div
-          className={cx("grid-row-wrapper", {
+          className={cx('grid-row-wrapper', {
             selected: this.isItemSelected(),
             ...customClasses,
           })}

@@ -763,13 +763,12 @@ export class LaunchesPage extends Component {
         entities={activeFilterConditions}
         onChange={onChangeFilter}
         render={({ onFilterAdd, ...rest }) => {
-          console.log("rest");
+          console.log('rest');
           console.log(rest);
           console.log(onFilterAdd);
-          console.log("onFilterAdd");
+          console.log('onFilterAdd');
           console.log(activeFilterConditions);
-          console.log("filterEntities");
-
+          console.log('filterEntities');
 
           return (
             <PageLayout>
@@ -784,7 +783,8 @@ export class LaunchesPage extends Component {
                     onResetFilter={onResetFilter}
                     onChangeSorting={onChangeSorting}
                     sortingString={sortingColumn}
-                    {...rest} />
+                    {...rest}
+                  />
                 )}
               </PageSection>
               <PageSection>
@@ -806,12 +806,14 @@ export class LaunchesPage extends Component {
                   onDelete={this.deleteItems}
                   activeFilterId={debugMode ? ALL : activeFilterId}
                   onAddNewWidget={this.showWidgetWizard}
-                  finishedLaunchesCount={finishedLaunchesCount} />
+                  finishedLaunchesCount={finishedLaunchesCount}
+                />
                 {debugMode && (
                   <RefineFiltersPanel
                     filterEntities={activeFilterConditions}
                     onFilterAdd={onFilterAdd}
-                    {...rest} />
+                    {...rest}
+                  />
                 )}
                 <LaunchSuiteGrid
                   data={launches}
@@ -832,7 +834,8 @@ export class LaunchesPage extends Component {
                   events={LAUNCHES_PAGE_EVENTS}
                   onAnalysis={this.onAnalysis}
                   onPatternAnalysis={this.onPatternAnalysis}
-                  rowHighlightingConfig={rowHighlightingConfig} />
+                  rowHighlightingConfig={rowHighlightingConfig}
+                />
                 {!!pageCount && !loading && (
                   <PaginationToolbar
                     activePage={activePage}
@@ -840,7 +843,8 @@ export class LaunchesPage extends Component {
                     pageCount={pageCount}
                     pageSize={pageSize}
                     onChangePage={onChangePage}
-                    onChangePageSize={onChangePageSize} />
+                    onChangePageSize={onChangePageSize}
+                  />
                 )}
               </PageSection>
             </PageLayout>

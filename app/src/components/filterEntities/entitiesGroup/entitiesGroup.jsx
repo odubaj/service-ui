@@ -63,13 +63,16 @@ export class EntitiesGroup extends Component {
 
   getEntity = (id) => this.props.entities.find((entity) => entity.id === id);
 
-  getActiveEntities = () => (this.props.entities.length > 3) ? this.props.entities.filter((entity) => entity.active) : this.handleRemovable(this.props.entities);
+  getActiveEntities = () =>
+    this.props.entities.length > 3
+      ? this.props.entities.filter((entity) => entity.active)
+      : this.handleRemovable(this.props.entities);
 
   handleRemovable = (entities) => {
-    entities.forEach((element) => element.removable = false)
+    entities.forEach((element) => (element.removable = false));
     this.props.noMoreDisplay = true;
     return entities;
-  }
+  };
 
   handleChange = (entity, value, isConditionChange = false) => {
     this.props.tracking.trackEvent(entity.eventInfo);
@@ -103,7 +106,15 @@ export class EntitiesGroup extends Component {
   };
 
   render() {
-    const { entities, entitySmallSize, errors, staticMode, vertical, events, noMoreDisplay } = this.props;
+    const {
+      entities,
+      entitySmallSize,
+      errors,
+      staticMode,
+      vertical,
+      events,
+      noMoreDisplay,
+    } = this.props;
     return (
       <div className={cx('entities-group')}>
         {this.getActiveEntities().map((entity) => {

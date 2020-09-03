@@ -50,13 +50,13 @@ export const GridBody = ({
     );
   }
 
-  /*var logsIndex = 0;
+  /* var logsIndex = 0;
   while (data[logsIndex].name != "LOGS" && logsIndex < data.length) {
     logsIndex++;
   }
   if(logsIndex < data.length && data[logsIndex].name == "LOGS") {
     data.push(data.splice(logsIndex, 1)[0]);
-  }*/
+  } */
 
   return data.map((row, i) => (
     <GridRow

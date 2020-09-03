@@ -1,44 +1,44 @@
 .grid-row-log1 {
-    text-align: left;
-    padding-left: 20px;
-    position: relative;
-    word-break: break-word;
-    padding: 30px 10px;
-    display: table-cell;
-    box-sizing: border-box;
-    vertical-align: top;
-    color: #464547;
-    font-family: OpenSans;
+  text-align: left;
+  padding-left: 20px;
+  position: relative;
+  word-break: break-word;
+  padding: 30px 10px;
+  display: table-cell;
+  box-sizing: border-box;
+  vertical-align: top;
+  color: #464547;
+  font-family: OpenSans;
 }
 
 .grid-row-log2 {
-    overflow: hidden;
-    color: #464547;
-    font-size: 11px;
-    font-family: Roboto-Mono-Regular,Menlo,Monaco,Consolas,"Courier New",monospace;
-    white-space: pre-wrap;
+  overflow: hidden;
+  color: #464547;
+  font-size: 11px;
+  font-family: Roboto-Mono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  white-space: pre-wrap;
 }
 
 .grid-row-log3 {
-    display: grid;
-    width: 100%;
+  display: grid;
+  width: 100%;
 }
 
 .grid-row-log4 {
-    font-size: 12px;
-    overflow: hidden;
-    word-wrap: break-word;
-    width: 100%;
-    height: auto;
-    font-family: monospace;
-    word-break: break-word;
+  font-size: 12px;
+  overflow: hidden;
+  word-wrap: break-word;
+  width: 100%;
+  height: auto;
+  font-family: monospace;
+  word-break: break-word;
 }
 
 .grid-row-log4 > p {
-    line-height: 17px;
+  line-height: 17px;
 }
 
 .grid-row-log4 > p > a {
-    color: #428bca;
-    text-decoration: none;
+  color: #428bca;
+  text-decoration: none;
 }

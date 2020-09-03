@@ -32,7 +32,14 @@ import {
 import { defectTypesSelector } from 'controllers/project';
 import { activeProjectSelector } from 'controllers/user';
 import { SCREEN_XS_MAX } from 'common/constants/screenSizeVariables';
-import { PASSED, FAILED, SKIPPED, INTERRUPTED, IN_PROGRESS, MANUAL } from 'common/constants/testStatuses';
+import {
+  PASSED,
+  FAILED,
+  SKIPPED,
+  INTERRUPTED,
+  IN_PROGRESS,
+  MANUAL,
+} from 'common/constants/testStatuses';
 import { formatAttribute } from 'common/utils/attributeUtils';
 import SearchIcon from 'common/img/search-icon-inline.svg';
 import FiltersIcon from 'common/img/filters-icon-inline.svg';
