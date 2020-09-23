@@ -66,6 +66,12 @@ export class HistoryPageContainer extends Component {
               onFilterAdd,
               onFilterRemove,
               filterEntities,
+              myfilterErrors,
+              myfilterValues,
+              myonFilterChange,
+              myonFilterValidate,
+              myonFilterAdd,
+              myonFilterRemove,
             }) => (
               <HistoryPage
                 filterErrors={filterErrors}
@@ -75,6 +81,12 @@ export class HistoryPageContainer extends Component {
                 onFilterAdd={onFilterAdd}
                 onFilterRemove={onFilterRemove}
                 filterEntities={filterEntities}
+                myfilterErrors={myfilterErrors}
+                myfilterValues={myfilterValues}
+                myonFilterChange={myonFilterChange}
+                myonFilterValidate={myonFilterValidate}
+                myonFilterAdd={myonFilterAdd}
+                myonFilterRemove={myonFilterRemove}
               />
             )}
           />

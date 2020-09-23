@@ -160,6 +160,13 @@ export class FilterEntitiesContainer extends Component {
         onFilterAdd={this.handleAdd}
         onFilterRemove={this.handleRemove}
         render={(props) => <FilterEntitiesAddHandlerContainer {...props} render={render} />}
+        myvisibleFilters={visibleFilters}
+        myfilterErrors={errors}
+        myfilterValues={values}
+        myonFilterChange={LaunchLevelEntities.handleChange}
+        myonFilterValidate={LaunchLevelEntities.handleValidate}
+        myonFilterAdd={LaunchLevelEntities.handleAdd}
+        myonFilterRemove={LaunchLevelEntities.handleRemove}
       />
     );
   }

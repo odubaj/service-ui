@@ -232,7 +232,7 @@ export class SuiteLevelEntities extends Component {
         active: visibleFilters.includes(ENTITY_ATTRIBUTE_KEYS),
         removable: true,
         customProps: {
-          getURI: URLS.launchAttributeKeysSearch(projectId),
+          getURI: URLS.testItemAttributeKeysSearch(projectId, launchId),
           placeholder: intl.formatMessage(messages.ATTRIBUTE_KEYS_PLACEHOLDER),
         },
       },
@@ -246,8 +246,9 @@ export class SuiteLevelEntities extends Component {
         active: visibleFilters.includes(ENTITY_ATTRIBUTE_VALUES),
         removable: true,
         customProps: {
-          getURI: URLS.launchAttributeValuesSearch(
+          getURI: URLS.testItemAttributeValuesSearch(
             projectId,
+            launchId,
             (filterValues[ENTITY_ATTRIBUTE_KEYS] || {}).value || '',
           ),
           placeholder: intl.formatMessage(messages.ATTRIBUTE_VALUES_PLACEHOLDER),

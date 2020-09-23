@@ -30,13 +30,28 @@ export const HistoryToolbar = ({
   onFilterRemove,
   onFilterValidate,
   onFilterChange,
+  myonFilterAdd,
+  myonFilterRemove,
+  myonFilterValidate,
+  myonFilterChange,
   filterErrors,
+  myfilterErrors,
   filterEntities,
   infoLine,
   withGroupOperations,
   userId,
 }) => {
-  console.log('onFilterAdd');
+  console.log('myonFilterAdd');
+  console.log(myonFilterAdd);
+  console.log('myonFilterRemove');
+  console.log(myonFilterRemove);
+  console.log('myonFilterValidate');
+  console.log(myonFilterValidate);
+  console.log('myonFilterChange');
+  console.log(myonFilterChange);
+  console.log('myfilterErrors');
+  console.log(myfilterErrors);
+  console.log('myonFilterAdd');
   console.log(onFilterAdd);
   console.log('onFilterRemove');
   console.log(onFilterRemove);
@@ -84,11 +99,11 @@ export const HistoryToolbar = ({
         events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS}
       />
       <RefineFiltersPanel
-        onFilterAdd={onFilterAdd}
-        onFilterRemove={onFilterRemove}
-        onFilterValidate={onFilterValidate}
-        onFilterChange={onFilterChange}
-        filterErrors={filterErrors}
+        onFilterAdd={myonFilterAdd}
+        onFilterRemove={myonFilterRemove}
+        onFilterValidate={myonFilterValidate}
+        onFilterChange={myonFilterChange}
+        filterErrors={myfilterErrors}
         filterEntities={myFilterEntities}
         events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS}
       />
@@ -108,6 +123,7 @@ HistoryToolbar.propTypes = {
   userId: PropTypes.string,
   infoLine: PropTypes.node,
   filterErrors: PropTypes.object,
+  myfilterErrors: PropTypes.object,
   filterEntities: PropTypes.array,
   withGroupOperations: PropTypes.bool,
   onRefresh: PropTypes.func,
@@ -115,6 +131,10 @@ HistoryToolbar.propTypes = {
   onFilterRemove: PropTypes.func,
   onFilterValidate: PropTypes.func,
   onFilterChange: PropTypes.func,
+  myonFilterAdd: PropTypes.func,
+  myonFilterRemove: PropTypes.func,
+  myonFilterValidate: PropTypes.func,
+  myonFilterChange: PropTypes.func,
   onUnselect: PropTypes.func,
   onUnselectAll: PropTypes.func,
 };
@@ -123,6 +143,7 @@ HistoryToolbar.defaultProps = {
   userId: '',
   infoLine: null,
   filterErrors: {},
+  myfilterErrors: {},
   filterEntities: [],
   withGroupOperations: false,
   onRefresh: () => {},
@@ -130,6 +151,10 @@ HistoryToolbar.defaultProps = {
   onFilterRemove: () => {},
   onFilterValidate: () => {},
   onFilterChange: () => {},
+  myonFilterAdd: () => {},
+  myonFilterRemove: () => {},
+  myonFilterValidate: () => {},
+  myonFilterChange: () => {},
   onUnselect: () => {},
   onUnselectAll: () => {},
 };
