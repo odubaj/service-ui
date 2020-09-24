@@ -170,10 +170,10 @@ export class FilterEntitiesContainer extends Component {
         myvisibleFilters={visibleFilters}
         myfilterErrors={errors}
         myfilterValues={values}
-        myonFilterChange={FilterEntitiesContainer.myhandleChange}
-        myonFilterValidate={FilterEntitiesContainer.myhandleValidate}
-        myonFilterAdd={FilterEntitiesContainer.myhandleAdd}
-        myonFilterRemove={FilterEntitiesContainer.myhandleRemove}
+        myonFilterChange={this.myhandleChange}
+        myonFilterValidate={this.myhandleValidate}
+        myonFilterAdd={this.myhandleAdd}
+        myonFilterRemove={this.myhandleRemove}
       />
     );
   }
