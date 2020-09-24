@@ -41,12 +41,14 @@ export class FilterEntitiesContainer extends Component {
     render: PropTypes.func.isRequired,
     level: PropTypes.string,
     entitiesProvider: PropTypes.elementType,
+    //myLaunchEntity: PropTypes.elementType,
   };
 
   static defaultProps = {
     entities: {},
     onChange: () => {},
     entitiesProvider: null,
+    //myLaunchEntity: LaunchLevelEntities.call(this),
     level: '',
   };
 
@@ -146,6 +148,11 @@ export class FilterEntitiesContainer extends Component {
     );
   };
 
+  myhandleChange = this.handleChange.bind(LaunchLevelEntities);
+  myhandleValidate = this.handleValidate.bind(LaunchLevelEntities);
+  myhandleAdd = this.handleAdd.bind(LaunchLevelEntities);
+  myhandleRemove = this.handleRemove.bind(LaunchLevelEntities);
+
   render() {
     const { errors, values, visibleFilters } = this.state;
     const { render, level, entitiesProvider } = this.props;
@@ -163,10 +170,10 @@ export class FilterEntitiesContainer extends Component {
         myvisibleFilters={visibleFilters}
         myfilterErrors={errors}
         myfilterValues={values}
-        myonFilterChange={LaunchLevelEntities.handleChange}
-        myonFilterValidate={LaunchLevelEntities.handleValidate}
-        myonFilterAdd={LaunchLevelEntities.handleAdd}
-        myonFilterRemove={LaunchLevelEntities.handleRemove}
+        myonFilterChange={FilterEntitiesContainer.myhandleChange}
+        myonFilterValidate={FilterEntitiesContainer.myhandleValidate}
+        myonFilterAdd={FilterEntitiesContainer.myhandleAdd}
+        myonFilterRemove={FilterEntitiesContainer.myhandleRemove}
       />
     );
   }
