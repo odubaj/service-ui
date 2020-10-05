@@ -23,6 +23,7 @@ import { HISTORY_DEPTH_CONFIG } from 'controllers/itemsHistory';
 import { HISTORY_PAGE_EVENTS } from 'components/main/analytics/events';
 import { HistoryControls } from './historyControls';
 import { HistoryTable } from './historyTable';
+import { RefineFiltersPanel } from '../../common/refineFiltersPanel';
 import styles from './historyView.scss';
 
 const cx = classNames.bind(styles);
@@ -67,6 +68,7 @@ export class HistoryView extends Component {
       withGroupOperations,
       onChangeHistoryBase,
       isTestItemsList,
+      filterEntities,
     } = this.props;
     const { historyDepth } = this.state;
 
@@ -85,6 +87,7 @@ export class HistoryView extends Component {
           onSelectItem={onSelectItem}
           selectedItems={selectedItems}
           withGroupOperations={withGroupOperations}
+          filterEntities={filterEntities}
         />
       </div>
     );

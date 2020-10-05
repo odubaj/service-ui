@@ -185,6 +185,7 @@ export class HistoryPage extends Component {
             selectedItems={selectedItems}
             withGroupOperations={isStepLevel}
             isTestItemsList={isTestItemsList}
+            {...rest}
           />
         </PageSection>
       </PageLayout>

@@ -57,6 +57,8 @@ import {
   ENTITY_DESCRIPTION,
   ENTITY_ATTRIBUTE_KEYS,
   ENTITY_ATTRIBUTE_VALUES,
+  ENTITY_LAUNCH_ATTRIBUTE_KEYS,
+  ENTITY_LAUNCH_ATTRIBUTE_VALUES,
   ENTITY_STATUS,
   ENTITY_DEFECT_TYPE,
   ENTITY_METHOD_TYPE,
@@ -102,11 +104,19 @@ const messages = defineMessages({
   },
   AttributeKeysTitle: {
     id: 'LaunchLevelEntities.AttributeKeysTitle',
-    defaultMessage: 'Attribute keys',
+    defaultMessage: 'Item attribute keys',
   },
   AttributeValuesTitle: {
     id: 'LaunchLevelEntities.AttributeValuesTitle',
-    defaultMessage: 'Attribute values',
+    defaultMessage: 'Item attribute values',
+  },
+  AttributeLaunchKeysTitle: {
+    id: 'LaunchLevelEntities.AttributeLaunchKeysTitle',
+    defaultMessage: 'Launch attribute keys',
+  },
+  AttributeLaunchValuesTitle: {
+    id: 'LaunchLevelEntities.AttributeLaunchValuesTitle',
+    defaultMessage: 'Launch attribute values',
   },
   BtsIssueTitle: {
     id: 'StepLevelEntities.BtsIssueTitle',
@@ -262,11 +272,19 @@ const messages = defineMessages({
   },
   ATTRIBUTE_KEYS_PLACEHOLDER: {
     id: 'StepLevelEntities.entityItemAttributeKeys.placeholder',
-    defaultMessage: 'Enter attribute keys',
+    defaultMessage: 'Enter item attribute keys',
   },
   ATTRIBUTE_VALUES_PLACEHOLDER: {
     id: 'StepLevelEntities.entityItemAttributeValues.placeholder',
-    defaultMessage: 'Enter attribute values',
+    defaultMessage: 'Enter item attribute values',
+  },
+  ATTRIBUTE_LAUNCH_KEYS_PLACEHOLDER: {
+    id: 'SuiteLevelEntities.entityLaunchAttributeKeys.placeholder',
+    defaultMessage: 'Enter launch attribute keys',
+  },
+  ATTRIBUTE_LAUNCH_VALUES_PLACEHOLDER: {
+    id: 'SuiteLevelEntities.entityLaunchAttributeValues.placeholder',
+    defaultMessage: 'Enter launch attribute values',
   },
   PatternNameTitle: {
     id: 'StepLevelEntities.PatternNameTitle',
@@ -566,6 +584,37 @@ export class StepLevelEntities extends Component {
             (filterValues[ENTITY_ATTRIBUTE_KEYS] || {}).value || '',
           ),
           placeholder: intl.formatMessage(messages.ATTRIBUTE_VALUES_PLACEHOLDER),
+        },
+      },
+      {
+        id: ENTITY_LAUNCH_ATTRIBUTE_KEYS,
+        component: EntityInputConditionalTags,
+        value: this.bindDefaultValue(ENTITY_LAUNCH_ATTRIBUTE_KEYS, {
+          condition: CONDITION_HAS,
+        }),
+        title: intl.formatMessage(messages.AttributeLaunchKeysTitle),
+        active: visibleFilters.includes(ENTITY_LAUNCH_ATTRIBUTE_KEYS),
+        removable: true,
+        customProps: {
+          getURI: URLS.launchAttributeKeysSearch(projectId),
+          placeholder: intl.formatMessage(messages.ATTRIBUTE_LAUNCH_KEYS_PLACEHOLDER),
+        },
+      },
+      {
+        id: ENTITY_LAUNCH_ATTRIBUTE_VALUES,
+        component: EntityInputConditionalTags,
+        value: this.bindDefaultValue(ENTITY_LAUNCH_ATTRIBUTE_VALUES, {
+          condition: CONDITION_HAS,
+        }),
+        title: intl.formatMessage(messages.AttributeLaunchValuesTitle),
+        active: visibleFilters.includes(ENTITY_LAUNCH_ATTRIBUTE_VALUES),
+        removable: true,
+        customProps: {
+          getURI: URLS.launchAttributeValuesSearch(
+            projectId,
+            (filterValues[ENTITY_ATTRIBUTE_KEYS] || {}).value || '',
+          ),
+          placeholder: intl.formatMessage(messages.ATTRIBUTE_LAUNCH_VALUES_PLACEHOLDER),
         },
       },
       {

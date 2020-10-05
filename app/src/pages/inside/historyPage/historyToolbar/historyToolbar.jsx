@@ -98,15 +98,6 @@ export const HistoryToolbar = ({
         filterEntities={filterEntities}
         events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS}
       />
-      <RefineFiltersPanel
-        onFilterAdd={myonFilterAdd}
-        onFilterRemove={myonFilterRemove}
-        onFilterValidate={myonFilterValidate}
-        onFilterChange={myonFilterChange}
-        filterErrors={myfilterErrors}
-        filterEntities={myFilterEntities}
-        events={HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS}
-      />
     </Fragment>
   );
 };

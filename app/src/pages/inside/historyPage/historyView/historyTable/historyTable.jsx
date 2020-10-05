@@ -322,7 +322,11 @@ export class HistoryTable extends Component {
       intl: { formatMessage },
       history,
       loading,
+      filterEntities,
     } = this.props;
+
+    console.log("v historytable som !!!!!!!!!!!!!!!!!!!!!!!")
+    console.log(filterEntities)
 
     return (
       <Fragment>
