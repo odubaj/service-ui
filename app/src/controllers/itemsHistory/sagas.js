@@ -65,7 +65,7 @@ function* getHistoryParams({ loadMore } = {}) {
 
   const pageNumber = loadMore ? pagination.number + 1 : pagination.number;
   const parentItemId = itemIdsArray.length > 1 ? itemIdsArray[itemIdsArray.length - 1] : undefined;
-  const params = {
+  var params = {
     ...query,
     'page.page': pageNumber,
     'page.size': pagination.size,
@@ -77,6 +77,22 @@ function* getHistoryParams({ loadMore } = {}) {
   } else if (isTestItemsList) {
     params.filterId = yield select(filterIdSelector);
   }
+
+  console.log("toto su TIE SPRAVNE PARAMETRE!!!!!!!!!!")
+  console.log(params);
+
+  if (params.hasOwnProperty('filter.has.attributeLaunchValue')) {
+    params['attributeLaunchValue'] = params['filter.has.attributeLaunchValue'];
+    delete params['filter.has.attributeLaunchValue'];
+  }
+
+  if (params.hasOwnProperty('filter.has.attributeLaunchKey')) {
+    params['attributeLaunchKey'] = params['filter.has.attributeLaunchKey'];
+    delete params['filter.has.attributeLaunchKey'];
+  }
+
+  console.log("toto su TIE SPRAVNE PARAMETRE PO PREMENOVANI!!!!!!!!!!")
+  console.log(params);
 
   return params;
 }
