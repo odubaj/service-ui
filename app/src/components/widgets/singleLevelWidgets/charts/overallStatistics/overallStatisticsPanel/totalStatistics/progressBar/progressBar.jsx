@@ -30,7 +30,7 @@ export class ProgressBar extends React.PureComponent {
   static getPercentage = (value, totalVal) => `${(value / totalVal) * 100}%`;
 
   render() {
-    const { total, passed, failed, skipped } = this.props.progressData;
+    const { total, passed, failed, skipped, manual } = this.props.progressData;
     const { getPercentage } = ProgressBar;
 
     return (
@@ -41,7 +41,7 @@ export class ProgressBar extends React.PureComponent {
           className={cx('passed')}
         />
         <div
-          onClick={() => this.props.onChartClick(FAILED, INTERRUPTED, MANUAL)}
+          onClick={() => this.props.onChartClick(FAILED, INTERRUPTED)}
           style={{ width: getPercentage(failed, total) }}
           className={cx('failed')}
         />
@@ -49,6 +49,11 @@ export class ProgressBar extends React.PureComponent {
           onClick={() => this.props.onChartClick(SKIPPED)}
           style={{ width: getPercentage(skipped, total) }}
           className={cx('skipped')}
+        />
+        <div
+          onClick={() => this.props.onChartClick(MANUAL)}
+          style={{ width: getPercentage(manual, total) }}
+          className={cx('failed')}
         />
       </div>
     );

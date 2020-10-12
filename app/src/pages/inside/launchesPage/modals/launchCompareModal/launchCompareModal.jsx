@@ -28,6 +28,7 @@ import {
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
   STATS_FAILED,
+  STATS_MANUAL,
   STATS_PASSED,
   STATS_SKIPPED,
 } from 'common/constants/statistics';
@@ -51,6 +52,7 @@ const contentParameters = {
   contentFields: [
     STATS_PASSED,
     STATS_FAILED,
+    STATS_MANUAL,
     STATS_SKIPPED,
     STATS_PB_TOTAL,
     STATS_AB_TOTAL,

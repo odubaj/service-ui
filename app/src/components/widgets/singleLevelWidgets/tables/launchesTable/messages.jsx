@@ -20,6 +20,7 @@ import {
   STATS_TOTAL,
   STATS_PASSED,
   STATS_FAILED,
+  STATS_MANUAL,
   STATS_SKIPPED,
 } from 'common/constants/statistics';
 import { STATS_SI, STATS_AB, STATS_TI, STATS_PB } from '../components/constants';
@@ -32,6 +33,8 @@ import {
   passedColumnFullTitle,
   failedColumnShortTitle,
   failedColumnFullTitle,
+  manualColumnShortTitle,
+  manualColumnFullTitle,
   totalColumnShortTitle,
 } from '../components/messages';
 import { END_TIME, NAME, START_TIME, STATUS } from './constants';
@@ -98,6 +101,10 @@ export const COLUMN_NAMES_MAP = {
   [STATS_FAILED]: {
     full: failedColumnFullTitle,
     short: failedColumnShortTitle,
+  },
+  [STATS_MANUAL]: {
+    full: manualColumnFullTitle,
+    short: manualColumnShortTitle,
   },
   [STATS_SKIPPED]: {
     full: skippedColumnFullTitle,

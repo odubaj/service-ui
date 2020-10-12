@@ -23,7 +23,7 @@ import { Grid } from 'components/main/grid';
 import { AbsRelTime } from 'components/main/absRelTime';
 import { COMMON_LOCALE_KEYS } from 'common/constants/localization';
 import { formatMethodType } from 'common/utils/localizationUtils';
-import { FAILED } from 'common/constants/testStatuses';
+import { FAILED, MANUAL } from 'common/constants/testStatuses';
 import {
   ENTITY_METHOD_TYPE,
   ENTITY_STATUS,
@@ -317,7 +317,7 @@ export class StepGrid extends Component {
   };
 
   highlightFailedItems = (value) => ({
-    [cx('failed')]: value.status === FAILED,
+    [cx('failed')]: (value.status === FAILED || value.status === MANUAL),
   });
 
   groupStepItems = () =>

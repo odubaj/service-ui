@@ -21,6 +21,7 @@ import { FieldProvider } from 'components/fields/fieldProvider';
 import {
   STATS_TOTAL,
   STATS_FAILED,
+  STATS_MANUAL,
   STATS_PASSED,
   STATS_SKIPPED,
   STATS_AB_TOTAL,
@@ -56,6 +57,7 @@ export class DifferentLaunchesComparisonControls extends Component {
           STATS_TOTAL,
           STATS_PASSED,
           STATS_FAILED,
+          STATS_MANUAL,
           STATS_SKIPPED,
           STATS_PB_TOTAL,
           STATS_AB_TOTAL,

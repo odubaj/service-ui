@@ -29,6 +29,10 @@ export const messages = defineMessages({
     id: 'FilterNameById.statistics$executions$failed',
     defaultMessage: 'Failed',
   },
+  statistics$executions$manual: {
+    id: 'FilterNameById.statistics$executions$manual',
+    defaultMessage: 'Manual',
+  },
   statistics$executions$skipped: {
     id: 'FilterNameById.statistics$executions$skipped',
     defaultMessage: 'Skipped',

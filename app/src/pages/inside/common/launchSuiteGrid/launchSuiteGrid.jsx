@@ -24,7 +24,7 @@ import {
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
 } from 'common/constants/defectTypes';
-import { FAILED, INTERRUPTED, PASSED, SKIPPED } from 'common/constants/launchStatuses';
+import { FAILED, INTERRUPTED, PASSED, SKIPPED, MANUAL } from 'common/constants/launchStatuses';
 import { COMMON_LOCALE_KEYS } from 'common/constants/localization';
 import { Grid } from 'components/main/grid';
 import { AbsRelTime } from 'components/main/absRelTime';
@@ -44,6 +44,7 @@ import {
   STATS_SKIPPED,
   STATS_PASSED,
   STATS_FAILED,
+  STATS_MANUAL,
   STATS_AB_TOTAL,
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
@@ -93,6 +94,7 @@ const TotalColumn = ({ className, ...rest }) => (
       statuses={[
         PASSED.toUpperCase(),
         FAILED.toUpperCase(),
+        MANUAL.toUpperCase(),
         SKIPPED.toUpperCase(),
         INTERRUPTED.toUpperCase(),
       ]}
@@ -128,6 +130,20 @@ const FailedColumn = ({ className, ...rest }) => (
   </div>
 );
 FailedColumn.propTypes = {
+  className: PropTypes.string.isRequired,
+};
+
+const ManualColumn = ({ className, ...rest }) => (
+  <div className={cx('ti-col', className)}>
+    <ExecutionStatistics
+      itemId={rest.value.id}
+      title={rest.title}
+      value={rest.value.statistics.executions && rest.value.statistics.executions.manual}
+      statuses={[MANUAL.toUpperCase()]}
+    />
+  </div>
+);
+ManualColumn.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
@@ -341,6 +357,18 @@ export class LaunchSuiteGrid extends PureComponent {
         withFilter: true,
         filterEventInfo: events.FAILED_FILTER,
         sortingEventInfo: events.FAILED_SORTING,
+      },
+      {
+        id: STATS_MANUAL,
+        title: {
+          full: 'manual',
+          short: 'mn',
+        },
+        component: ManualColumn,
+        sortable: true,
+        withFilter: true,
+        filterEventInfo: events.MANUAL_FILTER,
+        sortingEventInfo: events.MANUAL_SORTING,
       },
       {
         id: STATS_SKIPPED,

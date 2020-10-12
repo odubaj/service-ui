@@ -24,6 +24,7 @@ import { activeProjectSelector } from 'controllers/user';
 import {
   STATS_TOTAL,
   STATS_FAILED,
+  STATS_MANUAL,
   STATS_PASSED,
   STATS_SKIPPED,
 } from 'common/constants/statistics';
@@ -94,6 +95,10 @@ const messages = defineMessages({
   FailedTitle: {
     id: 'LaunchLevelEntities.FailedTitle',
     defaultMessage: 'Failed',
+  },
+  ManualTitle: {
+    id: 'LaunchLevelEntities.ManualTitle',
+    defaultMessage: 'Manual',
   },
   SkippedTitle: {
     id: 'LaunchLevelEntities.SkippedTitle',
@@ -335,6 +340,21 @@ export class LaunchLevelEntities extends Component {
         validationFunc: commonValidators.launchNumericEntity,
         title: intl.formatMessage(messages.FailedTitle),
         active: visibleFilters.includes(STATS_FAILED),
+        removable: true,
+        customProps: {
+          conditions: [CONDITION_GREATER_EQ, CONDITION_LESS_EQ, CONDITION_EQ],
+          placeholder: intl.formatMessage(messages.STATS_PLACEHOLDER),
+        },
+      },
+      {
+        id: STATS_MANUAL,
+        component: EntityInputConditional,
+        value: this.bindDefaultValue(STATS_MANUAL, {
+          condition: CONDITION_GREATER_EQ,
+        }),
+        validationFunc: commonValidators.launchNumericEntity,
+        title: intl.formatMessage(messages.ManualTitle),
+        active: visibleFilters.includes(STATS_MANUAL),
         removable: true,
         customProps: {
           conditions: [CONDITION_GREATER_EQ, CONDITION_LESS_EQ, CONDITION_EQ],

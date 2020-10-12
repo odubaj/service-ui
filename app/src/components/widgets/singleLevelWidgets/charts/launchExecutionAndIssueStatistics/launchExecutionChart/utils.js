@@ -25,6 +25,8 @@ export const getColumns = (content) => {
     columns.push(['statistics$executions$passed', chartData.statistics$executions$passed]);
   chartData.statistics$executions$failed &&
     columns.push(['statistics$executions$failed', chartData.statistics$executions$failed]);
+  chartData.statistics$executions$manual &&
+    columns.push(['statistics$executions$manual', chartData.statistics$executions$manual]);
   chartData.statistics$executions$skipped &&
     columns.push(['statistics$executions$skipped', chartData.statistics$executions$skipped]);
 

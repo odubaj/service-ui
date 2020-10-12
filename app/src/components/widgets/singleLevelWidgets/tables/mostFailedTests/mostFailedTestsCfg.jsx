@@ -22,6 +22,9 @@ const issueTypes = {
   skipped: (
     <FormattedMessage id="MostFailedTests.header.issueType.skipped" defaultMessage="Skipped" />
   ),
+  manual: (
+    <FormattedMessage id="MostFailedTests.header.issueType.manual" defaultMessage="Manual" />
+  ),
   product_bug: (
     <FormattedMessage
       id="MostFailedTests.header.issueType.product_bug"

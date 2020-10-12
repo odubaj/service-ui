@@ -21,7 +21,7 @@ import styles from './barChartTooltip.scss';
 
 const cx = classNames.bind(styles);
 
-export const BarChartTooltip = ({ passed, failed, skipped }) => (
+export const BarChartTooltip = ({ passed, failed, skipped, manual }) => (
   <div className={cx('bar-chart-tooltip')}>
     <div className={cx('stats-item')}>
       <FormattedMessage id="BarChartTooltip.passed" defaultMessage="Passed:" />
@@ -30,6 +30,10 @@ export const BarChartTooltip = ({ passed, failed, skipped }) => (
     <div className={cx('stats-item')}>
       <FormattedMessage id="BarChartTooltip.failed" defaultMessage="Failed:" />
       <span>{`${failed.toFixed(2)}%`}</span>
+    </div>
+    <div className={cx('stats-item')}>
+      <FormattedMessage id="BarChartTooltip.manual" defaultMessage="Manual:" />
+      <span>{`${manual.toFixed(2)}%`}</span>
     </div>
     <div className={cx('stats-item')}>
       <FormattedMessage id="BarChartTooltip.skipped" defaultMessage="Skipped:" />
@@ -41,5 +45,6 @@ export const BarChartTooltip = ({ passed, failed, skipped }) => (
 BarChartTooltip.propTypes = {
   passed: PropTypes.number.isRequired,
   failed: PropTypes.number.isRequired,
+  manual: PropTypes.number.isRequired,
   skipped: PropTypes.number.isRequired,
 };

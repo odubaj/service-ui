@@ -18,6 +18,7 @@ import { defineMessages } from 'react-intl';
 import {
   STATS_TOTAL,
   STATS_FAILED,
+  STATS_MANUAL,
   STATS_PASSED,
   STATS_SKIPPED,
   STATS_AB_TOTAL,
@@ -78,6 +79,10 @@ const messages = defineMessages({
   CriteriaFailed: {
     id: 'WidgetCriteriaOption.CriteriaFailed',
     defaultMessage: 'Failed',
+  },
+  CriteriaManual: {
+    id: 'WidgetCriteriaOption.CriteriaManual',
+    defaultMessage: 'Manual',
   },
   CriteriaSkipped: {
     id: 'WidgetCriteriaOption.CriteriaSkipped',
@@ -243,6 +248,7 @@ const getLaunchStatusesOptions = (formatMessage) => [
   { value: STATS_TOTAL, label: formatMessage(messages.CriteriaTotal) },
   { value: STATS_PASSED, label: formatMessage(messages.CriteriaPassed) },
   { value: STATS_FAILED, label: formatMessage(messages.CriteriaFailed) },
+  { value: STATS_MANUAL, label: formatMessage(messages.CriteriaFailed) },
   { value: STATS_SKIPPED, label: formatMessage(messages.CriteriaSkipped) },
 ];
 

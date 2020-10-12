@@ -20,6 +20,7 @@ import {
   STATS_TOTAL,
   STATS_PASSED,
   STATS_FAILED,
+  STATS_MANUAL,
   STATS_SKIPPED,
 } from 'common/constants/statistics';
 import { STATS_SI, STATS_AB, STATS_ND, STATS_TI, STATS_PB } from '../components/constants';
@@ -27,6 +28,8 @@ import {
   defaultDefectsMessages,
   failedColumnFullTitle,
   failedColumnShortTitle,
+  manualColumnFullTitle,
+  manualColumnShortTitle,
   passedColumnFullTitle,
   passedColumnShortTitle,
   skippedColumnFullTitle,
@@ -109,6 +112,10 @@ export const COLUMN_NAMES_MAP = {
   [STATS_FAILED]: {
     full: failedColumnFullTitle,
     short: failedColumnShortTitle,
+  },
+  [STATS_MANUAL]: {
+    full: manualColumnFullTitle,
+    short: manualColumnShortTitle,
   },
   [STATS_SKIPPED]: {
     full: skippedColumnFullTitle,

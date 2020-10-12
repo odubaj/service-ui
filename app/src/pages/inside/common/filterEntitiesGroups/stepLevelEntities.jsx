@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
 import { commonValidators } from 'common/utils/validation';
 import { URLS } from 'common/urls';
 import { activeProjectSelector } from 'controllers/user';
-import { FAILED, PASSED, SKIPPED, INTERRUPTED, IN_PROGRESS } from 'common/constants/launchStatuses';
+import { FAILED, PASSED, SKIPPED, INTERRUPTED, IN_PROGRESS, MANUAL } from 'common/constants/launchStatuses';
 import { DEFECT_TYPES_SEQUENCE } from 'common/constants/defectTypes';
 import {
   BEFORE_SUITE,
@@ -161,6 +161,10 @@ const messages = defineMessages({
   LaunchStatusFailed: {
     id: 'StepLevelEntities.LaunchStatusFailed',
     defaultMessage: 'Failed',
+  },
+  LaunchStatusManual: {
+    id: 'StepLevelEntities.LaunchStatusManual',
+    defaultMessage: 'Manual',
   },
   LaunchStatusSkipped: {
     id: 'StepLevelEntities.LaunchStatusSkipped',
@@ -510,6 +514,10 @@ export class StepLevelEntities extends Component {
             {
               label: intl.formatMessage(messages.LaunchStatusFailed),
               value: FAILED.toUpperCase(),
+            },
+            {
+              label: intl.formatMessage(messages.LaunchStatusManual),
+              value: MANUAL.toUpperCase(),
             },
             {
               label: intl.formatMessage(messages.LaunchStatusSkipped),

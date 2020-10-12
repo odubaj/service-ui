@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-import { FAILED, INTERRUPTED, PASSED, SKIPPED } from 'common/constants/launchStatuses';
+import { FAILED, INTERRUPTED, PASSED, SKIPPED, MANUAL } from 'common/constants/launchStatuses';
 import {
   STATS_TOTAL,
   STATS_SKIPPED,
   STATS_PASSED,
   STATS_FAILED,
+  STATS_MANUAL,
 } from 'common/constants/statistics';
 import { getItemNameConfig } from 'components/widgets/common/utils';
 
@@ -29,6 +30,7 @@ export const getStatisticsStatuses = (type) => {
       return [
         PASSED.toUpperCase(),
         FAILED.toUpperCase(),
+        MANUAL.toUpperCase(),
         SKIPPED.toUpperCase(),
         INTERRUPTED.toUpperCase(),
       ];
@@ -38,6 +40,8 @@ export const getStatisticsStatuses = (type) => {
       return [FAILED.toUpperCase(), INTERRUPTED.toUpperCase()];
     case STATS_SKIPPED:
       return [SKIPPED.toUpperCase()];
+    case STATS_MANUAL:
+      return [MANUAL.toUpperCase()];
     default:
       break;
   }

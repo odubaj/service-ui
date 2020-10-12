@@ -44,6 +44,12 @@ export const passedColumnFullTitle = (
 export const passedColumnShortTitle = (
   <FormattedMessage id={'TableWidgets.passedColumnShort'} defaultMessage={'ps'} />
 );
+export const manualColumnFullTitle = (
+  <FormattedMessage id={'TableWidgets.manualColumnFull'} defaultMessage={'Manual'} />
+);
+export const manualColumnShortTitle = (
+  <FormattedMessage id={'TableWidgets.manualColumnShort'} defaultMessage={'mn'} />
+);
 export const failedColumnFullTitle = (
   <FormattedMessage id={'TableWidgets.failedColumnFull'} defaultMessage={'Failed'} />
 );
@@ -74,5 +80,6 @@ export const defaultStatisticsMessages = {
   [STATS_TOTAL]: totalColumnFullTitle,
   [STATS_PASSED]: passedColumnFullTitle,
   [STATS_FAILED]: failedColumnFullTitle,
+  [STATS_MANUAL]: manualColumnFullTitle,
   [STATS_SKIPPED]: skippedColumnFullTitle,
 };

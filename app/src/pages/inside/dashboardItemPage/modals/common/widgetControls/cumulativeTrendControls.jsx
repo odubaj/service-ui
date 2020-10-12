@@ -27,7 +27,7 @@ import {
   commonValidators,
 } from 'common/utils/validation';
 import { URLS } from 'common/urls';
-import { STATS_FAILED, STATS_PASSED, STATS_SKIPPED } from 'common/constants/statistics';
+import { STATS_FAILED, STATS_PASSED, STATS_SKIPPED, STATS_MANUAL } from 'common/constants/statistics';
 import { FieldProvider } from 'components/fields/fieldProvider';
 import { activeProjectSelector } from 'controllers/user';
 import {
@@ -44,7 +44,7 @@ const cx = classNames.bind(styles);
 
 const MAX_ATTRIBUTES_AMOUNT = 2;
 const DEFAULT_ITEMS_COUNT = '15';
-const STATIC_CONTENT_FIELDS = [STATS_FAILED, STATS_SKIPPED, STATS_PASSED];
+const STATIC_CONTENT_FIELDS = [STATS_FAILED, STATS_SKIPPED, STATS_PASSED, STATS_MANUAL];
 
 const messages = defineMessages({
   CriteriaFieldLabel: {

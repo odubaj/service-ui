@@ -23,6 +23,7 @@ import {
   STATS_SKIPPED,
   STATS_PASSED,
   STATS_FAILED,
+  STATS_MANUAL,
 } from 'common/constants/statistics';
 import { changeActiveFilterAction } from 'controllers/filter';
 import { ALL } from 'common/constants/reservedFilterIds';
@@ -146,6 +147,7 @@ export class ProductStatus extends PureComponent {
       [STATS_TOTAL]: STATISTICS_COLUMN_KEY,
       [STATS_PASSED]: STATISTICS_COLUMN_KEY,
       [STATS_FAILED]: STATISTICS_COLUMN_KEY,
+      [STATS_MANUAL]: STATISTICS_COLUMN_KEY,
       [STATS_SKIPPED]: STATISTICS_COLUMN_KEY,
       [STATS_PB]: DEFECT_COLUMN_KEY,
       [STATS_AB]: DEFECT_COLUMN_KEY,
