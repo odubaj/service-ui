@@ -46,6 +46,12 @@ const issueTypes = {
   no_defect: (
     <FormattedMessage id="MostFailedTests.header.issueType.no_defect" defaultMessage="No Defect" />
   ),
+  waived_as_passed: (
+    <FormattedMessage id="MostFailedTests.header.issueType.waived_as_passed" defaultMessage="Waived as Passed" />
+  ),
+  manual_test: (
+    <FormattedMessage id="MostFailedTests.header.issueType.manual_test" defaultMessage="Manual Test" />
+  ),
 };
 
 const columns = {

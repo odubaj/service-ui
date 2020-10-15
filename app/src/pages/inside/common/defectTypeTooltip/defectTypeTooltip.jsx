@@ -32,6 +32,8 @@ const messages = defineMessages({
   },
   system_issue_total: { id: 'DefectTypeTooltip.si-total', defaultMessage: 'Total system issues' },
   no_defect_total: { id: 'DefectTypeTooltip.nd-total', defaultMessage: 'Total no defects' },
+  waived_as_passed_total: { id: 'DefectTypeTooltip.wap-total', defaultMessage: 'Total waived as passed' },
+  manual_test_total: { id: 'DefectTypeTooltip.mt-total', defaultMessage: 'Total manual tests' },
   to_investigate_total: {
     id: 'DefectTypeTooltip.ti-total',
     defaultMessage: 'Total to investigate',

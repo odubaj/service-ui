@@ -69,6 +69,22 @@ export const messages = defineMessages({
     id: 'FilterNameById.statistics$defects$no_defect',
     defaultMessage: 'No defect',
   },
+  statistics$defects$waived_as_passed: {
+    id: 'FilterNameById.statistics$defects$waived_as_passed',
+    defaultMessage: 'Waived as Passed',
+  },
+  statistics$defects$waived_as_passed$total: {
+    id: 'FilterNameById.statistics$defects$waived_as_passed',
+    defaultMessage: 'Waived as Passed',
+  },
+  statistics$defects$manual_test: {
+    id: 'FilterNameById.statistics$defects$manual_test',
+    defaultMessage: 'Manual Test',
+  },
+  statistics$defects$manual_test$total: {
+    id: 'FilterNameById.statistics$defects$manual_test',
+    defaultMessage: 'Manual Test',
+  },
   statistics$defects$to_investigate: {
     id: 'FilterNameById.statistics$defects$to_investigate',
     defaultMessage: 'To investigate',

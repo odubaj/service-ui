@@ -78,6 +78,8 @@ const PRODUCT_BUG = 'statistics$defects$product_bug$pb001';
 const AUTOMATION_BUG = 'statistics$defects$automation_bug$ab001';
 const SYSTEM_ISSUE = 'statistics$defects$system_issue$si001';
 const NO_DEFECT = 'statistics$defects$no_defect$nd001';
+const MANUAL_TEST = 'statistics$defects$manual_test$mt001';
+const WAIVED_AS_PASSED = 'statistics$defects$waived_as_passed$wap001';
 const TO_INVESTIGATE = 'statistics$defects$to_investigate$ti001';
 const STATIC_BASE_COLUMNS = [STATS_TOTAL, STATS_PASSED, STATS_FAILED, STATS_SKIPPED, STATS_MANUAL];
 const BASE_COLUMNS_ORDER = [
@@ -92,6 +94,8 @@ const BASE_COLUMNS_ORDER = [
   AUTOMATION_BUG,
   SYSTEM_ISSUE,
   NO_DEFECT,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
   TO_INVESTIGATE,
 ];
 const validators = {

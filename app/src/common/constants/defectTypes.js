@@ -19,6 +19,8 @@ export const AUTOMATION_BUG = 'automation_bug';
 export const SYSTEM_ISSUE = 'system_issue';
 export const NO_DEFECT = 'no_defect';
 export const TO_INVESTIGATE = 'to_investigate';
+export const WAIVED_AS_PASSED = 'waived_as_passed';
+export const MANUAL_TEST = 'manual_test';
 
 export const DEFECT_TYPES_SEQUENCE = [
   PRODUCT_BUG.toUpperCase(),
@@ -26,4 +28,6 @@ export const DEFECT_TYPES_SEQUENCE = [
   SYSTEM_ISSUE.toUpperCase(),
   NO_DEFECT.toUpperCase(),
   TO_INVESTIGATE.toUpperCase(),
+  MANUAL_TEST.toUpperCase(),
+  WAIVED_AS_PASSED.toUpperCase(),
 ];

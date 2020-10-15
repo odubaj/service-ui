@@ -23,7 +23,7 @@ import {
   STATS_MANUAL,
   STATS_SKIPPED,
 } from 'common/constants/statistics';
-import { STATS_SI, STATS_AB, STATS_ND, STATS_TI, STATS_PB } from '../components/constants';
+import { STATS_SI, STATS_AB, STATS_ND, STATS_TI, STATS_PB, STATS_WAP, STATS_MT } from '../components/constants';
 import {
   defaultDefectsMessages,
   failedColumnFullTitle,
@@ -135,6 +135,12 @@ export const COLUMN_NAMES_MAP = {
   },
   [STATS_TI]: {
     full: defaultDefectsMessages[STATS_TI],
+  },
+  [STATS_WAP]: {
+    full: defaultDefectsMessages[STATS_WAP],
+  },
+  [STATS_MT]: {
+    full: defaultDefectsMessages[STATS_MT],
   },
   [PASSING_RATE]: {
     full: passingRateColumnFullTitle,

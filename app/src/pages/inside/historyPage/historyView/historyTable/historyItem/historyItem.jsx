@@ -26,6 +26,8 @@ import {
   PRODUCT_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
 } from 'common/constants/defectTypes';
 import { withTooltip } from 'components/main/tooltips/tooltip';
 import { ItemPathTooltip } from 'pages/inside/common/itemPathTooltip';
@@ -41,6 +43,8 @@ const defectsTitleMap = {
   [AUTOMATION_BUG]: 'ab',
   [NO_DEFECT]: 'nd',
   [PRODUCT_BUG]: 'pb',
+  [WAIVED_AS_PASSED]: 'wap',
+  [MANUAL_TEST]: 'mt',
   [SYSTEM_ISSUE]: 'si',
   [TO_INVESTIGATE]: 'ti',
 };

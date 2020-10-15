@@ -250,6 +250,14 @@ const messages = defineMessages({
     id: 'StepLevelEntities.NO_DEFECT_ALL',
     defaultMessage: 'All no defects',
   },
+  WAIVED_AS_PASSED_ALL: {
+    id: 'StepLevelEntities.WAIVED_AS_PASSED_ALL',
+    defaultMessage: 'All waived as passed',
+  },
+  MANUAL_TEST_ALL: {
+    id: 'StepLevelEntities.MANUAL_TEST_ALL',
+    defaultMessage: 'All manual tests',
+  },
   TO_INVESTIGATE_ALL: {
     id: 'StepLevelEntities.TO_INVESTIGATE_ALL',
     defaultMessage: 'All to investigate',
@@ -269,6 +277,14 @@ const messages = defineMessages({
   Defect_Type_TI001: {
     id: 'StepLevelEntities.Defect_Type_TI001',
     defaultMessage: 'To investigate',
+  },
+  Defect_Type_WAP001: {
+    id: 'StepLevelEntities.Defect_Type_WAP001',
+    defaultMessage: 'Waived as Passed',
+  },
+  Defect_Type_MT001: {
+    id: 'StepLevelEntities.Defect_Type_MT001',
+    defaultMessage: 'Manual Test',
   },
   Defect_Type_ND001: {
     id: 'StepLevelEntities.Defect_Type_ND001',

@@ -25,6 +25,8 @@ import {
   SYSTEM_ISSUE,
   NO_DEFECT,
   TO_INVESTIGATE,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
 } from 'common/constants/defectTypes';
 import { defectLinkSelector, statisticsLinkSelector } from 'controllers/testItem';
 import { activeProjectSelector } from 'controllers/user';
@@ -100,7 +102,7 @@ export class InvestigatedTrendChart extends Component {
 
   getDefectTypeLocators = (id) => {
     const { defectTypes } = this.props;
-    const investigatedDefectType = [PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE, NO_DEFECT];
+    const investigatedDefectType = [PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE, NO_DEFECT, MANUAL_TEST, WAIVED_AS_PASSED];
     const toInvestigateDefectType = [TO_INVESTIGATE];
     const defectType = id === 'toInvestigate' ? toInvestigateDefectType : investigatedDefectType;
 

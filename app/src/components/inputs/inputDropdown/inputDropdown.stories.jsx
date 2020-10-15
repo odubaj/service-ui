@@ -42,6 +42,16 @@ const options = [
     disabled: false,
   },
   {
+    value: 'WAP',
+    label: 'Waived as Passed',
+    disabled: false,
+  },
+  {
+    value: 'MT',
+    label: 'Manual Test',
+    disabled: false,
+  },
+  {
     value: 'TI',
     label: 'To invest',
     disabled: false,

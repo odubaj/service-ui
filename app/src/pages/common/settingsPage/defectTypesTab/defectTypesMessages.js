@@ -22,6 +22,8 @@ import {
   PRODUCT_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
 } from 'common/constants/defectTypes';
 
 export const messages = defineMessages({
@@ -56,6 +58,14 @@ export const messages = defineMessages({
   [NO_DEFECT]: {
     id: 'DefectTypesTab.noDefectBugsGroup',
     defaultMessage: 'No Defect Group',
+  },
+  [WAIVED_AS_PASSED]: {
+    id: 'DefectTypesTab.waivedAsPassedGroup',
+    defaultMessage: 'Waived as Passed Group',
+  },
+  [MANUAL_TEST]: {
+    id: 'DefectTypesTab.ManualTestsGroup',
+    defaultMessage: 'Manual Tests Group',
   },
   [TO_INVESTIGATE]: {
     id: 'DefectTypesTab.toInvestigateBugsGroup',

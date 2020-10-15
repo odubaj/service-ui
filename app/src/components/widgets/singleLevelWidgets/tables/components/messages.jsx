@@ -29,8 +29,10 @@ import {
   SYSTEM_ISSUE,
   AUTOMATION_BUG,
   NO_DEFECT,
+  MANUAL_TEST,
+  WAIVED_AS_PASSED
 } from 'common/constants/defectTypes';
-import { STATS_AB, STATS_ND, STATS_PB, STATS_SI, STATS_TI } from './constants';
+import { STATS_AB, STATS_ND, STATS_PB, STATS_SI, STATS_TI, STATS_MT, STATS_WAP } from './constants';
 
 export const totalColumnFullTitle = (
   <FormattedMessage id={'TableWidgets.totalColumnFull'} defaultMessage={'Total'} />
@@ -69,11 +71,15 @@ export const defaultDefectsMessages = {
   [STATS_AB]: 'Automation bug',
   [STATS_ND]: 'No defect',
   [STATS_SI]: 'System issue',
+  [STATS_WAP]: 'Waived as Passed',
+  [STATS_MT]: 'Manual Test',
   [TO_INVESTIGATE]: 'To investigate',
   [PRODUCT_BUG]: 'Product bug',
   [AUTOMATION_BUG]: 'Automation bug',
   [NO_DEFECT]: 'No defect',
   [SYSTEM_ISSUE]: 'System issue',
+  [MANUAL_TEST]: 'Manual test',
+  [WAIVED_AS_PASSED]: 'Waived as Passed',
 };
 
 export const defaultStatisticsMessages = {

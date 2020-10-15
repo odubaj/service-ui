@@ -28,6 +28,8 @@ import {
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
   NO_DEFECT,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
 } from 'common/constants/defectTypes';
 import { getWidgetCriteriaOptions } from './utils/getWidgetCriteriaOptions';
 import {
@@ -119,7 +121,7 @@ export class LaunchesTableControls extends Component {
       criteries
         .map((criteria) => {
           const value = criteria.value || criteria;
-          return [PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE, TO_INVESTIGATE, NO_DEFECT].indexOf(
+          return [PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE, TO_INVESTIGATE, NO_DEFECT, MANUAL_TEST, WAIVED_AS_PASSED].indexOf(
             value,
           ) + 1
             ? this.props.defectTypes[value.toUpperCase()].map(

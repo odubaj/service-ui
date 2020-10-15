@@ -15,6 +15,12 @@
  */
 
 export default {
+  WAIVED_AS_PASSED: [
+    '#3cff33',
+  ],
+  MANUAL_TEST: [
+    '#334fff',
+  ],
   NO_DEFECT: [
     '#7f7f7f',
     '#888888',

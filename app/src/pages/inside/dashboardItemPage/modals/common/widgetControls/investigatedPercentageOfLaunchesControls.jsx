@@ -24,6 +24,8 @@ import {
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
+  STATS_WAP_TOTAL,
+  STATS_MT_TOTAL,
 } from 'common/constants/statistics';
 import { CHART_MODES, MODES_VALUES } from 'common/constants/chartModes';
 import { commonValidators } from 'common/utils/validation';
@@ -70,6 +72,8 @@ export class InvestigatedPercentageOfLaunchesControls extends Component {
           STATS_SI_TOTAL,
           STATS_ND_TOTAL,
           STATS_TI_TOTAL,
+          STATS_WAP_TOTAL,
+          STATS_MT_TOTAL,
         ],
         itemsCount: DEFAULT_ITEMS_COUNT,
         widgetOptions: {

@@ -17,6 +17,8 @@
 export const STATS_AB_TOTAL = 'statistics$defects$automation_bug$total';
 export const STATS_ND_TOTAL = 'statistics$defects$no_defect$total';
 export const STATS_PB_TOTAL = 'statistics$defects$product_bug$total';
+export const STATS_WAP_TOTAL = 'statistics$defects$waived_as_passed$total';
+export const STATS_MT_TOTAL = 'statistics$defects$manual_test$total';
 export const STATS_SI_TOTAL = 'statistics$defects$system_issue$total';
 export const STATS_TI_TOTAL = 'statistics$defects$to_investigate$total';
 

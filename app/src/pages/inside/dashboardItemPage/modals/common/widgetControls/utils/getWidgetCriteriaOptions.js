@@ -24,6 +24,8 @@ import {
   STATS_AB_TOTAL,
   STATS_ND_TOTAL,
   STATS_PB_TOTAL,
+  STATS_WAP_TOTAL,
+  STATS_MT_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
 } from 'common/constants/statistics';
@@ -33,6 +35,8 @@ import {
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
   NO_DEFECT,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
   DEFECT_TYPES_SEQUENCE,
 } from 'common/constants/defectTypes';
 import {
@@ -109,6 +113,14 @@ const messages = defineMessages({
     id: 'WidgetCriteriaOption.NO_DEFECT',
     defaultMessage: 'No defect',
   },
+  [WAIVED_AS_PASSED]: {
+    id: 'WidgetCriteriaOption.WAIVED_AS_PASSED',
+    defaultMessage: 'Waived as Passed',
+  },
+  [MANUAL_TEST]: {
+    id: 'WidgetCriteriaOption.MANUAL_TEST',
+    defaultMessage: 'Manual Test',
+  },
 
   PRODUCT_BUG_TOTAL: {
     id: 'WidgetCriteriaOption.PRODUCT_BUG_TOTAL',
@@ -130,6 +142,14 @@ const messages = defineMessages({
     id: 'WidgetCriteriaOption.NO_DEFECT_TOTAL',
     defaultMessage: 'Total no defects',
   },
+  MANUAL_TEST_TOTAL: {
+    id: 'WidgetCriteriaOption.MANUAL_TEST_TOTAL',
+    defaultMessage: 'Total manual test',
+  },
+  WAIVED_AS_PASSED_TOTAL: {
+    id: 'WidgetCriteriaOption.WAIVED_AS_PASSED_TOTAL',
+    defaultMessage: 'Total waived as passed',
+  },
   Defect_Type_AB001: {
     id: 'WidgetCriteriaOption.Defect_Type_AB001',
     defaultMessage: 'Automation bug',
@@ -149,6 +169,14 @@ const messages = defineMessages({
   Defect_Type_ND001: {
     id: 'WidgetCriteriaOption.Defect_Type_ND001',
     defaultMessage: 'No defect',
+  },
+  Defect_Type_WAP001: {
+    id: 'WidgetCriteriaOption.Defect_Type_WAP001',
+    defaultMessage: 'Waived as Passed',
+  },
+  Defect_Type_MT001: {
+    id: 'WidgetCriteriaOption.Defect_Type_MT001',
+    defaultMessage: 'Manual Test',
   },
 
   [START_LAUNCH]: {
@@ -267,6 +295,8 @@ const getDefectStatisticsOptions = (formatMessage) => [
   { value: STATS_AB_TOTAL, label: formatMessage(messages[AUTOMATION_BUG]) },
   { value: STATS_SI_TOTAL, label: formatMessage(messages[SYSTEM_ISSUE]) },
   { value: STATS_ND_TOTAL, label: formatMessage(messages[NO_DEFECT]) },
+  { value: STATS_WAP_TOTAL, label: formatMessage(messages[WAIVED_AS_PASSED]) },
+  { value: STATS_MT_TOTAL, label: formatMessage(messages[MANUAL_TEST]) },
 ];
 
 const getToInvestigateStatisticsOption = (formatMessage) => [
@@ -362,6 +392,8 @@ const getDefectTypesGroupsOptions = (formatMessage) => [
   { value: SYSTEM_ISSUE, label: formatMessage(messages[SYSTEM_ISSUE]) },
   { value: TO_INVESTIGATE, label: formatMessage(messages[TO_INVESTIGATE]) },
   { value: NO_DEFECT, label: formatMessage(messages[NO_DEFECT]) },
+  { value: MANUAL_TEST, label: formatMessage(messages[MANUAL_TEST]) },
+  { value: WAIVED_AS_PASSED, label: formatMessage(messages[WAIVED_AS_PASSED]) },
 ];
 
 export const getWidgetCriteriaOptions = (optionGroups, formatMessage, meta) => {

@@ -24,6 +24,8 @@ import {
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
+  STATS_WAP_TOTAL,
+  STATS_MT_TOTAL,
 } from 'common/constants/statistics';
 import { commonValidators } from 'common/utils/validation';
 import { ITEMS_INPUT_WIDTH } from './constants';
@@ -67,6 +69,8 @@ export class FailedCasesTrendControls extends Component {
           STATS_SI_TOTAL,
           STATS_ND_TOTAL,
           STATS_TI_TOTAL,
+          STATS_WAP_TOTAL,
+          STATS_MT_TOTAL,
         ],
         widgetOptions: {},
         itemsCount: DEFAULT_ITEMS_COUNT,

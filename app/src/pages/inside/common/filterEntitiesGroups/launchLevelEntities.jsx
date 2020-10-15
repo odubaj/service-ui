@@ -144,6 +144,22 @@ const messages = defineMessages({
     id: 'LaunchLevelEntities.NO_DEFECT_totalTitle',
     defaultMessage: 'No Defect Total',
   },
+  WAIVED_AS_PASSED_title: {
+    id: 'LaunchLevelEntities.WAIVED_AS_PASSED_title',
+    defaultMessage: 'Waived as Passed',
+  },
+  WAIVED_AS_PASSED_totalTitle: {
+    id: 'LaunchLevelEntities.WAIVED_AS_PASSED_totalTitle',
+    defaultMessage: 'Waived as Passed Total',
+  },
+  MANUAL_TEST_title: {
+    id: 'LaunchLevelEntities.MANUAL_TEST_title',
+    defaultMessage: 'Manual Test',
+  },
+  MANUAL_TEST_totalTitle: {
+    id: 'LaunchLevelEntities.MANUAL_TEST_totalTitle',
+    defaultMessage: 'Manual Test Total',
+  },
   LAUNCH_NUMBER_PLACEHOLDER: {
     id: 'LaunchLevelEntities.launchNumberPlaceholder',
     defaultMessage: 'Enter number',

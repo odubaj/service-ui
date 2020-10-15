@@ -20,6 +20,8 @@ import {
   AUTOMATION_BUG,
   PRODUCT_BUG,
   TO_INVESTIGATE,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
 } from 'common/constants/defectTypes';
 
 export const DEFECT_TYPE_CONFIGURATION = [
@@ -28,4 +30,6 @@ export const DEFECT_TYPE_CONFIGURATION = [
   SYSTEM_ISSUE.toUpperCase(),
   NO_DEFECT.toUpperCase(),
   TO_INVESTIGATE.toUpperCase(),
+  WAIVED_AS_PASSED.toUpperCase(),
+  MANUAL_TEST.toUpperCase(),
 ];

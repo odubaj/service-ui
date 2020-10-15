@@ -27,6 +27,8 @@ import {
   STATS_AB_TOTAL,
   STATS_ND_TOTAL,
   STATS_PB_TOTAL,
+  STATS_WAP_TOTAL,
+  STATS_MT_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
 } from 'common/constants/statistics';
@@ -63,6 +65,8 @@ export class DifferentLaunchesComparisonControls extends Component {
           STATS_AB_TOTAL,
           STATS_SI_TOTAL,
           STATS_ND_TOTAL,
+          STATS_WAP_TOTAL,
+          STATS_MT_TOTAL,
           STATS_TI_TOTAL,
         ],
         widgetOptions: {},
