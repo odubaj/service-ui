@@ -51,9 +51,12 @@
 }
 
 .table-body-cell-FAILED,
-.table-body-cell-MANUAL,
 .table-body-cell-INTERRUPTED {
   background-color: $COLOR--blush;
+}
+
+.table-body-cell-MANUAL {
+  background-color: $COLOR--steel-grey;
 }
 
 .table-body-cell-SKIPPED {

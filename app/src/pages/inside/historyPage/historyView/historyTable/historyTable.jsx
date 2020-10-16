@@ -153,6 +153,24 @@ export class HistoryTable extends Component {
           };
           navigate(link(ownProps));
         };
+        if(historyItem.status != "PASSED") {
+          if(((historyItem.statistics.defects.hasOwnProperty('manual_test')) 
+            || (historyItem.statistics.defects.hasOwnProperty('no_defect'))
+            || (historyItem.statistics.defects.hasOwnProperty('waived_as_passed')))
+            && (!historyItem.statistics.defects.hasOwnProperty('product_bug'))
+            && (!historyItem.statistics.defects.hasOwnProperty('to_investigate'))
+            && (!historyItem.statistics.defects.hasOwnProperty('system_issue'))
+            && (!historyItem.statistics.defects.hasOwnProperty('automation_bug'))) {
+              historyItem.status = "PASSED";
+              if(historyItem.statistics.defects.hasOwnProperty('manual_test')) {
+                if(historyItem.statistics.defects.manual_test.hasOwnProperty('mt_1hrgfvhu6snxu')) {
+                  historyItem.status = "FAILED";
+                } else if(historyItem.statistics.defects.manual_test.hasOwnProperty('mt001')) {
+                  historyItem.status = "MANUAL";
+                }
+              }
+          }
+        }
         return (
           <HistoryCell
             status={historyItem.status}
@@ -183,8 +201,6 @@ export class HistoryTable extends Component {
     const historyResourcesLength = history[0].resources.length;
     const maxRowItemsCount = selectedFilter ? historyResourcesLength - 1 : historyResourcesLength;
     const headerItems = [];
-    // console.log("rederheader: "+history[0].resources)
-    // console.log("filter: "+ selectedFilter);
 
     for (let index = maxRowItemsCount; index > 0; index -= 1) {
       let distro = '';
@@ -226,16 +242,10 @@ export class HistoryTable extends Component {
     return history.map((item, index) => {
       const isLastRow = index === history.length - 1;
 
-      console.log(headerlineLaunch);
-
       let k = 0;
       const tmp = Array();
-      console.log('pole na zaciatku');
-      console.log(item.resources);
       for (let i = 0; i < item.resources.length; ) {
-        console.log(`i: ${i}`);
         if (item.resources[i].status == 'NOT_FOUND' || item.resources[i].status == 'RESETED') {
-          console.log('nenajdene, pokracujem');
           i++;
           continue;
         }
@@ -243,29 +253,17 @@ export class HistoryTable extends Component {
         if (item.resources[i].launchId === headerlineLaunch[k]) {
           tmp[k] = item.resources[i];
           i++;
-          console.log('rovnake, pokracujem');
         } else {
-          console.log('prazdne pole, zaciatok');
           const emptyObj = { status: 'NOT_FOUND', id: 'NOT_FOUND_-1694763521_6' };
           tmp.splice(k, 0, emptyObj);
-          console.log('prazdne pole, koniec');
         }
         k++;
-        console.log('porovnavam');
-        console.log(item.resources.length);
-        console.log(k);
         if (k == item.resources.length) {
-          console.log('breakujem');
           break;
         }
       }
 
-      console.log('priradujem');
-      console.log(tmp);
       item.resources = tmp;
-
-      console.log('vysledne pole: ');
-      console.log(item.resources);
 
       return (
         <tr key={item.groupingField}>
@@ -274,7 +272,6 @@ export class HistoryTable extends Component {
               <ItemNameBlock
                 data={itemsHistory[index].resources[0]}
                 ownLinkParams={this.calculateItemOwnLinkParams(itemsHistory[index].resources[0])}
-                // { `${ this.renderRow(longestRow, item.resources, line, isLastRow) } `}
               />
             </div>
           </HistoryCell>
@@ -324,9 +321,6 @@ export class HistoryTable extends Component {
       loading,
       filterEntities,
     } = this.props;
-
-    console.log("v historytable som !!!!!!!!!!!!!!!!!!!!!!!")
-    console.log(filterEntities)
 
     return (
       <Fragment>

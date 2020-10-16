@@ -78,9 +78,6 @@ function* getHistoryParams({ loadMore } = {}) {
     params.filterId = yield select(filterIdSelector);
   }
 
-  console.log("toto su TIE SPRAVNE PARAMETRE!!!!!!!!!!")
-  console.log(params);
-
   if (params.hasOwnProperty('filter.has.attributeLaunchValue')) {
     params['attributeLaunchValue'] = params['filter.has.attributeLaunchValue'];
     delete params['filter.has.attributeLaunchValue'];
@@ -90,9 +87,6 @@ function* getHistoryParams({ loadMore } = {}) {
     params['attributeLaunchKey'] = params['filter.has.attributeLaunchKey'];
     delete params['filter.has.attributeLaunchKey'];
   }
-
-  console.log("toto su TIE SPRAVNE PARAMETRE PO PREMENOVANI!!!!!!!!!!")
-  console.log(params);
 
   return params;
 }

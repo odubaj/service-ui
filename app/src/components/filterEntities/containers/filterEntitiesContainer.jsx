@@ -18,7 +18,6 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import isEqual from 'fast-deep-equal';
 import { omit } from 'common/utils/omit';
-import { MyComponent } from '.';
 import { LEVEL_STEP, LEVEL_SUITE, LEVEL_TEST, LEVEL_LAUNCH } from 'common/constants/launchLevels';
 import {
   StepLevelEntities,
@@ -42,14 +41,12 @@ export class FilterEntitiesContainer extends Component {
     render: PropTypes.func.isRequired,
     level: PropTypes.string,
     entitiesProvider: PropTypes.elementType,
-    //myLaunchEntity: PropTypes.elementType,
   };
 
   static defaultProps = {
     entities: {},
     onChange: () => {},
     entitiesProvider: null,
-    //myLaunchEntity: LaunchLevelEntities.call(this),
     level: '',
   };
 
@@ -87,17 +84,11 @@ export class FilterEntitiesContainer extends Component {
   };
 
   handleChange = (entityId, value) => {
-    console.log("v handle change je entityID!!!!!!!!!!!!!!!!!!!!!")
-    console.log(entityId);
-    console.log(value)
     this.setState(
       {
         values: { ...this.state.values, [entityId]: { ...this.state.values[entityId], ...value } },
       },
       () => {
-        //if((entityId == "attributeLaunchKey") || (entityId == "attributeLaunchValue")) {
-        //  return;
-        //}
         this.isValidChange(entityId) &&
         this.props.onChange(this.collectEntities(this.state.values));
       });
@@ -155,35 +146,7 @@ export class FilterEntitiesContainer extends Component {
     );
   };
 
-  /*handleMyRemove = (entityId) => {
-    this.setState(
-      (prevState) => {
-        let values;
-        let visibleFilters;
-        if (Array.isArray(entityId)) {
-          values = omit(prevState.values, entityId);
-          visibleFilters = prevState.visibleFilters.filter((item) => !entityId.includes(item));
-        } else {
-          values = omit(prevState.values, [entityId]);
-          visibleFilters = prevState.visibleFilters.filter((item) => item !== entityId);
-        }
-        return { values, visibleFilters };
-      },
-      () => this.props.onChange(this.collectEntities(this.state.values)),
-    );
-  };*/
-
-  //myhandleChange = this.handleChange.bind(LaunchLevelEntities);
-  //myhandleValidate = this.handleValidate.bind(LaunchLevelEntities);
-  //myhandleAdd = this.handleAdd.bind(LaunchLevelEntities);
-  //myhandleRemove = this.handleRemove.bind(LaunchLevelEntities);
-
   render() {
-    //console.log("filterentitiesContainer!!!!!!!!!!!!!!!!!!!");
-    //console.log(this.myhandleAdd);
-    //console.log(this.myhandleValidate);
-    //console.log(this.myhandleRemove);
-    //console.log(this.myhandleChange);
     const { errors, values, visibleFilters } = this.state;
     const { render, level, entitiesProvider, onChange, entities } = this.props;
     const EntitiesProvider = entitiesProvider || ENTITY_PROVIDERS[level];

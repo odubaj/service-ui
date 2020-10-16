@@ -168,18 +168,9 @@ export class GridRow extends Component {
       level,
     } = this.props;
 
-    console.log('columns');
-    console.log(columns);
-    console.log('value');
-    console.log(value);
-    console.log('level');
-    console.log(level);
-
     const { expanded } = this.state;
     const customClasses = (rowClassMapper && rowClassMapper(value)) || {};
 
-    console.log('custom classes');
-    console.log(customClasses);
     if (value.name == 'LOGS' && value.hasOwnProperty('parameters')) {
       return value.parameters.map((element) => {
         return (

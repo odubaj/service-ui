@@ -763,12 +763,6 @@ export class LaunchesPage extends Component {
         entities={activeFilterConditions}
         onChange={onChangeFilter}
         render={({ onFilterAdd, ...rest }) => {
-          console.log('rest');
-          console.log(rest);
-          console.log(onFilterAdd);
-          console.log('onFilterAdd');
-          console.log(activeFilterConditions);
-          console.log('filterEntities');
 
           return (
             <PageLayout>

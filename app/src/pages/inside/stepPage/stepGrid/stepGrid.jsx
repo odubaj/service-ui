@@ -317,7 +317,7 @@ export class StepGrid extends Component {
   };
 
   highlightFailedItems = (value) => ({
-    [cx('failed')]: (value.status === FAILED || value.status === MANUAL),
+    [cx('failed')]: (value.status === FAILED && value.issue.issueType != "wap001" && value.issue.issueType != "nd001") || (value.status === MANUAL && value.issue.issueType == "mt_1hrgfvhu6snxu"),
   });
 
   groupStepItems = () =>

@@ -41,39 +41,10 @@ export const HistoryToolbar = ({
   withGroupOperations,
   userId,
 }) => {
-  console.log('myonFilterAdd');
-  console.log(myonFilterAdd);
-  console.log('myonFilterRemove');
-  console.log(myonFilterRemove);
-  console.log('myonFilterValidate');
-  console.log(myonFilterValidate);
-  console.log('myonFilterChange');
-  console.log(myonFilterChange);
-  console.log('myfilterErrors');
-  console.log(myfilterErrors);
-  console.log('myonFilterAdd');
-  console.log(onFilterAdd);
-  console.log('onFilterRemove');
-  console.log(onFilterRemove);
-  console.log('onFilterValidate');
-  console.log(onFilterValidate);
-  console.log('onFilterChange');
-  console.log(onFilterChange);
-  console.log('filterErrors');
-  console.log(filterErrors);
-  console.log('events');
-  console.log(HISTORY_PAGE_EVENTS.REFINE_FILTERS_PANEL_EVENTS);
 
   let myFilterEntities;
   myFilterEntities = filterEntities.slice(0, 5);
   myFilterEntities.splice(0, 3);
-
-  // myFilterEntities.forEach(element => element.active = true);
-
-  console.log('myfilterEntities');
-  console.log(myFilterEntities);
-  console.log('filterEntities');
-  console.log(filterEntities);
 
   return (
     <Fragment>
