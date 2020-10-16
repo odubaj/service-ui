@@ -17,7 +17,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE } from 'common/constants/defectTypes';
+import { PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE, WAIVED_AS_PASSED, MANUAL_TEST } from 'common/constants/defectTypes';
 import { injectIntl, defineMessages } from 'react-intl';
 import styles from './infoLine.scss';
 import { BarChart } from './barChart';
@@ -78,6 +78,8 @@ export class InfoLine extends Component {
       [PRODUCT_BUG]: events.PB_TOOLTIP,
       [SYSTEM_ISSUE]: events.SI_TOOLTIP,
       [AUTOMATION_BUG]: events.AB_TOOLTIP,
+      [WAIVED_AS_PASSED]: events.WAP_TOOLTIP,
+      [MANUAL_TEST]: events.MT_TOOLTIP,
     };
     return (
       <div className={cx('info-line')}>

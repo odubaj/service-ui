@@ -85,6 +85,24 @@ export const state = {
               color: '#0274d1',
             },
           ],
+          MANUAL_TEST: [
+            {
+              locator: 'MT001',
+              typeRef: 'MANUAL_TEST',
+              longName: 'Manual Test',
+              shortName: 'MT',
+              color: '#334fff',
+            },
+          ],
+          WAIVED_AS_PASSED: [
+            {
+              locator: 'WAP001',
+              typeRef: 'WAIVED_AS_PASSED',
+              longName: 'Waived as Passed',
+              shortName: 'WAP',
+              color: '#3cff33',
+            },
+          ],
         },
       },
     },

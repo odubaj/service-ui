@@ -131,6 +131,16 @@ export const LAUNCHES_PAGE_EVENTS = {
     action: getActionTableFilter('PRODUCT BUG'),
     label: getDescriptionTableFilter(),
   },
+  WAP_FILTER: {
+    category: LAUNCHES_PAGE,
+    action: getActionTableFilter('WAIVED AS PASSED'),
+    label: getDescriptionTableFilter(),
+  },
+  MT_FILTER: {
+    category: LAUNCHES_PAGE,
+    action: getActionTableFilter('MANUAL TEST'),
+    label: getDescriptionTableFilter(),
+  },
   AB_FILTER: {
     category: LAUNCHES_PAGE,
     action: getActionTableFilter('AUTO BUG'),
@@ -156,6 +166,16 @@ export const LAUNCHES_PAGE_EVENTS = {
     action: 'Click on Product Bug Circle',
     label: 'Transition to inner level of launch with Product Bugs',
   },
+  WAP_CHART: {
+    category: LAUNCHES_PAGE,
+    action: 'Click on Waived as Passed Circle',
+    label: 'Transition to inner level of launch with Waived as Passed',
+  },
+  MT_CHART: {
+    category: LAUNCHES_PAGE,
+    action: 'Click on Manual Test Circle',
+    label: 'Transition to inner level of launch with Manual Tests',
+  },
   AB_CHART: {
     category: LAUNCHES_PAGE,
     action: 'Click on Auto Bug Circle',
@@ -175,6 +195,16 @@ export const LAUNCHES_PAGE_EVENTS = {
     category: LAUNCHES_PAGE,
     action: 'Click on Tooltip "Total Product Bugs"',
     label: 'Transition to inner level of launch with Product Bugs',
+  },
+  WAP_TOOLTIP: {
+    category: LAUNCHES_PAGE,
+    action: 'Click on Tooltip "Total Waived as Passed"',
+    label: 'Transition to inner level of launch with Waived as Passed',
+  },
+  MT_TOOLTIP: {
+    category: LAUNCHES_PAGE,
+    action: 'Click on Tooltip "Total Manual Tests"',
+    label: 'Transition to inner level of launch with Manual Tests',
   },
   AB_TOOLTIP: {
     category: LAUNCHES_PAGE,

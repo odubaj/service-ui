@@ -56,6 +56,17 @@
   background: $COLOR--automation-bug;
 }
 
+.type-wap {
+  background: $COLOR--waived-as-passed;
+}
+
+.type-mt {
+  background: $COLOR--manual-test;
+  & .defect-title {
+    color: $COLOR--white-two;
+  }
+}
+
 .type-si {
   background: $COLOR--system-issue;
   & span {

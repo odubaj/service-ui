@@ -224,7 +224,7 @@ export const getWidgets = (formatMessage) => [
       <FormattedHTMLMessage
         id={'Widgets.Description.launchStatistics'}
         defaultMessage={
-          'Shows statistics of the last launch divided into 2 sections:</br> - Skipped, Passed, Failed, Manual </br> - Product Bug, System Issue, To Investigate, Automation Bugs.'
+          'Shows statistics of the last launch divided into 2 sections:</br> - Skipped, Passed, Failed, Manual </br> - Product Bug, System Issue, To Investigate, Automation Bug, Waived as Passed, Manual Test.'
         }
       />
     ),

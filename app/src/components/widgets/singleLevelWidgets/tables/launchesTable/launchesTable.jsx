@@ -31,6 +31,8 @@ import {
   TO_INVESTIGATE,
   AUTOMATION_BUG,
   SYSTEM_ISSUE,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
 } from 'common/constants/defectTypes';
 import { ALL } from 'common/constants/reservedFilterIds';
 import { activeProjectSelector } from 'controllers/user';
@@ -228,6 +230,8 @@ const COLUMNS_KEYS_MAP = {
   [STATS_MANUAL]: STATISTICS_COLUMN_KEY,
   [STATS_SKIPPED]: STATISTICS_COLUMN_KEY,
   [PRODUCT_BUG]: DEFECT_COLUMN_KEY,
+  [WAIVED_AS_PASSED]: DEFECT_COLUMN_KEY,
+  [MANUAL_TEST]: DEFECT_COLUMN_KEY,
   [AUTOMATION_BUG]: DEFECT_COLUMN_KEY,
   [SYSTEM_ISSUE]: DEFECT_COLUMN_KEY,
   [TO_INVESTIGATE]: DEFECT_COLUMN_KEY,

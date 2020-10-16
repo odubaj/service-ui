@@ -15,7 +15,7 @@
  */
 
 import { URLS } from 'common/urls';
-import { AUTOMATION_BUG, SYSTEM_ISSUE, PRODUCT_BUG } from 'components/widgets/common/constants';
+import { AUTOMATION_BUG, SYSTEM_ISSUE, PRODUCT_BUG, WAIVED_AS_PASSED, MANUAL_TEST } from 'components/widgets/common/constants';
 import {
   GeneralInfo,
   OwnersInfo,
@@ -82,6 +82,26 @@ export const statusPageWidgets = [
     ),
     getUrl: (projectId, interval) =>
       URLS.projectWidget(projectId, WIDGETS_IDS.issuesChart, interval),
+  },
+  {
+    title: messages.manualTest,
+    id: WIDGETS_IDS.manualTest,
+    source: WIDGETS_IDS.manualTest,
+    component: (data, interval) => (
+      <IssuesChartWrapper data={data} interval={interval} targetFieldKey={MANUAL_TEST} />
+    ),
+    getUrl: (projectId, interval) =>
+      URLS.projectWidget(projectId, WIDGETS_IDS.manualTest, interval),
+  },
+  {
+    title: messages.waivedAsPassed,
+    id: WIDGETS_IDS.waivedAsPassed,
+    source: WIDGETS_IDS.waivedAsPassed,
+    component: (data, interval) => (
+      <IssuesChartWrapper data={data} interval={interval} targetFieldKey={WAIVED_AS_PASSED} />
+    ),
+    getUrl: (projectId, interval) =>
+      URLS.projectWidget(projectId, WIDGETS_IDS.waivedAsPassed, interval),
   },
   {
     title: messages.systemIssues,

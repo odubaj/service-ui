@@ -49,6 +49,14 @@ export const messages = defineMessages({
     id: 'StatusPageContent.systemIssues',
     defaultMessage: 'Percentage of system issues',
   },
+  waivedAsPassed: {
+    id: 'StatusPageContent.waivedAsPassed',
+    defaultMessage: 'Percentage of waived as passed',
+  },
+  manualTest: {
+    id: 'StatusPageContent.manualTest',
+    defaultMessage: 'Percentage of manual tests',
+  },
   autoBugs: {
     id: 'StatusPageContent.autoBugs',
     defaultMessage: 'Percentage of auto bugs',

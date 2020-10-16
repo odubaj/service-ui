@@ -29,10 +29,13 @@ import {
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
+  STATS_MT_TOTAL,
+  STATS_WAP_TOTAL,
 } from 'common/constants/statistics';
 import { SORTING_ASC } from 'controllers/sorting';
 import { ENTITY_START_TIME, ENTITY_NAME, ENTITY_NUMBER } from 'components/filterEntities/constants';
 import styles from './filtersSorting.scss';
+import { STATS_WAP } from '../../../../components/widgets/singleLevelWidgets/tables/components/constants';
 
 const cx = classNames.bind(styles);
 const messages = defineMessages({
@@ -84,6 +87,14 @@ const messages = defineMessages({
     id: 'FilterSort.toInvestigate',
     defaultMessage: 'To Investigate',
   },
+  [STATS_MT_TOTAL]: {
+    id: 'FilterSort.manualTest',
+    defaultMessage: 'Manual Test',
+  },
+  [STATS_WAP_TOTAL]: {
+    id: 'FilterSort.waivedAsPassed',
+    defaultMessage: 'Waived as Passed',
+  },
 });
 const options = [
   ENTITY_NAME,
@@ -97,6 +108,8 @@ const options = [
   STATS_AB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
+  STATS_WAP_TOTAL,
+  STATS_MT_TOTAL,
 ];
 
 @injectIntl

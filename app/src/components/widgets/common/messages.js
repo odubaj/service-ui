@@ -22,6 +22,8 @@ import {
   PRODUCT_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
+  WAIVED_AS_PASSED,
+  MANUAL_TEST,
 } from './constants';
 
 export const messages = defineMessages({
@@ -76,6 +78,14 @@ export const messages = defineMessages({
   [PRODUCT_BUG]: {
     id: `Chart.label.productBug`,
     defaultMessage: 'Product Bug',
+  },
+  [WAIVED_AS_PASSED]: {
+    id: `Chart.label.waivedAsPassed`,
+    defaultMessage: 'Waived as Passed',
+  },
+  [MANUAL_TEST]: {
+    id: `Chart.label.manualTest`,
+    defaultMessage: 'Manual Test',
   },
   [AUTOMATION_BUG]: {
     id: `Chart.label.automationBug`,

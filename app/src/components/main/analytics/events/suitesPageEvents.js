@@ -167,6 +167,26 @@ export const SUITES_PAGE_EVENTS = {
     action: 'Click on icon "sorting" on Product Bug',
     label: 'Sort items by Product Bug',
   },
+  WAP_FILTER: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "filter" on Waived as Passed',
+    label: 'Arises active "Waived as Passed" input',
+  },
+  WAP_SORTING: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "sorting" on Waived as Passed',
+    label: 'Sort items by Waived as Passed',
+  },
+  MT_FILTER: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "filter" on Manual Test',
+    label: 'Arises active "Manual Test" input',
+  },
+  MT_SORTING: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "sorting" on Manual Test',
+    label: 'Sort items by Manual Test',
+  },
   AB_FILTER: {
     category: SUITE_PAGE,
     action: 'Click on icon "filter" on Auto Bug',
@@ -206,6 +226,26 @@ export const SUITES_PAGE_EVENTS = {
     category: SUITE_PAGE,
     action: 'Click on Tooltip "Total Product Bugs"',
     label: 'Transition to PB list view',
+  },
+  WAP_CHART: {
+    category: SUITE_PAGE,
+    action: 'Click on WAP Circle',
+    label: 'Transition to WAP list view',
+  },
+  WAP_TOOLTIP: {
+    category: SUITE_PAGE,
+    action: 'Click on Tooltip "Total Waived as Passed"',
+    label: 'Transition to WAP list view',
+  },
+  MT_CHART: {
+    category: SUITE_PAGE,
+    action: 'Click on MT Circle',
+    label: 'Transition to MT list view',
+  },
+  MT_TOOLTIP: {
+    category: SUITE_PAGE,
+    action: 'Click on Tooltip "Total Manual Tests"',
+    label: 'Transition to MT list view',
   },
   AB_CHART: {
     category: SUITE_PAGE,

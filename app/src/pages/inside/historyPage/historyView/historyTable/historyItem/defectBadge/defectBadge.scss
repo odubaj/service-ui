@@ -53,3 +53,14 @@
     color: $COLOR--white-two;
   }
 }
+
+.wap {
+  background: $COLOR--waived-as-passed;
+}
+
+.mt {
+  background: $COLOR--manual-test;
+  & .defect-title {
+    color: $COLOR--white-two;
+  }
+}

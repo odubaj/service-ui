@@ -54,6 +54,12 @@
   &.type-to_investigate {
     background-color: $COLOR--to-investigate;
   }
+  &.type-manual-test {
+    background-color: $COLOR--manual-test;
+  }
+  &.type-waived-as-passed {
+    background-color: $COLOR--waived-as-passed;
+  }
 }
 .value {
   display: inline-block;

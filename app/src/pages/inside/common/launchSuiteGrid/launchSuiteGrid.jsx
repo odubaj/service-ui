@@ -23,6 +23,8 @@ import {
   AUTOMATION_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
+  MANUAL_TEST,
+  WAIVED_AS_PASSED,
 } from 'common/constants/defectTypes';
 import { FAILED, INTERRUPTED, PASSED, SKIPPED, MANUAL } from 'common/constants/launchStatuses';
 import { COMMON_LOCALE_KEYS } from 'common/constants/localization';
@@ -49,6 +51,8 @@ import {
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
+  STATS_WAP_TOTAL,
+  STATS_MT_TOTAL,
 } from 'common/constants/statistics';
 import { Hamburger } from './hamburger';
 import { ExecutionStatistics } from './executionStatistics';
@@ -174,6 +178,38 @@ const PbColumn = ({ className, ...rest }) => (
   </div>
 );
 PbColumn.propTypes = {
+  className: PropTypes.string.isRequired,
+};
+
+const MtColumn = ({ className, ...rest }) => (
+  <div className={cx('mt-col', className)}>
+    <DefectStatistics
+      type={MANUAL_TEST}
+      customProps={rest.customProps}
+      data={rest.value.statistics.defects && rest.value.statistics.defects.manual_test}
+      itemId={rest.value.id}
+      eventInfo={rest.customProps.events.MT_CHART}
+      tooltipEventInfo={rest.customProps.events.MT_TOOLTIP}
+    />
+  </div>
+);
+MtColumn.propTypes = {
+  className: PropTypes.string.isRequired,
+};
+
+const WapColumn = ({ className, ...rest }) => (
+  <div className={cx('wap-col', className)}>
+    <DefectStatistics
+      type={WAIVED_AS_PASSED}
+      customProps={rest.customProps}
+      data={rest.value.statistics.defects && rest.value.statistics.defects.waived_as_passed}
+      itemId={rest.value.id}
+      eventInfo={rest.customProps.events.WAP_CHART}
+      tooltipEventInfo={rest.customProps.events.WAP_TOOLTIP}
+    />
+  </div>
+);
+WapColumn.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
@@ -397,6 +433,38 @@ export class LaunchSuiteGrid extends PureComponent {
         withFilter: true,
         filterEventInfo: events.PB_FILTER,
         sortingEventInfo: events.PB_SORTING,
+      },
+      {
+        id: STATS_WAP_TOTAL,
+        title: {
+          full: 'waived as passed',
+          short: 'waived as passed',
+        },
+        component: WapColumn,
+        customProps: {
+          abbreviation: 'wap',
+          events,
+        },
+        sortable: true,
+        withFilter: true,
+        filterEventInfo: events.WAP_FILTER,
+        sortingEventInfo: events.WAP_SORTING,
+      },
+      {
+        id: STATS_MT_TOTAL,
+        title: {
+          full: 'manual test',
+          short: 'manual test',
+        },
+        component: MtColumn,
+        customProps: {
+          abbreviation: 'mt',
+          events,
+        },
+        sortable: true,
+        withFilter: true,
+        filterEventInfo: events.MT_FILTER,
+        sortingEventInfo: events.MT_SORTING,
       },
       {
         id: STATS_AB_TOTAL,

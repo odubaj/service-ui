@@ -21,12 +21,16 @@ export const INVESTIGATED = 'investigated';
 export const AUTOMATION_BUG = 'automationBug';
 export const PRODUCT_BUG = 'productBug';
 export const SYSTEM_ISSUE = 'systemIssue';
+export const WAIVED_AS_PASSED = 'waivedAsPassed';
+export const MANUAL_TEST = 'manualTest';
 export const DEFECT_TYPES = [
   TO_INVESTIGATE,
   INVESTIGATED,
   AUTOMATION_BUG,
   PRODUCT_BUG,
   SYSTEM_ISSUE,
+  MANUAL_TEST,
+  WAIVED_AS_PASSED,
 ];
 export const LAUNCHES_QUANTITY = 'launchesQuantity';
 
@@ -40,6 +44,8 @@ export const COLORS = {
   [AUTOMATION_BUG]: AVAILABLE_COLORS[`COLOR_${AUTOMATION_BUG.toUpperCase()}`],
   [PRODUCT_BUG]: AVAILABLE_COLORS[`COLOR_${PRODUCT_BUG.toUpperCase()}`],
   [SYSTEM_ISSUE]: AVAILABLE_COLORS[`COLOR_${SYSTEM_ISSUE.toUpperCase()}`],
+  [MANUAL_TEST]: AVAILABLE_COLORS[`COLOR_${MANUAL_TEST.toUpperCase()}`],
+  [WAIVED_AS_PASSED]: AVAILABLE_COLORS[`COLOR_${WAIVED_AS_PASSED.toUpperCase()}`],
 };
 
 export const CHART_OFFSET = 40.5;

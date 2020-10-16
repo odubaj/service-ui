@@ -122,6 +122,18 @@
       }
     }
 
+    &.defect-manual-test {
+      &:before {
+        background-color: $COLOR--manual-test;
+      }
+    }
+
+    &.defect-waived-as-passed {
+      &:before {
+        background-color: $COLOR--waived-as-passed;
+      }
+    }
+
     a {
       font-family: $FONT-REGULAR;
       font-size: 13px;
