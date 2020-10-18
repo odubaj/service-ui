@@ -79,7 +79,6 @@
 
 .status-FAILED,
 .status-STOPPED,
-.status-MANUAL,
 .status-INTERRUPTED {
   &:before {
     background-color: $COLOR--blush;
@@ -87,6 +86,17 @@
   .item-block-bg:before,
   .item-block-bg:after {
     border-color: $COLOR--blush;
+  }
+}
+
+.status-MANUAL {
+  &:before {
+    background-color: $COLOR--steel-grey;
+  }
+
+  .item-block-bg:before,
+  .item-block-bg:after {
+    border-color: $COLOR--steel-grey;
   }
 }
 
@@ -161,7 +171,6 @@
   }
 
   &.status-FAILED,
-  &.status-MANUAL,
   &.status-STOPPED,
   &.status-INTERRUPTED {
     &:before {
@@ -170,6 +179,17 @@
     .item-block-bg:before,
     .item-block-bg:after {
       border-color: $COLOR--orangish;
+    }
+  }
+
+  .status-MANUAL {
+    &:before {
+      background-color: $COLOR--silver;
+    }
+  
+    .item-block-bg:before,
+    .item-block-bg:after {
+      border-color: $COLOR--silver;
     }
   }
 

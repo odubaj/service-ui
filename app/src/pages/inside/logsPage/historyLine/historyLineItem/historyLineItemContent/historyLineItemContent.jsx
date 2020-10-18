@@ -88,9 +88,30 @@ export class HistoryLineItemContent extends Component {
       ...rest
     } = this.props;
 
+    var newStatus = status;
+
+    if(status != "PASSED") {
+      if(((statistics.defects.hasOwnProperty('manual_test')) 
+        || (statistics.defects.hasOwnProperty('no_defect'))
+        || (statistics.defects.hasOwnProperty('waived_as_passed')))
+        && (!statistics.defects.hasOwnProperty('product_bug'))
+        && (!statistics.defects.hasOwnProperty('to_investigate'))
+        && (!statistics.defects.hasOwnProperty('system_issue'))
+        && (!statistics.defects.hasOwnProperty('automation_bug'))) {
+          newStatus = "PASSED";
+          if(statistics.defects.hasOwnProperty('manual_test')) {
+            if(statistics.defects.manual_test.hasOwnProperty('mt_1hrgfvhu6snxu')) {
+              newStatus = "FAILED";
+            } else if(statistics.defects.manual_test.hasOwnProperty('mt001')) {
+              newStatus = "MANUAL";
+            }
+          }
+      }
+    }
+
     return (
       <div
-        className={cx('history-line-item-content', `status-${status}`, {
+        className={cx('history-line-item-content', `status-${newStatus}`, {
           active,
           'first-item': isFirstItem,
           'last-item': isLastItem,
