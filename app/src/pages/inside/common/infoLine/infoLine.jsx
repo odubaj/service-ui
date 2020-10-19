@@ -44,11 +44,21 @@ const messages = defineMessages({
 });
 
 const normalizeExecutions = (executions) => ({
+  //total: (executions.total*0.75) || 0,
+  //passed: (executions.passed - (executions.total*0.25)) || 0,
   total: executions.total || 0,
   passed: executions.passed || 0,
   failed: executions.failed || 0,
   manual: executions.manual || 0,
   skipped: executions.skipped || 0,
+});
+
+const normalizeDefects = (defects) => ({
+  manual: defects.manual_test.mt001 || 0,
+  manual_passed: defects.manual_test.mt_1iv10dm30ywdd || 0,
+  manual_failed: defects.manual_test.mt_1hrgfvhu6snxu || 0,
+  waived_as_passed: defects.waived_as_passed.wap001 || 0,
+  no_defect: defects.no_defect.nd001 || 0,
 });
 
 @injectIntl
@@ -69,10 +79,11 @@ export class InfoLine extends Component {
       data,
     } = this.props;
     const defects = data.statistics.defects;
+    const mydefects = normalizeDefects(data.statistics.defects);
     const executions = normalizeExecutions(data.statistics.executions);
-    const passed = (executions.passed / executions.total) * 100 || 0;
-    const failed = (executions.failed / executions.total) * 100 || 0;
-    const manual = (executions.manual / executions.total) * 100 || 0;
+    const passed = ((executions.passed + mydefects.manual_passed + mydefects.waived_as_passed + mydefects.no_defect) / executions.total) * 100 || 0;
+    const failed = ((executions.failed + mydefects.manual_failed - mydefects.waived_as_passed - mydefects.no_defect) / executions.total) * 100 || 0;
+    const manual = (mydefects.manual / executions.total) * 100 || 0;
     const skipped = (executions.skipped / executions.total) * 100 || 0;
     const tooltipEventsInfo = {
       [PRODUCT_BUG]: events.PB_TOOLTIP,
