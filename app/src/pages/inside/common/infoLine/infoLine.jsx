@@ -55,8 +55,8 @@ const normalizeExecutions = (executions) => ({
 
 const normalizeDefects = (defects) => ({
   manual: defects.manual_test.mt001 || 0,
-  manual_passed: defects.manual_test.mt_1iv10dm30ywdd || 0,
-  manual_failed: defects.manual_test.mt_1hrgfvhu6snxu || 0,
+  manual_passed: defects.manual_test.mtp001 || 0,
+  manual_failed: defects.manual_test.mtf001 || 0,
   waived_as_passed: defects.waived_as_passed.wap001 || 0,
   no_defect: defects.no_defect.nd001 || 0,
 });

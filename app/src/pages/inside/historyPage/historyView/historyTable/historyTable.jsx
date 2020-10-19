@@ -163,7 +163,7 @@ export class HistoryTable extends Component {
             && (!historyItem.statistics.defects.hasOwnProperty('automation_bug'))) {
               historyItem.status = "PASSED";
               if(historyItem.statistics.defects.hasOwnProperty('manual_test')) {
-                if(historyItem.statistics.defects.manual_test.hasOwnProperty('mt_1hrgfvhu6snxu')) {
+                if(historyItem.statistics.defects.manual_test.hasOwnProperty('mtf001')) {
                   historyItem.status = "FAILED";
                 } else if(historyItem.statistics.defects.manual_test.hasOwnProperty('mt001')) {
                   historyItem.status = "MANUAL";

@@ -100,7 +100,7 @@ export class HistoryLineItemContent extends Component {
         && (!statistics.defects.hasOwnProperty('automation_bug'))) {
           newStatus = "PASSED";
           if(statistics.defects.hasOwnProperty('manual_test')) {
-            if(statistics.defects.manual_test.hasOwnProperty('mt_1hrgfvhu6snxu')) {
+            if(statistics.defects.manual_test.hasOwnProperty('mtf001')) {
               newStatus = "FAILED";
             } else if(statistics.defects.manual_test.hasOwnProperty('mt001')) {
               newStatus = "MANUAL";
