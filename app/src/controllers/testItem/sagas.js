@@ -138,7 +138,16 @@ function* fetchTestItems({ payload = {} }) {
   }
   const project = yield select(activeProjectSelector);
   const namespace = yield select(namespaceSelector, offset);
-  const query = yield select(queryParametersSelector, namespace);
+  var query = yield select(queryParametersSelector, namespace);
+  if (query.hasOwnProperty('filter.has.attributeLaunchValue')) {
+    query["attributeLaunchValue"] = query['filter.has.attributeLaunchValue'];
+    delete query['filter.has.attributeLaunchValue'];
+  }
+
+  if (query.hasOwnProperty('filter.has.attributeLaunchKey')) {
+    query["attributeLaunchKey"] = query['filter.has.attributeLaunchKey'];
+    delete query['filter.has.attributeLaunchKey'];
+  };
   const pageQuery = yield select(pagePropertiesSelector);
   const activeFilter = yield select(activeFilterSelector);
   const uniqueIdFilterKey = 'filter.eq.uniqueId';
