@@ -191,6 +191,33 @@ export class HistoryTable extends Component {
     }
   };
 
+  getMaxResourcesLenght = (history) => {
+    var maxValue = 0;
+    history.forEach(element => {
+      if (element.resources.length > maxValue) {
+        maxValue = element.resources.length;
+      }
+    });
+    return maxValue;
+  }
+
+  getValidHistoryItemIndex = (history, max) => {
+    for(let i = 0; i < history.length; i++) {
+      if(history[i].resources.length == max) {
+        var j = 0;
+        for(j = 0; j < history[i].resources.length; j++) {
+          if (history[i].resources[j].status == "NOT_FOUND") {
+            break;
+          }
+        }
+        if(j == history[i].resources.length) {
+          return i;
+        }
+      }
+    }
+    return 0;
+  }
+
   renderHeader = () => {
     const {
       intl: { formatMessage },
@@ -198,21 +225,18 @@ export class HistoryTable extends Component {
       loading,
       history,
     } = this.props;
-    const historyResourcesLength = history[0].resources.length;
-    const maxRowItemsCount = selectedFilter ? historyResourcesLength - 1 : historyResourcesLength;
+    const historyResourcesMaxLength = this.getMaxResourcesLenght(history);
+    const maxRowItemsCount = selectedFilter ? historyResourcesMaxLength - 1 : historyResourcesMaxLength;
     const headerItems = [];
 
     for (let index = maxRowItemsCount; index > 0; index -= 1) {
-      let distro = '';
-      history[0].resources[maxRowItemsCount - index].attributes.forEach((element) =>
-        element.key === 'distro' ? (distro = element.value) : '',
-      );
+      var validHistoryIndex = this.getValidHistoryItemIndex(history, historyResourcesMaxLength);
       headerlineLaunch[maxRowItemsCount - index] =
-        history[0].resources[maxRowItemsCount - index].launchId;
+        history[validHistoryIndex].resources[maxRowItemsCount - index].launchId;
       headerItems.push(
         <HistoryCell key={index} header>
-          {history[0].resources[maxRowItemsCount - index].pathNames.launchPathName.name} #
-          {history[0].resources[maxRowItemsCount - index].pathNames.launchPathName.number}
+          {history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.name} #
+          {history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.number}
         </HistoryCell>,
       );
     }
