@@ -70,7 +70,7 @@ build-release: get-build-deps test
 
 # Builds the image
 build-image:
-	docker build -t "$(IMAGE_NAME_REACT)" -f Dockerfile-full .
+	docker build -t "$(IMAGE_NAME)" -f Dockerfile-full .
 
 release: build-release
 	releaser release --bintray.token ${BINTRAY_TOKEN}

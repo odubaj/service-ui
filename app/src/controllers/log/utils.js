@@ -59,6 +59,7 @@ export const normalizeHistoryItem = (historyItem, index) => {
   return {
     ...historyItem,
     launchNumber: historyItem.pathNames.launchPathName.number,
+    launchName: historyItem.pathNames.launchPathName.name,
   };
 };
 

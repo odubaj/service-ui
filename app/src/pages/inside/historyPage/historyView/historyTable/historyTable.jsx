@@ -44,6 +44,8 @@ import styles from './historyTable.scss';
 
 const cx = classNames.bind(styles);
 
+const headerlineLaunch = new Array();
+
 const messages = defineMessages({
   loadMoreHistoryItemsTitle: {
     id: 'HistoryTable.loadMoreHistoryItemsTitle',
@@ -182,6 +184,33 @@ export class HistoryTable extends Component {
     }
   };
 
+  getMaxResourcesLenght = (history) => {
+    var maxValue = 0;
+    history.forEach(element => {
+      if (element.resources.length > maxValue) {
+        maxValue = element.resources.length;
+      }
+    });
+    return maxValue;
+  }
+
+  getValidHistoryItemIndex = (history, max) => {
+    for(let i = 0; i < history.length; i++) {
+      if(history[i].resources.length == max) {
+        var j = 0;
+        for(j = 0; j < history[i].resources.length; j++) {
+          if (history[i].resources[j].status == "NOT_FOUND") {
+            break;
+          }
+        }
+        if(j == history[i].resources.length) {
+          return i;
+        }
+      }
+    }
+    return 0;
+  }
+
   renderHeader = () => {
     const {
       intl: { formatMessage },
@@ -189,14 +218,18 @@ export class HistoryTable extends Component {
       loading,
       history,
     } = this.props;
-    const historyResourcesLength = history[0].resources.length;
-    const maxRowItemsCount = selectedFilter ? historyResourcesLength - 1 : historyResourcesLength;
+    const historyResourcesMaxLength = this.getMaxResourcesLenght(history);
+    const maxRowItemsCount = selectedFilter ? historyResourcesMaxLength - 1 : historyResourcesMaxLength;
     const headerItems = [];
 
     for (let index = maxRowItemsCount; index > 0; index -= 1) {
+      var validHistoryIndex = this.getValidHistoryItemIndex(history, historyResourcesMaxLength);
+      headerlineLaunch[maxRowItemsCount - index] =
+        history[validHistoryIndex].resources[maxRowItemsCount - index].launchId;
       headerItems.push(
         <HistoryCell key={index} header>
-          {`${formatMessage(messages.executionNumberTitle)}${index}`}
+          {history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.name} #
+          {history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.number}
         </HistoryCell>,
       );
     }
@@ -225,6 +258,34 @@ export class HistoryTable extends Component {
 
     return history.map((item, index) => {
       const isLastRow = index === history.length - 1;
+
+      let k = 0;
+      const tmp = Array();
+      for (let i = 0; i < item.resources.length; ) {
+        if (item.resources[i].status == 'NOT_FOUND' || item.resources[i].status == 'RESETED') {
+          i++;
+          continue;
+        }
+
+        if (item.resources[i].launchId === headerlineLaunch[k]) {
+          tmp[k] = item.resources[i];
+          i++;
+        } else {
+          const emptyObj = { status: 'NOT_FOUND', id: 'NOT_FOUND_-1694763521_6' };
+          tmp.splice(k, 0, emptyObj);
+        }
+        k++;
+        if (k == item.resources.length) {
+          break;
+        }
+      }
+
+      while(tmp.length < item.resources.length) {
+        const emptyObj = { status: 'NOT_FOUND', id: 'NOT_FOUND_-1694763521_6' };
+        tmp.splice(tmp.length, 0, emptyObj);
+      }
+
+      item.resources = tmp;
 
       return (
         <tr key={item.groupingField}>
