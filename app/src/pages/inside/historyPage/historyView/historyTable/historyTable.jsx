@@ -287,6 +287,11 @@ export class HistoryTable extends Component {
         }
       }
 
+      while(tmp.length < item.resources.length) {
+        const emptyObj = { status: 'NOT_FOUND', id: 'NOT_FOUND_-1694763521_6' };
+        tmp.splice(tmp.length, 0, emptyObj);
+      }
+
       item.resources = tmp;
 
       return (
