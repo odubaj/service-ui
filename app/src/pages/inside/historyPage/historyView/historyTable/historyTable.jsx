@@ -218,6 +218,24 @@ export class HistoryTable extends Component {
     return 0;
   }
 
+  cutLaunchName = (launch) => {
+    if(launch.length <= 20) {
+      return launch;
+    }
+    var newName = launch.substring(0,18)+"...";
+    return newName;
+  }
+
+  addScratch = (launch) => {
+    if(launch.length <= 20) {
+      return "";
+    }
+    if(launch.includes("scratch")) {
+      return "(scratch)"
+    }
+    return "";
+  }
+
   renderHeader = () => {
     const {
       intl: { formatMessage },
@@ -235,8 +253,10 @@ export class HistoryTable extends Component {
         history[validHistoryIndex].resources[maxRowItemsCount - index].launchId;
       headerItems.push(
         <HistoryCell key={index} header>
-          {history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.name} #
-          {history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.number}
+          {this.cutLaunchName(history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.name)} 
+          <br/>
+          {this.addScratch(history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.name)
+            +" #"+history[validHistoryIndex].resources[maxRowItemsCount - index].pathNames.launchPathName.number}
         </HistoryCell>,
       );
     }

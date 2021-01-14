@@ -93,6 +93,24 @@ export class HistoryLineItem extends Component {
     };
   };
 
+  cutLaunchName = (launch) => {
+    if(launch.length <= 17) {
+      return launch;
+    }
+    var newName = launch.substring(0,15)+"...";
+    return newName;
+  }
+
+  addScratch = (launch) => {
+    if(launch.length <= 17) {
+      return "";
+    }
+    if(launch.includes("scratch")) {
+      return "(scratch)"
+    }
+    return "";
+  }
+
   render() {
     const { launchNumber, launchName, launchDistro, active, ...rest } = this.props;
 
@@ -105,9 +123,13 @@ export class HistoryLineItem extends Component {
           to={this.checkIfTheLinkIsActive() ? this.createHistoryLineItemLink() : ''}
           onClick={() => this.props.tracking.trackEvent(LOG_PAGE_EVENTS.HISTORY_LINE_ITEM)}
         >
-          <span className={cx('launch-title')} />
+          <span className={cx('launch-title')}></span>
           <span>
-            {launchName} #{launchNumber}
+            {this.cutLaunchName(launchName)} 
+            <br/>
+          </span>
+          <span>
+            {this.addScratch(launchName)+" #"+launchNumber}
           </span>
         </Link>
         <HistoryLineItemContent
