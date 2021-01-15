@@ -260,7 +260,6 @@ export class HistoryTable extends Component {
         </HistoryCell>,
       );
     }
-    
 
     if (selectedFilter) {
       headerItems.unshift(

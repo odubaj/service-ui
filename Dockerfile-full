@@ -17,7 +17,7 @@ COPY ./app/ /usr/src/app/
 RUN npm ci
 RUN NODE_OPTIONS=--max_old_space_size=4096 npm run build && npm run test
 
-FROM alpine:latest
+FROM quay.io/testing-farm/alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=build-backend /go/src/github.com/reportportal/service-ui/bin/service-ui /
