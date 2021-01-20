@@ -39,6 +39,13 @@
   white-space: nowrap;
 }
 
+.status-col {
+  font-family: $FONT-SEMIBOLD;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
 .id {
   word-break: break-all;
 

@@ -100,6 +100,11 @@ export class StatusDropdown extends Component {
 
     onChange(oldStatus, newStatus);
 
+    // this.setState({value: newStatus.toLowerCase()});
+    // this.props.status = newStatus;
+    // console.log("vypisujem properties");
+    // console.log(this.props);
+
     fetch(URLS.testItemUpdate(currentProject, itemId), { method: 'put', data })
       .then(() => {
         showMessage({

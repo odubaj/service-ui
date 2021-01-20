@@ -48,6 +48,7 @@ import {
   NOTIFICATION_TYPES,
 } from 'controllers/notification';
 import { TestItemStatus } from 'pages/inside/common/testItemStatus';
+//import { StatusDropdown } from '../../../common/statusDropdown/statusDropdown';
 import { ScrollWrapper } from 'components/main/scrollWrapper';
 import { TestParameters } from 'pages/inside/common/testParameters';
 import { validate } from 'common/utils/validation';
@@ -188,6 +189,20 @@ export class TestItemDetailsModal extends Component {
       })
       .catch(this.props.showDefaultErrorNotification);
   };
+
+  // onChange = (oldStatus, newStatus) => {
+  //   this.props.tracking.trackEvent(getChangeItemStatusEvent(oldStatus, newStatus));
+  // };
+
+  /* <div className={cx('status-col')}>
+            <StatusDropdown
+              itemId={item.id}
+              status={item.status}
+              attributes={item.attributes}
+              description={item.description}
+              onChange={this.onChange}
+            />
+          </div> */
 
   renderDetailsTab = (editable) => {
     const {

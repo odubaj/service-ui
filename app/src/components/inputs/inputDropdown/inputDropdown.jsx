@@ -68,6 +68,7 @@ export class InputDropdown extends Component {
   };
   state = {
     opened: false,
+    //value: '',
   };
 
   componentDidMount() {
@@ -128,11 +129,14 @@ export class InputDropdown extends Component {
     const { multiple, value, onChange } = this.props;
     if (multiple) {
       if (value.indexOf(selectedValue) > -1) {
+        console.log("onclick1")
         onChange(value.filter((item) => item !== selectedValue));
       } else {
+        console.log("onclick2")
         onChange([...value, selectedValue]);
       }
     } else {
+      console.log("onclick3")
       onChange(selectedValue);
       this.setState({ opened: !this.state.opened });
     }
@@ -149,10 +153,12 @@ export class InputDropdown extends Component {
       .filter((item) => item.groupRef === groupId)
       .map((item) => item.value);
     if (this.isGroupOptionSelected(groupId)) {
+      console.log("onclick4")
       this.props.onChange(
         this.props.value.filter((item) => relatedSubOptions.indexOf(item) === -1),
       );
     } else {
+      console.log("onclick5")
       this.props.onChange(
         this.props.value.concat(
           relatedSubOptions.filter((item) => this.props.value.indexOf(item) === -1),
@@ -163,10 +169,12 @@ export class InputDropdown extends Component {
 
   handleAllClick = () => {
     if (this.props.value.length !== this.props.options.length) {
+      console.log("onclick6")
       this.props.onChange(
         this.props.options.filter((item) => !item.disabled).map((item) => item.value),
       );
     } else {
+      console.log("onclick7")
       this.props.onChange([]);
     }
   };
