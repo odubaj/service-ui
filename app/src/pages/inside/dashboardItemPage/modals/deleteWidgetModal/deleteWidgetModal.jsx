@@ -22,7 +22,7 @@ import classNames from 'classnames/bind';
 import { injectIntl, defineMessages } from 'react-intl';
 import { withModal, ModalLayout } from 'components/main/modal';
 import { COMMON_LOCALE_KEYS } from 'common/constants/localization';
-import { PROJECT_MANAGER } from 'common/constants/projectRoles';
+import { MEMBER } from 'common/constants/projectRoles';
 import {
   userIdSelector,
   userAccountRoleSelector,
@@ -90,7 +90,7 @@ export class DeleteWidgetModal extends Component {
     if (data.widget.share && data.widget.owner === userId) {
       return intl.formatMessage(messages.deleteOwnWidgetWarning);
     }
-    if (data.widget.owner !== userId && (isAdmin || userProjectRole === PROJECT_MANAGER)) {
+    if (data.widget.owner !== userId && (isAdmin || userProjectRole === MEMBER)) {
       return intl.formatMessage(messages.deleteWidgetAdminWarning);
     }
     return '';
