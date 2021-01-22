@@ -187,7 +187,7 @@ export class LoginForm extends React.Component {
 
     return (
       <form className={cx('login-form')} onSubmit={handleSubmit(authorize)}>
-
+        {!isEmptyObject(externalAuth) ? (
           <div>
             <ExternalLoginBlock externalAuth={externalAuth} />
             <div className={cx('separator')}>
@@ -197,7 +197,7 @@ export class LoginForm extends React.Component {
               </div>
             </div>
           </div>
-
+        ) : null}
         <div className={cx('login-field')}>
           <FieldProvider name="login">
             <FieldErrorHint>
