@@ -319,7 +319,7 @@ export class SuiteLevelEntities extends Component {
         customProps: {
           getURI: URLS.launchAttributeValuesSearch(
             projectId,
-            (filterValues[ENTITY_ATTRIBUTE_KEYS] || {}).value || '',
+            (filterValues[ENTITY_LAUNCH_ATTRIBUTE_KEYS] || {}).value || '',
           ),
           placeholder: intl.formatMessage(messages.ATTRIBUTE_LAUNCH_VALUES_PLACEHOLDER),
         },
