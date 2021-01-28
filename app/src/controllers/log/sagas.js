@@ -110,7 +110,7 @@ function* fetchHistoryItems() {
 
   const response = yield call(
     fetch,
-    URLS.testItemsHistory(activeProject, DEFAULT_HISTORY_DEPTH, 'line', logItemId),
+    URLS.testItemsHistory(activeProject, DEFAULT_HISTORY_DEPTH, 'table', logItemId),
   );
 
   yield put(fetchHistoryItemsSuccessAction(response.content));

@@ -90,7 +90,12 @@ export class InputConditionalTags extends Component {
     this.conditionsBlock = conditionsBlock;
   };
   getConditions = () => {
-    const { conditions } = this.props;
+    const { conditions, placeholder } = this.props;
+    if((placeholder == "Enter launch attribute keys") ||
+       (placeholder == "Enter launch attribute values"))
+       {
+        return getInputConditions([CONDITION_HAS]);
+       }
     return getInputConditions(conditions);
   };
   handleClickOutside = (e) => {
