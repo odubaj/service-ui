@@ -51,6 +51,16 @@ export class MarkdownViewer extends Component {
     }
   }
 
+  getFilename(url) {
+    if (url) {
+        var m = url.toString().match(/.*\/(.+?)$/);
+        if (m && m.length > 1) {
+          return m[1];
+        }
+    }
+    return "";
+  }
+
   updateElements = () => {
     if (!this.container.current) {
       return;
@@ -66,6 +76,8 @@ export class MarkdownViewer extends Component {
     this.container.current.querySelectorAll('a').forEach((elem) => {
       elem.setAttribute('target', '_blank');
       elem.setAttribute('rel', 'noreferrer noopener');
+      content = elem.textContent;
+      elem.textContent = this.getFilename(content);
     });
   };
 

@@ -33,7 +33,7 @@ export class LogMessageBlock extends Component {
   };
 
   static defaultProps = {
-    customProps: {},
+    customProps: { markdownMode: true},
     refFunction: null,
   };
 

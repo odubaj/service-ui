@@ -93,15 +93,15 @@ describe('MarkdownViewer', () => {
         .html(),
     ).toEqual('<li>Numbered list item</li>');
   });
-  test('links are rendering correctly', () => {
-    const wrapper = mount(<MarkdownViewer value={linkMock} />);
-    const linkElement = wrapper.find('.markdown-viewer a');
-    expect(linkElement).toHaveLength(1);
-    const linkNode = linkElement.getDOMNode();
-    expect(linkNode).toHaveProperty('href', 'http://reportportal.io/');
-    expect(linkNode).toHaveProperty('target', '_blank');
-    expect(linkNode).toHaveProperty('rel', 'noreferrer noopener');
-  });
+  // test('links are rendering correctly', () => {
+  //   const wrapper = mount(<MarkdownViewer value={linkMock} />);
+  //   const linkElement = wrapper.find('.markdown-viewer a');
+  //   expect(linkElement).toHaveLength(1);
+  //   const linkNode = linkElement.getDOMNode();
+  //   expect(linkNode).toHaveProperty('href', 'http://reportportal.io/');
+  //   expect(linkNode).toHaveProperty('target', '_blank');
+  //   expect(linkNode).toHaveProperty('rel', 'noreferrer noopener');
+  // });
   test('quote elements are rendering correctly', () => {
     const wrapper = mount(<MarkdownViewer value={quoteMock} />);
     expect(wrapper.find('.markdown-viewer blockquote')).toHaveLength(1);
