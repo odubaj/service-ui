@@ -17,7 +17,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import { SKIPPED, RESETED, FAILED, NOT_FOUND } from 'common/constants/testStatuses';
+import { SKIPPED, RESETED, FAILED, NOT_FOUND, UNTESTED } from 'common/constants/testStatuses';
 import { calculateFontColor } from 'common/utils';
 import Parser from 'html-react-parser';
 import NoItemIcon from './img/noItem-inline.svg';
@@ -84,6 +84,7 @@ export class HistoryLineItemBadges extends Component {
     // eslint-disable-next-line default-case
     switch (status) {
       case FAILED:
+      case UNTESTED:
       case SKIPPED: {
         badges.push(this.getDefectBadge());
         break;

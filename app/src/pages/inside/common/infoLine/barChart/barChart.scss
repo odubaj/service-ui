@@ -38,4 +38,7 @@
   &.skipped {
     background-color: $COLOR--skipped;
   }
+  &.untested {
+    background-color: $COLOR--untested;
+  }
 }

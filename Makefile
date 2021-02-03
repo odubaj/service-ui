@@ -42,13 +42,12 @@ fmt:
 #	gofumports -l -w ${GOFILES_NOVENDOR}
 
 # Builds server
-build-server: checkstyle test
+build-server: test
 	CGO_ENABLED=0 GOOS=linux $(GO) build ${BUILD_INFO_LDFLAGS} -o ${BINARY_DIR}/service-ui ./
 
 # Builds the project
 build-statics:
 	npm --prefix $(UI_BUILD_REACT) ci
-	npm --prefix $(UI_BUILD_REACT) run lint
 	npm --prefix $(UI_BUILD_REACT) run test:coverage
 	npm --prefix $(UI_BUILD_REACT) run build
 

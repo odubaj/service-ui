@@ -32,6 +32,7 @@ export class BarChart extends Component {
     passed: PropTypes.number.isRequired,
     failed: PropTypes.number.isRequired,
     skipped: PropTypes.number.isRequired,
+    untested: PropTypes.number.isRequired,
   };
 
   render() {
@@ -39,6 +40,7 @@ export class BarChart extends Component {
       <div className={cx('bar-chart')}>
         <div className={cx('segment', 'passed')} style={{ width: `${this.props.passed}px` }} />
         <div className={cx('segment', 'failed')} style={{ width: `${this.props.failed}px` }} />
+        <div className={cx('segment', 'untested')} style={{ width: `${this.props.untested}px` }} />
         <div className={cx('segment', 'skipped')} style={{ width: `${this.props.skipped}px` }} />
       </div>
     );

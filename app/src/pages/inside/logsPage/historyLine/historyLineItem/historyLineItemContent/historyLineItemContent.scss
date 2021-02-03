@@ -89,6 +89,17 @@
   }
 }
 
+.status-UNTESTED {
+  &:before {
+    background-color: $COLOR--steel-grey;
+  }
+
+  .item-block-bg:before,
+  .item-block-bg:after {
+    border-color: $COLOR--steel-grey;
+  }
+}
+
 .status-PASSED {
   &:before {
     background-color: $COLOR--greenish-grey;
@@ -168,6 +179,17 @@
     .item-block-bg:before,
     .item-block-bg:after {
       border-color: $COLOR--orangish;
+    }
+  }
+
+  .status-UNTESTED {
+    &:before {
+      background-color: $COLOR--silver;
+    }
+
+    .item-block-bg:before,
+    .item-block-bg:after {
+      border-color: $COLOR--silver;
     }
   }
 
