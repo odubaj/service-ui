@@ -74,7 +74,7 @@ export const getConfig = ({
       x: {
         show: !isPreview,
         type: 'category',
-        categories: itemsData.map((item) => `# ${item.number}`),
+        categories: itemsData.map((item) => `${item.name} #${item.number}`),
         tick: {
           values: getLaunchAxisTicks(itemsData.length),
           width: 60,

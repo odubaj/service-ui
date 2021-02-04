@@ -34,9 +34,10 @@ describe('chartUtils', () => {
   describe('transformCategoryLabelByDefault', () => {
     test('can transform label by default (with # character)', () => {
       const item = {
+        name: "launch",
         number: 14,
       };
-      expect(transformCategoryLabelByDefault(item)).toBe('#14');
+      expect(transformCategoryLabelByDefault(item)).toBe('launch #14');
     });
   });
 

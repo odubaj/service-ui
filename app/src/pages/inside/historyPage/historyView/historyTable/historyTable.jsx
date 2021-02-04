@@ -162,6 +162,16 @@ export class HistoryTable extends Component {
           };
           navigate(link(ownProps));
         };
+        if(historyItem.status != "PASSED") {
+          if(!historyItem.statistics.executions.hasOwnProperty('failed')) {
+            historyItem.status = "UNTESTED";
+            if(historyItem.statistics.executions.hasOwnProperty('skipped')) {
+              if(historyItem.statistics.executions.skipped == historyItem.statistics.executions.total) {
+                historyItem.status = "SKIPPED";
+              }
+            }
+          }
+        }
         return (
           <HistoryCell
             status={historyItem.status}

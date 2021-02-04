@@ -285,7 +285,7 @@ export class EditItemModal extends Component {
           <ModalField>
             <div title={item.name} className={cx('item-name')}>
               {formatItemName(item.name)}
-              {type === LAUNCH_ITEM_TYPES.launch && ` #${item.number}`}
+              {type === LAUNCH_ITEM_TYPES.launch && `${item.name} #${item.number}`}
             </div>
           </ModalField>
           {item.uuid && (

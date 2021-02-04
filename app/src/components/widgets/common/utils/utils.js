@@ -34,7 +34,7 @@ export const range = (start = 0, end = 0, step = 1) => {
 
 export const rangeMaxValue = (itemsLength) => (itemsLength > 6 ? Math.round(itemsLength / 12) : 1);
 
-export const transformCategoryLabelByDefault = (item) => `#${item.number}`;
+export const transformCategoryLabelByDefault = (item) => `${item.name} #${item.number}`;
 
 export const getItemNameConfig = (name) => {
   const nameParts = name.split('$');

@@ -184,12 +184,12 @@
 
   .status-UNTESTED {
     &:before {
-      background-color: $COLOR--silver;
+      background-color: $COLOR--steel-grey;
     }
 
     .item-block-bg:before,
     .item-block-bg:after {
-      border-color: $COLOR--silver;
+      border-color: $COLOR--steel-grey;
     }
   }
 

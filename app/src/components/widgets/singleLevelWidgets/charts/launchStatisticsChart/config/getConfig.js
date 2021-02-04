@@ -80,7 +80,7 @@ export const getConfig = ({
               .substring(0, 3);
             return `${day}, ${item.date}`;
           }
-          return `#${item.number}`;
+          return `${item.name} #${item.number}`;
         }),
         tick: {
           values: isTimeline
