@@ -328,7 +328,7 @@ export class StepGrid extends Component {
   };
 
   highlightFailedItems = (value) => ({
-    [cx('failed')]: value.status === FAILED,
+    [cx('failed')]: (value.status === FAILED && value.issue.issueType != "nd001"),
   });
 
   render() {

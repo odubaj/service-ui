@@ -55,6 +55,10 @@ const normalizeExecutions = (executions) => ({
   untested: executions.untested || 0,
 });
 
+const normalizeDefects = (defects) => ({
+  no_defect: defects.no_defect.nd001 || 0,
+});
+
 @connect((state) => ({
   isStepLevel: isStepLevelSelector(state),
 }))
@@ -84,9 +88,10 @@ export class InfoLine extends Component {
       isStepLevel,
     } = this.props;
     const defects = data.statistics.defects;
+    const normalized_defects = normalizeDefects(data.statistics.defects);
     const executions = normalizeExecutions(data.statistics.executions);
-    const passed = (executions.passed / executions.total) * 100 || 0;
-    const failed = (executions.failed / executions.total) * 100 || 0;
+    const passed = ((executions.passed + normalized_defects.no_defect) / executions.total) * 100 || 0;
+    const failed = ((executions.failed - normalized_defects.no_defect) / executions.total) * 100 || 0;
     const untested = (executions.untested / executions.total) * 100 || 0;
     const skipped = (executions.skipped / executions.total) * 100 || 0;
     const tooltipEventsInfo = {
