@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-export const STATS_AB_TOTAL = 'statistics$defects$automation_bug$total';
-export const STATS_ND_TOTAL = 'statistics$defects$no_defect$total';
+export const STATS_TB_TOTAL = 'statistics$defects$test_bug$total';
+export const STATS_MD_TOTAL = 'statistics$defects$minor_defect$total';
 export const STATS_PB_TOTAL = 'statistics$defects$product_bug$total';
 export const STATS_SI_TOTAL = 'statistics$defects$system_issue$total';
 export const STATS_TI_TOTAL = 'statistics$defects$to_investigate$total';

@@ -258,25 +258,25 @@ const messages = defineMessages({
     id: 'StepLevelEntities.PRODUCT_BUG_ALL',
     defaultMessage: 'All product bugs',
   },
-  AUTOMATION_BUG_ALL: {
-    id: 'StepLevelEntities.AUTOMATION_BUG_ALL',
-    defaultMessage: 'All automation bug',
+  TEST_BUG_ALL: {
+    id: 'StepLevelEntities.TEST_BUG_ALL',
+    defaultMessage: 'All test bug',
   },
   SYSTEM_ISSUE_ALL: {
     id: 'StepLevelEntities.SYSTEM_ISSUE_ALL',
     defaultMessage: 'All system issues',
   },
-  NO_DEFECT_ALL: {
-    id: 'StepLevelEntities.NO_DEFECT_ALL',
-    defaultMessage: 'All no defects',
+  MINOR_DEFECT_ALL: {
+    id: 'StepLevelEntities.MINOR_DEFECT_ALL',
+    defaultMessage: 'All minor defects',
   },
   TO_INVESTIGATE_ALL: {
     id: 'StepLevelEntities.TO_INVESTIGATE_ALL',
     defaultMessage: 'All to investigate',
   },
-  Defect_Type_AB001: {
-    id: 'StepLevelEntities.Defect_Type_AB001',
-    defaultMessage: 'Automation bug',
+  Defect_Type_TB001: {
+    id: 'StepLevelEntities.Defect_Type_TB001',
+    defaultMessage: 'Test bug',
   },
   Defect_Type_PB001: {
     id: 'StepLevelEntities.Defect_Type_PB001',
@@ -290,9 +290,9 @@ const messages = defineMessages({
     id: 'StepLevelEntities.Defect_Type_TI001',
     defaultMessage: 'To investigate',
   },
-  Defect_Type_ND001: {
-    id: 'StepLevelEntities.Defect_Type_ND001',
-    defaultMessage: 'No defect',
+  Defect_Type_MD001: {
+    id: 'StepLevelEntities.Defect_Type_MD001',
+    defaultMessage: 'Minor defect',
   },
   ATTRIBUTE_KEYS_PLACEHOLDER: {
     id: 'StepLevelEntities.entityItemAttributeKeys.placeholder',

@@ -49,9 +49,13 @@ export const messages = defineMessages({
     id: 'StatusPageContent.systemIssues',
     defaultMessage: 'Percentage of system issues',
   },
-  autoBugs: {
-    id: 'StatusPageContent.autoBugs',
-    defaultMessage: 'Percentage of auto bugs',
+  testBugs: {
+    id: 'StatusPageContent.testBugs',
+    defaultMessage: 'Percentage of test bugs',
+  },
+  minorDefects: {
+    id: 'StatusPageContent.minorDefects',
+    defaultMessage: 'Percentage of minor defects',
   },
   activities: {
     id: 'StatusPageContent.activities',

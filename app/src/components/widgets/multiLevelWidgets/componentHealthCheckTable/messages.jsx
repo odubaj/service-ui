@@ -26,8 +26,9 @@ import {
 import {
   PRODUCT_BUG,
   TO_INVESTIGATE,
-  AUTOMATION_BUG,
+  TEST_BUG,
   SYSTEM_ISSUE,
+  MINOR_DEFECT,
 } from 'common/constants/defectTypes';
 import {
   totalColumnFullTitle,
@@ -61,10 +62,16 @@ const productBugColumnTitle = (
     defaultMessage={'Product bug'}
   />
 );
-const automationBugColumnTitle = (
+const testBugColumnTitle = (
   <FormattedMessage
-    id={'ComponentHealthCheckTable.automationBugColumnTitle'}
-    defaultMessage={'Automation bug'}
+    id={'ComponentHealthCheckTable.testBugColumnTitle'}
+    defaultMessage={'Test bug'}
+  />
+);
+const minorDefectColumnTitle = (
+  <FormattedMessage
+    id={'ComponentHealthCheckTable.minorDefectColumnTitle'}
+    defaultMessage={'Minor defect'}
   />
 );
 const systemIssueColumnTitle = (
@@ -111,9 +118,9 @@ export const COLUMN_NAMES_MAP = {
     full: toInvestigateColumnTitle,
     short: 'TI',
   }),
-  [AUTOMATION_BUG]: () => ({
-    full: automationBugColumnTitle,
-    short: 'AB',
+  [TEST_BUG]: () => ({
+    full: testBugColumnTitle,
+    short: 'TB',
   }),
   [PRODUCT_BUG]: () => ({
     full: productBugColumnTitle,
@@ -122,6 +129,10 @@ export const COLUMN_NAMES_MAP = {
   [SYSTEM_ISSUE]: () => ({
     full: systemIssueColumnTitle,
     short: 'SI',
+  }),
+  [MINOR_DEFECT]: () => ({
+    full: minorDefectColumnTitle,
+    short: 'MD',
   }),
   [PASS_RATE]: () => ({
     full: passRateColumnTitle,

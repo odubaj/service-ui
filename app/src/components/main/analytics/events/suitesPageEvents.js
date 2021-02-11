@@ -169,15 +169,15 @@ export const SUITES_PAGE_EVENTS = {
     action: 'Click on icon "sorting" on Product Bug',
     label: 'Sort items by Product Bug',
   },
-  AB_FILTER: {
+  TB_FILTER: {
     category: SUITE_PAGE,
-    action: 'Click on icon "filter" on Auto Bug',
-    label: 'Arises active "Auto Bug" input',
+    action: 'Click on icon "filter" on Test Bug',
+    label: 'Arises active "Test Bug" input',
   },
-  AB_SORTING: {
+  TB_SORTING: {
     category: SUITE_PAGE,
-    action: 'Click on icon "sorting" on Auto Bug',
-    label: 'Sort items by Auto Bug',
+    action: 'Click on icon "sorting" on Test Bug',
+    label: 'Sort items by Test Bug',
   },
   SI_FILTER: {
     category: SUITE_PAGE,
@@ -188,6 +188,16 @@ export const SUITES_PAGE_EVENTS = {
     category: SUITE_PAGE,
     action: 'Click on icon "sorting" on System Issue',
     label: 'Sort items by System Issue',
+  },
+  MD_FILTER: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "filter" on Minor Defect',
+    label: 'Arises active "Minor Defect" input',
+  },
+  MD_SORTING: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "sorting" on Minor Defect',
+    label: 'Sort items by Minor Defect',
   },
   TI_FILTER: {
     category: SUITE_PAGE,
@@ -209,15 +219,15 @@ export const SUITES_PAGE_EVENTS = {
     action: 'Click on Tooltip "Total Product Bugs"',
     label: 'Transition to PB list view',
   },
-  AB_CHART: {
+  TB_CHART: {
     category: SUITE_PAGE,
-    action: 'Click on AB Circle',
-    label: 'Transition to AB list view ',
+    action: 'Click on TB Circle',
+    label: 'Transition to TB list view ',
   },
-  AB_TOOLTIP: {
+  TB_TOOLTIP: {
     category: SUITE_PAGE,
-    action: 'Click on Tooltip "Auto Bug"',
-    label: 'Transition to AB list view ',
+    action: 'Click on Tooltip "Test Bug"',
+    label: 'Transition to TB list view ',
   },
   SI_CHART: {
     category: SUITE_PAGE,
@@ -228,6 +238,16 @@ export const SUITES_PAGE_EVENTS = {
     category: SUITE_PAGE,
     action: 'Click on Tooltip "Total System Issue"',
     label: 'Transition to SI list view',
+  },
+  MD_CHART: {
+    category: SUITE_PAGE,
+    action: 'Click on MD Circle',
+    label: 'Transition to MD list view ',
+  },
+  MD_TOOLTIP: {
+    category: SUITE_PAGE,
+    action: 'Click on Tooltip "Total Minor Defect"',
+    label: 'Transition to MD list view',
   },
   TI_CHART: {
     category: SUITE_PAGE,

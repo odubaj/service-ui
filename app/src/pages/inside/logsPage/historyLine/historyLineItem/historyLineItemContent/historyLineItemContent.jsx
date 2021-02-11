@@ -91,11 +91,11 @@ export class HistoryLineItemContent extends Component {
     var normalizedStatus = status;
 
     if(status == "FAILED") {
-      if((statistics.defects.hasOwnProperty('no_defect'))
+      if((statistics.defects.hasOwnProperty('minor_defect'))
         && (!statistics.defects.hasOwnProperty('product_bug'))
         && (!statistics.defects.hasOwnProperty('to_investigate'))
         && (!statistics.defects.hasOwnProperty('system_issue'))
-        && (!statistics.defects.hasOwnProperty('automation_bug'))) {
+        && (!statistics.defects.hasOwnProperty('test_bug'))) {
           normalizedStatus = "PASSED";
       }
     }

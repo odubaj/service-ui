@@ -131,14 +131,19 @@ export const LAUNCHES_PAGE_EVENTS = {
     action: getActionTableFilter('PRODUCT BUG'),
     label: getDescriptionTableFilter(),
   },
-  AB_FILTER: {
+  TB_FILTER: {
     category: LAUNCHES_PAGE,
-    action: getActionTableFilter('AUTO BUG'),
+    action: getActionTableFilter('TEST BUG'),
     label: getDescriptionTableFilter(),
   },
   SI_FILTER: {
     category: LAUNCHES_PAGE,
     action: getActionTableFilter('SYSTEM ISSUE'),
+    label: getDescriptionTableFilter(),
+  },
+  MD_FILTER: {
+    category: LAUNCHES_PAGE,
+    action: getActionTableFilter('MINOR DEFECT'),
     label: getDescriptionTableFilter(),
   },
   TI_FILTER: {
@@ -156,15 +161,20 @@ export const LAUNCHES_PAGE_EVENTS = {
     action: 'Click on Product Bug Circle',
     label: 'Transition to inner level of launch with Product Bugs',
   },
-  AB_CHART: {
+  TB_CHART: {
     category: LAUNCHES_PAGE,
-    action: 'Click on Auto Bug Circle',
-    label: 'Transition to inner level of launch with Auto Bug',
+    action: 'Click on Test Bug Circle',
+    label: 'Transition to inner level of launch with Test Bug',
   },
   SI_CHART: {
     category: LAUNCHES_PAGE,
     action: 'Click on System Issue Circle',
     label: 'Transition to inner level of launch with System Issue',
+  },
+  MD_CHART: {
+    category: LAUNCHES_PAGE,
+    action: 'Click on Minor Defect Circle',
+    label: 'Transition to inner level of launch with Minor Defect',
   },
   TI_CHART: {
     category: LAUNCHES_PAGE,
@@ -176,15 +186,20 @@ export const LAUNCHES_PAGE_EVENTS = {
     action: 'Click on Tooltip "Total Product Bugs"',
     label: 'Transition to inner level of launch with Product Bugs',
   },
-  AB_TOOLTIP: {
+  TB_TOOLTIP: {
     category: LAUNCHES_PAGE,
-    action: 'Click on Tooltip "Total Auto Bug"',
-    label: 'Transition to inner level of launch with Auto Bug',
+    action: 'Click on Tooltip "Total Test Bug"',
+    label: 'Transition to inner level of launch with Test Bug',
   },
   SI_TOOLTIP: {
     category: LAUNCHES_PAGE,
     action: 'Click on Tooltip "Total System Issue"',
     label: 'Transition to inner level of launch with System Issue',
+  },
+  MD_TOOLTIP: {
+    category: LAUNCHES_PAGE,
+    action: 'Click on Tooltip "Total Minor Defect"',
+    label: 'Transition to inner level of launch with Minor Defect',
   },
   TI_TOOLTIP: {
     category: LAUNCHES_PAGE,

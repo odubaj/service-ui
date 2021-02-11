@@ -65,8 +65,8 @@ export class IssuesChartWrapper extends Component {
 
     const data = Object.keys(rawData).map((key) => {
       const currentItemValues = rawData[key][0].values;
-      const { automationBug, toInvestigate, systemIssue, productBug } = currentItemValues;
-      const total = +automationBug + +toInvestigate + +systemIssue + +productBug;
+      const { testBug, toInvestigate, systemIssue, productBug, minorDefect } = currentItemValues;
+      const total = +testBug + +toInvestigate + +systemIssue + +productBug+ +minorDefect;
 
       return {
         date: key,

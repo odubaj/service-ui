@@ -19,8 +19,8 @@ import PropTypes from 'prop-types';
 import { injectIntl, defineMessages } from 'react-intl';
 import { FieldProvider } from 'components/fields/fieldProvider';
 import {
-  STATS_AB_TOTAL,
-  STATS_ND_TOTAL,
+  STATS_TB_TOTAL,
+  STATS_MD_TOTAL,
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
@@ -66,9 +66,9 @@ export class InvestigatedPercentageOfLaunchesControls extends Component {
       contentParameters: widgetSettings.contentParameters || {
         contentFields: [
           STATS_PB_TOTAL,
-          STATS_AB_TOTAL,
+          STATS_TB_TOTAL,
           STATS_SI_TOTAL,
-          STATS_ND_TOTAL,
+          STATS_MD_TOTAL,
           STATS_TI_TOTAL,
         ],
         itemsCount: DEFAULT_ITEMS_COUNT,

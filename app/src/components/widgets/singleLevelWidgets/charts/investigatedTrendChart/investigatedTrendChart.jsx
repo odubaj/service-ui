@@ -21,9 +21,9 @@ import classNames from 'classnames/bind';
 import { CHART_MODES, MODES_VALUES } from 'common/constants/chartModes';
 import {
   PRODUCT_BUG,
-  AUTOMATION_BUG,
+  TEST_BUG,
   SYSTEM_ISSUE,
-  NO_DEFECT,
+  MINOR_DEFECT,
   TO_INVESTIGATE,
 } from 'common/constants/defectTypes';
 import { defectLinkSelector, statisticsLinkSelector } from 'controllers/testItem';
@@ -100,7 +100,7 @@ export class InvestigatedTrendChart extends Component {
 
   getDefectTypeLocators = (id) => {
     const { defectTypes } = this.props;
-    const investigatedDefectType = [PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE, NO_DEFECT];
+    const investigatedDefectType = [PRODUCT_BUG, TEST_BUG, SYSTEM_ISSUE, MINOR_DEFECT];
     const toInvestigateDefectType = [TO_INVESTIGATE];
     const defectType = id === 'toInvestigate' ? toInvestigateDefectType : investigatedDefectType;
 

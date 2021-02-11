@@ -80,17 +80,17 @@ const messages = defineMessages({
     id: 'LogItemInfo.linkIssue',
     defaultMessage: 'Link issue',
   },
-  noDefectTypeToLinkIssue: {
-    id: 'LogItemInfo.noDefectTypeToLinkIssue',
-    defaultMessage: "You can't link issue if item has no defect type",
+  minorDefectTypeToLinkIssue: {
+    id: 'LogItemInfo.minorDefectTypeToLinkIssue',
+    defaultMessage: "You can't link issue if item has minor defect type",
   },
-  noDefectTypeToPostIssue: {
-    id: 'LogItemInfo.noDefectTypeToPostIssue',
-    defaultMessage: "You can't post issue if item has no defect type",
+  minorDefectTypeToPostIssue: {
+    id: 'LogItemInfo.minorDefectTypeToPostIssue',
+    defaultMessage: "You can't post issue if item has minor defect type",
   },
-  noDefectTypeToCopySendDefect: {
-    id: 'LogItemInfo.noDefectTypeToCopySendDefect',
-    defaultMessage: "You can't copy/send defect if item has no defect type",
+  minorDefectTypeToCopySendDefect: {
+    id: 'LogItemInfo.minorDefectTypeToCopySendDefect',
+    defaultMessage: "You can't copy/send defect if item has minor defect type",
   },
   retries: {
     id: 'LogItemInfo.retries',
@@ -419,7 +419,7 @@ export class LogItemInfo extends Component {
     } = this.props;
     const isPostIssueUnavailable = !isPostIssueActionAvailable(this.props.btsIntegrations);
     const copySendDefectTitle =
-      logItem && !logItem.issue ? formatMessage(messages.noDefectTypeToCopySendDefect) : null;
+      logItem && !logItem.issue ? formatMessage(messages.minorDefectTypeToCopySendDefect) : null;
 
     return (
       logItem && (
@@ -468,7 +468,7 @@ export class LogItemInfo extends Component {
                     title={
                       !logItem.issue || isPostIssueUnavailable
                         ? this.getIssueActionTitle(
-                            messages.noDefectTypeToPostIssue,
+                            messages.minorDefectTypeToPostIssue,
                             isPostIssueUnavailable,
                           )
                         : ''
@@ -485,7 +485,7 @@ export class LogItemInfo extends Component {
                     title={
                       !logItem.issue || !btsIntegrations.length
                         ? this.getIssueActionTitle(
-                            messages.noDefectTypeToLinkIssue,
+                            messages.minorDefectTypeToLinkIssue,
                             isPostIssueUnavailable,
                           )
                         : ''

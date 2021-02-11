@@ -17,8 +17,8 @@
 import { defineMessages } from 'react-intl';
 
 import {
-  AUTOMATION_BUG,
-  NO_DEFECT,
+  TEST_BUG,
+  MINOR_DEFECT,
   PRODUCT_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
@@ -49,13 +49,13 @@ export const messages = defineMessages({
     id: 'DefectTypesTab.systemIssuesGroup',
     defaultMessage: 'System Issues Group',
   },
-  [AUTOMATION_BUG]: {
-    id: 'DefectTypesTab.automationBugsGroup',
-    defaultMessage: 'Automation Bugs Group',
+  [TEST_BUG]: {
+    id: 'DefectTypesTab.testBugsGroup',
+    defaultMessage: 'Test Bugs Group',
   },
-  [NO_DEFECT]: {
-    id: 'DefectTypesTab.noDefectBugsGroup',
-    defaultMessage: 'No Defect Group',
+  [MINOR_DEFECT]: {
+    id: 'DefectTypesTab.minorDefectBugsGroup',
+    defaultMessage: 'Minor Defect Group',
   },
   [TO_INVESTIGATE]: {
     id: 'DefectTypesTab.toInvestigateBugsGroup',

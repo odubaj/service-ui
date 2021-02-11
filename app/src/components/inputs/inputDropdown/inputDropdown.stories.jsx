@@ -22,8 +22,8 @@ import README from './README.md';
 
 const options = [
   {
-    value: 'AI',
-    label: 'Auto Bug',
+    value: 'TB',
+    label: 'Test Bug',
     disabled: false,
   },
   {
@@ -37,8 +37,8 @@ const options = [
     disabled: true,
   },
   {
-    value: 'ND',
-    label: 'No Defect',
+    value: 'MD',
+    label: 'Minor Defect',
     disabled: false,
   },
   {
@@ -81,14 +81,14 @@ storiesOf('Components/Inputs/InputDropdown', module)
       onChange={action('changed')}
       onBlur={action('blured')}
       onFocus={action('focused')}
-      value="ND"
+      value="MD"
     />
   ))
   // Multiple dropdown
   .add('Multiple, default state', () => <InputDropdown options={options} multiple />)
   .add('Multiple, disabled', () => <InputDropdown options={options} multiple disabled />)
   .add('Multiple, select all, value', () => (
-    <InputDropdown options={options} multiple selectAll value={['ND', 'AI']} />
+    <InputDropdown options={options} multiple selectAll value={['MD', 'TB']} />
   ))
   .add('Multiple, with actions', () => (
     <InputDropdown

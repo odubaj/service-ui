@@ -26,12 +26,12 @@ import styles from './defectTypeTooltip.scss';
 const cx = classNames.bind(styles);
 const messages = defineMessages({
   product_bug_total: { id: 'DefectTypeTooltip.pb-total', defaultMessage: 'Total product bugs' },
-  automation_bug_total: {
-    id: 'DefectTypeTooltip.ab-total',
-    defaultMessage: 'Total automation bugs',
+  test_bug_total: {
+    id: 'DefectTypeTooltip.tb-total',
+    defaultMessage: 'Total test bugs',
   },
   system_issue_total: { id: 'DefectTypeTooltip.si-total', defaultMessage: 'Total system issues' },
-  no_defect_total: { id: 'DefectTypeTooltip.nd-total', defaultMessage: 'Total no defects' },
+  minor_defect_total: { id: 'DefectTypeTooltip.md-total', defaultMessage: 'Total minor defects' },
   to_investigate_total: {
     id: 'DefectTypeTooltip.ti-total',
     defaultMessage: 'Total to investigate',

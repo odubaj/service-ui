@@ -28,7 +28,7 @@ import {
   STATS_SKIPPED,
   STATS_UNTESTED,
 } from 'common/constants/statistics';
-import { DEFECT_TYPES_SEQUENCE, NO_DEFECT } from 'common/constants/defectTypes';
+import { DEFECT_TYPES_SEQUENCE, MINOR_DEFECT } from 'common/constants/defectTypes';
 import {
   EntityInputConditional,
   EntityItemStartTime,
@@ -111,13 +111,13 @@ const messages = defineMessages({
     id: 'SuiteLevelEntities.PRODUCT_BUG_totalTitle',
     defaultMessage: 'Total product bugs',
   },
-  AUTOMATION_BUG_title: {
-    id: 'SuiteLevelEntities.AUTOMATION_BUG_title',
-    defaultMessage: 'Automation bug',
+  TEST_BUG_title: {
+    id: 'SuiteLevelEntities.TEST_BUG_title',
+    defaultMessage: 'Test bug',
   },
-  AUTOMATION_BUG_totalTitle: {
-    id: 'SuiteLevelEntities.AUTOMATION_BUG_totalTitle',
-    defaultMessage: 'Total automation bugs',
+  TEST_BUG_totalTitle: {
+    id: 'SuiteLevelEntities.TEST_BUG_totalTitle',
+    defaultMessage: 'Total test bugs',
   },
   SYSTEM_ISSUE_title: {
     id: 'SuiteLevelEntities.SYSTEM_ISSUE_title',
@@ -135,13 +135,13 @@ const messages = defineMessages({
     id: 'SuiteLevelEntities.TO_INVESTIGATE_totalTitle',
     defaultMessage: 'Total to investigate',
   },
-  NO_DEFECT_title: {
-    id: 'SuiteLevelEntities.NO_DEFECT_title',
-    defaultMessage: 'No defects',
+  MINOR_DEFECT_title: {
+    id: 'SuiteLevelEntities.MINOR_DEFECT_title',
+    defaultMessage: 'Minor defect',
   },
-  NO_DEFECT_totalTitle: {
-    id: 'SuiteLevelEntities.NO_DEFECT_totalTitle',
-    defaultMessage: 'Total no defects',
+  MINOR_DEFECT_totalTitle: {
+    id: 'SuiteLevelEntities.MINOR_DEFECT_totalTitle',
+    defaultMessage: 'Total minor defects',
   },
   LAUNCH_NUMBER_PLACEHOLDER: {
     id: 'SuiteLevelEntities.launchNumberPlaceholder',
@@ -390,9 +390,6 @@ export class SuiteLevelEntities extends Component {
     const { intl, visibleFilters } = this.props;
     let defectTypeEntities = [];
     DEFECT_TYPES_SEQUENCE.forEach((defectTypeRef) => {
-      if (defectTypeRef.toLowerCase() === NO_DEFECT) {
-        return;
-      }
       const defectTypeGroup = this.props.defectTypes[defectTypeRef];
       const hasSubtypes = defectTypeGroup.length > 1;
       const defectTitle = `${defectTypeRef}_${hasSubtypes ? 'totalTitle' : 'title'}`;

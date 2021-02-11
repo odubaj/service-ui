@@ -31,10 +31,10 @@ const issueTypes = {
       defaultMessage="Product Bug"
     />
   ),
-  automation_bug: (
+  test_bug: (
     <FormattedMessage
-      id="MostFailedTests.header.issueType.automation_bug"
-      defaultMessage="Automation Bug"
+      id="MostFailedTests.header.issueType.test_bug"
+      defaultMessage="Test Bug"
     />
   ),
   system_issue: (
@@ -43,8 +43,8 @@ const issueTypes = {
       defaultMessage="System Issue"
     />
   ),
-  no_defect: (
-    <FormattedMessage id="MostFailedTests.header.issueType.no_defect" defaultMessage="No Defect" />
+  minor_defect: (
+    <FormattedMessage id="MostFailedTests.header.issueType.minor_defect" defaultMessage="Minor Defect" />
   ),
 };
 

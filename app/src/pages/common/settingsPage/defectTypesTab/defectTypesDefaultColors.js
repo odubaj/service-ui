@@ -15,7 +15,7 @@
  */
 
 export default {
-  NO_DEFECT: [
+  MINOR_DEFECT: [
     '#7f7f7f',
     '#888888',
     '#909090',
@@ -47,7 +47,7 @@ export default {
     '#ffebcb',
     '#ffebcb',
   ],
-  AUTOMATION_BUG: [
+  TEST_BUG: [
     '#f7d63e',
     '#f8d94e',
     '#f8d94e',

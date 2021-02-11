@@ -26,10 +26,11 @@ import {
 import {
   PRODUCT_BUG,
   TO_INVESTIGATE,
-  AUTOMATION_BUG,
+  TEST_BUG,
   SYSTEM_ISSUE,
+  MINOR_DEFECT,
 } from 'common/constants/defectTypes';
-import { STATS_SI, STATS_AB, STATS_TI, STATS_PB } from '../components/constants';
+import { STATS_SI, STATS_TB, STATS_TI, STATS_PB, STATS_MD } from '../components/constants';
 import {
   defaultDefectsMessages,
   totalColumnFullTitle,
@@ -120,8 +121,8 @@ export const COLUMN_NAMES_MAP = {
     full: defaultDefectsMessages[STATS_TI],
     short: 'to invest',
   },
-  [STATS_AB]: {
-    full: 'Auto bug',
+  [STATS_TB]: {
+    full: 'Test bug',
   },
   [STATS_PB]: {
     full: defaultDefectsMessages[STATS_PB],
@@ -129,17 +130,23 @@ export const COLUMN_NAMES_MAP = {
   [STATS_SI]: {
     full: defaultDefectsMessages[STATS_SI],
   },
+  [STATS_MD]: {
+    full: 'Minor defect',
+  },
   [TO_INVESTIGATE]: {
     full: defaultDefectsMessages[STATS_TI],
     short: 'to invest',
   },
-  [AUTOMATION_BUG]: {
-    full: 'Auto bug',
+  [TEST_BUG]: {
+    full: 'Test bug',
   },
   [PRODUCT_BUG]: {
     full: defaultDefectsMessages[STATS_PB],
   },
   [SYSTEM_ISSUE]: {
     full: defaultDefectsMessages[STATS_SI],
+  },
+  [MINOR_DEFECT]: {
+    full: 'Minor defect',
   },
 };

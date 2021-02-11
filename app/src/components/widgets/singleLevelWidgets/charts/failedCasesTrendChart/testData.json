@@ -6,8 +6,8 @@
       "widgetType": "bugTrend",
       "contentFields": [
           "statistics$defects$product_bug$total",
-          "statistics$defects$no_defect$total",
-          "statistics$defects$automation_bug$total",
+          "statistics$defects$minor_defect$total",
+          "statistics$defects$test_bug$total",
           "statistics$defects$system_issue$total",
           "statistics$defects$to_investigate$total"
       ],
@@ -25,8 +25,8 @@
               "values": {
                   "total": "11",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -39,8 +39,8 @@
               "values": {
                   "total": "10",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -53,8 +53,8 @@
               "values": {
                   "total": "9",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -67,8 +67,8 @@
               "values": {
                   "total": "9",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -81,8 +81,8 @@
               "values": {
                   "total": "8",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -95,8 +95,8 @@
               "values": {
                   "total": "8",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -109,8 +109,8 @@
               "values": {
                   "total": "2",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -123,8 +123,8 @@
               "values": {
                   "total": "2",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -137,8 +137,8 @@
               "values": {
                   "total": "3",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }
@@ -151,8 +151,8 @@
               "values": {
                   "total": "4",
                   "statistics$defects$product_bug$total": "0",
-                  "statistics$defects$no_defect$total": "0",
-                  "statistics$defects$automation_bug$total": "0",
+                  "statistics$defects$minor_defect$total": "0",
+                  "statistics$defects$test_bug$total": "0",
                   "statistics$defects$system_issue$total": "0",
                   "statistics$defects$to_investigate$total": "1"
               }

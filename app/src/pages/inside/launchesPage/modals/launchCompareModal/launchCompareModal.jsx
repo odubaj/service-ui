@@ -22,8 +22,8 @@ import { fetch } from 'common/utils';
 import { connect } from 'react-redux';
 import { injectIntl, defineMessages } from 'react-intl';
 import {
-  STATS_AB_TOTAL,
-  STATS_ND_TOTAL,
+  STATS_TB_TOTAL,
+  STATS_MD_TOTAL,
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
@@ -55,9 +55,9 @@ const contentParameters = {
     STATS_SKIPPED,
     STATS_UNTESTED,
     STATS_PB_TOTAL,
-    STATS_AB_TOTAL,
+    STATS_TB_TOTAL,
     STATS_SI_TOTAL,
-    STATS_ND_TOTAL,
+    STATS_MD_TOTAL,
     STATS_TI_TOTAL,
   ],
 };

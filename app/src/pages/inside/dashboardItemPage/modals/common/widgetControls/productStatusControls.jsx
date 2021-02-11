@@ -75,9 +75,9 @@ const messages = defineMessages({
 });
 
 const PRODUCT_BUG = 'statistics$defects$product_bug$pb001';
-const AUTOMATION_BUG = 'statistics$defects$automation_bug$ab001';
+const TEST_BUG = 'statistics$defects$test_bug$tb001';
 const SYSTEM_ISSUE = 'statistics$defects$system_issue$si001';
-const NO_DEFECT = 'statistics$defects$no_defect$nd001';
+const MINOR_DEFECT = 'statistics$defects$minor_defect$md001';
 const TO_INVESTIGATE = 'statistics$defects$to_investigate$ti001';
 const STATIC_BASE_COLUMNS = [
   STATS_TOTAL,
@@ -95,9 +95,9 @@ const BASE_COLUMNS_ORDER = [
   STATS_SKIPPED,
   STATS_UNTESTED,
   PRODUCT_BUG,
-  AUTOMATION_BUG,
+  TEST_BUG,
   SYSTEM_ISSUE,
-  NO_DEFECT,
+  MINOR_DEFECT,
   TO_INVESTIGATE,
 ];
 const validators = {

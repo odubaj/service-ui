@@ -62,17 +62,18 @@ export class LaunchStatistics extends Component {
     const minListLength = PERIOD_VALUES_LENGTH[interval];
     const data = Object.keys(rawData).map((key) => {
       const {
-        values: { automationBug, toInvestigate, systemIssue, productBug },
+        values: { testBug, toInvestigate, systemIssue, productBug, minorDefect },
       } = rawData[key][0];
-      const total = +automationBug + +toInvestigate + +systemIssue + +productBug;
+      const total = +testBug + +toInvestigate + +systemIssue + +productBug+ +minorDefect;
 
       return {
         date: key,
         name: interval === PERIOD_VALUES.ONE_MONTH ? key : getWeekRange(key),
         values: {
-          automationBug: ((automationBug / total) * 100).toFixed(2),
+          testBug: ((testBug / total) * 100).toFixed(2),
           productBug: ((productBug / total) * 100).toFixed(2),
           systemIssue: ((systemIssue / total) * 100).toFixed(2),
+          minorDefect: ((minorDefect / total) * 100).toFixed(2),
           toInvestigate: ((toInvestigate / total) * 100).toFixed(2),
         },
       };
@@ -82,10 +83,11 @@ export class LaunchStatistics extends Component {
       data.unshift({
         name: '',
         values: {
-          automationBug: 0,
+          testBug: 0,
           productBug: 0,
           systemIssue: 0,
           toInvestigate: 0,
+          minorDefect: 0,
         },
       });
     }

@@ -23,7 +23,7 @@ import { DefectTypeSelector } from './defectTypeSelector';
 import README from './README.md';
 import { state } from './data';
 
-const value = 'AB001';
+const value = 'TB001';
 
 storiesOf('Pages/Inside/Common/DefectTypeSelector', module)
   .addDecorator(

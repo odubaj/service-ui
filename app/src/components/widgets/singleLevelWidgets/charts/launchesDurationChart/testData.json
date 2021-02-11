@@ -18,7 +18,7 @@
       "conditions": [],
       "orders": [
         {
-          "sortingColumn": "statistics$defects$no_defect$nd001",
+          "sortingColumn": "statistics$defects$minor_defect$md001",
           "isAsc": false
         }
       ],

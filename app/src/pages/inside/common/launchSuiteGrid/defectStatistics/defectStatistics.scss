@@ -45,14 +45,17 @@
   &.type-product_bug {
     background-color: $COLOR--product-bug;
   }
-  &.type-automation_bug {
-    background-color: $COLOR--automation-bug;
+  &.type-test_bug {
+    background-color: $COLOR--test-bug;
   }
   &.type-system_issue {
     background-color: $COLOR--system-issue;
   }
   &.type-to_investigate {
     background-color: $COLOR--to-investigate;
+  }
+  &.type-minor_defect {
+    background-color: $COLOR--minor-defect;
   }
 }
 .value {

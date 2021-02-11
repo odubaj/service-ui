@@ -16,7 +16,7 @@
 
 export const validateIgnoreInAA = (item) => {
   if (!item.issue || !item.issue.issueType) {
-    return 'noDefectType';
+    return 'minorDefectType';
   }
   if (item.issue && item.issue.ignoreAnalyzer) {
     return 'alreadyIgnored';
@@ -26,7 +26,7 @@ export const validateIgnoreInAA = (item) => {
 
 export const validateIncludeInAA = (item) => {
   if (!item.issue || !item.issue.issueType) {
-    return 'noDefectType';
+    return 'minorDefectType';
   }
   if (item.issue && !item.issue.ignoreAnalyzer) {
     return 'alreadyIncluded';
@@ -42,10 +42,10 @@ export const validateUnlinkIssue = (item) => {
 };
 
 export const validateLinkIssue = (item) =>
-  !item.issue || !item.issue.issueType ? 'noDefectTypeToLinkIssue' : null;
+  !item.issue || !item.issue.issueType ? 'minorDefectTypeToLinkIssue' : null;
 
 export const validateEditDefect = (item) =>
   !item.issue || !item.issue.issueType ? 'noIssue' : null;
 
 export const validatePostIssue = (item) =>
-  !item.issue || !item.issue.issueType ? 'noDefectTypeToPostIssue' : null;
+  !item.issue || !item.issue.issueType ? 'minorDefectTypeToPostIssue' : null;

@@ -27,10 +27,10 @@ import {
   PRODUCT_BUG,
   TO_INVESTIGATE,
   SYSTEM_ISSUE,
-  AUTOMATION_BUG,
-  NO_DEFECT,
+  TEST_BUG,
+  MINOR_DEFECT,
 } from 'common/constants/defectTypes';
-import { STATS_AB, STATS_ND, STATS_PB, STATS_SI, STATS_TI } from './constants';
+import { STATS_TB, STATS_MD, STATS_PB, STATS_SI, STATS_TI } from './constants';
 
 export const totalColumnFullTitle = (
   <FormattedMessage id={'TableWidgets.totalColumnFull'} defaultMessage={'Total'} />
@@ -66,13 +66,13 @@ export const skippedColumnShortTitle = (
 export const defaultDefectsMessages = {
   [STATS_TI]: 'To investigate',
   [STATS_PB]: 'Product bug',
-  [STATS_AB]: 'Automation bug',
-  [STATS_ND]: 'No defect',
+  [STATS_TB]: 'Test bug',
+  [STATS_MD]: 'Minor defect',
   [STATS_SI]: 'System issue',
   [TO_INVESTIGATE]: 'To investigate',
   [PRODUCT_BUG]: 'Product bug',
-  [AUTOMATION_BUG]: 'Automation bug',
-  [NO_DEFECT]: 'No defect',
+  [TEST_BUG]: 'Test bug',
+  [MINOR_DEFECT]: 'Minor defect',
   [SYSTEM_ISSUE]: 'System issue',
 };
 

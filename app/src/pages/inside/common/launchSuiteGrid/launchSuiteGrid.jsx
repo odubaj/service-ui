@@ -20,9 +20,10 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import {
   PRODUCT_BUG,
-  AUTOMATION_BUG,
+  TEST_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
+  MINOR_DEFECT,
 } from 'common/constants/defectTypes';
 import { FAILED, INTERRUPTED, PASSED, SKIPPED, UNTESTED } from 'common/constants/launchStatuses';
 import { COMMON_LOCALE_KEYS } from 'common/constants/localization';
@@ -45,10 +46,11 @@ import {
   STATS_PASSED,
   STATS_UNTESTED,
   STATS_FAILED,
-  STATS_AB_TOTAL,
+  STATS_TB_TOTAL,
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
+  STATS_MD_TOTAL,
 } from 'common/constants/statistics';
 import { Hamburger } from './hamburger';
 import { ExecutionStatistics } from './executionStatistics';
@@ -177,19 +179,19 @@ PbColumn.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-const AbColumn = ({ className, ...rest }) => (
-  <div className={cx('ab-col', className)}>
+const TbColumn = ({ className, ...rest }) => (
+  <div className={cx('tb-col', className)}>
     <DefectStatistics
-      type={AUTOMATION_BUG}
+      type={TEST_BUG}
       customProps={rest.customProps}
-      data={rest.value.statistics.defects && rest.value.statistics.defects.automation_bug}
+      data={rest.value.statistics.defects && rest.value.statistics.defects.test_bug}
       itemId={rest.value.id}
-      eventInfo={rest.customProps.events.AB_CHART}
-      tooltipEventInfo={rest.customProps.events.AB_TOOLTIP}
+      eventInfo={rest.customProps.events.TB_CHART}
+      tooltipEventInfo={rest.customProps.events.TB_TOOLTIP}
     />
   </div>
 );
-AbColumn.propTypes = {
+TbColumn.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
@@ -206,6 +208,22 @@ const SiColumn = ({ className, ...rest }) => (
   </div>
 );
 SiColumn.propTypes = {
+  className: PropTypes.string.isRequired,
+};
+
+const MdColumn = ({ className, ...rest }) => (
+  <div className={cx('md-col', className)}>
+    <DefectStatistics
+      type={MINOR_DEFECT}
+      customProps={rest.customProps}
+      data={rest.value.statistics.defects && rest.value.statistics.defects.minor_defect}
+      itemId={rest.value.id}
+      eventInfo={rest.customProps.events.MD_CHART}
+      tooltipEventInfo={rest.customProps.events.MD_TOOLTIP}
+    />
+  </div>
+);
+MdColumn.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
@@ -401,20 +419,20 @@ export class LaunchSuiteGrid extends PureComponent {
         sortingEventInfo: events.PB_SORTING,
       },
       {
-        id: STATS_AB_TOTAL,
+        id: STATS_TB_TOTAL,
         title: {
-          full: 'auto bug',
-          short: 'auto bug',
+          full: 'test bug',
+          short: 'test bug',
         },
-        component: AbColumn,
+        component: TbColumn,
         customProps: {
-          abbreviation: 'ab',
+          abbreviation: 'tb',
           events,
         },
         sortable: true,
         withFilter: true,
-        filterEventInfo: events.AB_FILTER,
-        sortingEventInfo: events.AB_SORTING,
+        filterEventInfo: events.TB_FILTER,
+        sortingEventInfo: events.TB_SORTING,
       },
       {
         id: STATS_SI_TOTAL,
@@ -431,6 +449,22 @@ export class LaunchSuiteGrid extends PureComponent {
         withFilter: true,
         filterEventInfo: events.SI_FILTER,
         sortingEventInfo: events.SI_SORTING,
+      },
+      {
+        id: STATS_MD_TOTAL,
+        title: {
+          full: 'minor defect',
+          short: 'minor defect',
+        },
+        component: MdColumn,
+        customProps: {
+          abbreviation: 'md',
+          events,
+        },
+        sortable: true,
+        withFilter: true,
+        filterEventInfo: events.MD_FILTER,
+        sortingEventInfo: events.MD_SORTING,
       },
       {
         id: STATS_TI_TOTAL,

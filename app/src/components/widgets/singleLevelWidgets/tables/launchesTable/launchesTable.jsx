@@ -29,8 +29,9 @@ import {
 import {
   PRODUCT_BUG,
   TO_INVESTIGATE,
-  AUTOMATION_BUG,
+  TEST_BUG,
   SYSTEM_ISSUE,
+  MINOR_DEFECT,
 } from 'common/constants/defectTypes';
 import { ALL } from 'common/constants/reservedFilterIds';
 import { activeProjectSelector } from 'controllers/user';
@@ -228,8 +229,9 @@ const COLUMNS_KEYS_MAP = {
   [STATS_SKIPPED]: STATISTICS_COLUMN_KEY,
   [STATS_UNTESTED]: STATISTICS_COLUMN_KEY,
   [PRODUCT_BUG]: DEFECT_COLUMN_KEY,
-  [AUTOMATION_BUG]: DEFECT_COLUMN_KEY,
+  [TEST_BUG]: DEFECT_COLUMN_KEY,
   [SYSTEM_ISSUE]: DEFECT_COLUMN_KEY,
+  [MINOR_DEFECT]: DEFECT_COLUMN_KEY,
   [TO_INVESTIGATE]: DEFECT_COLUMN_KEY,
 };
 

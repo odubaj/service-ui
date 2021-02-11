@@ -22,8 +22,8 @@ import README from './README.md';
 
 const options = [
   {
-    value: 'AI',
-    label: 'Auto Bug',
+    value: 'TB',
+    label: 'Test Bug',
     disabled: false,
   },
   {
@@ -37,8 +37,8 @@ const options = [
     disabled: true,
   },
   {
-    value: 'ND',
-    label: 'No Defect',
+    value: 'MD',
+    label: 'Minor Defect',
     disabled: false,
   },
   {
@@ -82,6 +82,6 @@ storiesOf('Components/Inputs/InputDropdownSorting', module)
       onChange={action('changed')}
       onBlur={action('blured')}
       onFocus={action('focused')}
-      value="ND"
+      value="MD"
     />
   ));

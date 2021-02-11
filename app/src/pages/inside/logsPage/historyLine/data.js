@@ -42,8 +42,8 @@ export const mockEntries = [
               total: 0,
               PB001: 0,
             },
-            automation_bug: {
-              AB001: 0,
+            test_bug: {
+              TB001: 0,
               total: 0,
             },
             system_issue: {
@@ -54,8 +54,8 @@ export const mockEntries = [
               total: 0,
               TI001: 0,
             },
-            no_defect: {
-              ND001: 0,
+            minor_defect: {
+              MD001: 0,
               total: 0,
             },
           },
@@ -113,8 +113,8 @@ export const mockEntries = [
               total: 0,
               PB001: 0,
             },
-            automation_bug: {
-              AB001: 0,
+            test_bug: {
+              TB001: 0,
               total: 0,
             },
             system_issue: {
@@ -125,8 +125,8 @@ export const mockEntries = [
               total: 0,
               TI001: 0,
             },
-            no_defect: {
-              ND001: 0,
+            minor_defect: {
+              MD001: 0,
               total: 0,
             },
           },
@@ -177,8 +177,8 @@ export const mockEntries = [
               total: 1,
               PB001: 1,
             },
-            automation_bug: {
-              AB001: 0,
+            test_bug: {
+              TB001: 0,
               total: 0,
             },
             system_issue: {
@@ -189,8 +189,8 @@ export const mockEntries = [
               total: 0,
               TI001: 0,
             },
-            no_defect: {
-              ND001: 0,
+            minor_defect: {
+              MD001: 0,
               total: 0,
             },
           },
@@ -246,8 +246,8 @@ export const mockEntries = [
               total: 0,
               PB001: 0,
             },
-            automation_bug: {
-              AB001: 0,
+            test_bug: {
+              TB001: 0,
               total: 0,
             },
             system_issue: {
@@ -258,8 +258,8 @@ export const mockEntries = [
               total: 0,
               TI001: 0,
             },
-            no_defect: {
-              ND001: 0,
+            minor_defect: {
+              MD001: 0,
               total: 0,
             },
           },
@@ -317,8 +317,8 @@ export const mockEntries = [
               total: 0,
               PB001: 0,
             },
-            automation_bug: {
-              AB001: 0,
+            test_bug: {
+              TB001: 0,
               total: 0,
             },
             system_issue: {
@@ -329,8 +329,8 @@ export const mockEntries = [
               total: 0,
               TI001: 0,
             },
-            no_defect: {
-              ND001: 0,
+            minor_defect: {
+              MD001: 0,
               total: 0,
             },
           },
@@ -395,8 +395,8 @@ export const mockEntries = [
               total: 0,
               PB001: 0,
             },
-            automation_bug: {
-              AB001: 0,
+            test_bug: {
+              TB001: 0,
               total: 0,
             },
             system_issue: {
@@ -407,8 +407,8 @@ export const mockEntries = [
               total: 0,
               TI001: 0,
             },
-            no_defect: {
-              ND001: 0,
+            minor_defect: {
+              MD001: 0,
               total: 0,
             },
           },

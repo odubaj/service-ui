@@ -56,21 +56,21 @@ export const state = {
               color: '#ffb743',
             },
           ],
-          NO_DEFECT: [
+          MINOR_DEFECT: [
             {
-              locator: 'ND001',
-              typeRef: 'NO_DEFECT',
-              longName: 'No Defect',
-              shortName: 'ND',
+              locator: 'MD001',
+              typeRef: 'MINOR_DEFECT',
+              longName: 'Minor Defect',
+              shortName: 'MD',
               color: '#777777',
             },
           ],
-          AUTOMATION_BUG: [
+          TEST_BUG: [
             {
-              locator: 'AB001',
-              typeRef: 'AUTOMATION_BUG',
-              longName: 'Automation Bug',
-              shortName: 'AB',
+              locator: 'TB001',
+              typeRef: 'TEST_BUG',
+              longName: 'Test Bug',
+              shortName: 'TB',
               color: '#f7d63e',
             },
           ],

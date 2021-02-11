@@ -21,7 +21,7 @@ describe('controllers/testItem/utils', () => {
     test('should add missing defect statistics from project config with count set to 0', () => {
       const defectConfig = {
         TO_INVESTIGATE: [{ locator: 'ti001' }, { locator: 'ti002' }],
-        AUTOMATION_BUG: [{ locator: 'ab001' }],
+        TEST_BUG: [{ locator: 'tb001' }],
       };
       const testItem = {
         id: 0,
@@ -45,9 +45,9 @@ describe('controllers/testItem/utils', () => {
               ti001: 3,
               ti002: 0,
             },
-            automation_bug: {
+            test_bug: {
               total: 0,
-              ab001: 0,
+              tb001: 0,
             },
           },
         },

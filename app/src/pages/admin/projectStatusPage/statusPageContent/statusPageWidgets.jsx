@@ -15,7 +15,7 @@
  */
 
 import { URLS } from 'common/urls';
-import { AUTOMATION_BUG, SYSTEM_ISSUE, PRODUCT_BUG } from 'components/widgets/common/constants';
+import { TEST_BUG, SYSTEM_ISSUE, PRODUCT_BUG, MINOR_DEFECT } from 'components/widgets/common/constants';
 import {
   GeneralInfo,
   OwnersInfo,
@@ -92,11 +92,19 @@ export const statusPageWidgets = [
     ),
   },
   {
-    title: messages.autoBugs,
-    id: WIDGETS_IDS.autoBugs,
+    title: messages.testBugs,
+    id: WIDGETS_IDS.testBugs,
     source: WIDGETS_IDS.issuesChart,
     component: (data, interval) => (
-      <IssuesChartWrapper data={data} interval={interval} targetFieldKey={AUTOMATION_BUG} />
+      <IssuesChartWrapper data={data} interval={interval} targetFieldKey={TEST_BUG} />
+    ),
+  },
+  {
+    title: messages.minorDefects,
+    id: WIDGETS_IDS.minorDefects,
+    source: WIDGETS_IDS.issuesChart,
+    component: (data, interval) => (
+      <IssuesChartWrapper data={data} interval={interval} targetFieldKey={MINOR_DEFECT} />
     ),
   },
 ];

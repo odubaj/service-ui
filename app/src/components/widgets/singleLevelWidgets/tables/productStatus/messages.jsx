@@ -23,7 +23,7 @@ import {
   STATS_SKIPPED,
   STATS_UNTESTED,
 } from 'common/constants/statistics';
-import { STATS_SI, STATS_AB, STATS_ND, STATS_TI, STATS_PB } from '../components/constants';
+import { STATS_SI, STATS_TB, STATS_MD, STATS_TI, STATS_PB } from '../components/constants';
 import {
   defaultDefectsMessages,
   failedColumnFullTitle,
@@ -124,14 +124,14 @@ export const COLUMN_NAMES_MAP = {
   [STATS_PB]: {
     full: defaultDefectsMessages[STATS_PB],
   },
-  [STATS_AB]: {
-    full: defaultDefectsMessages[STATS_AB],
+  [STATS_TB]: {
+    full: defaultDefectsMessages[STATS_TB],
   },
   [STATS_SI]: {
     full: defaultDefectsMessages[STATS_SI],
   },
-  [STATS_ND]: {
-    full: defaultDefectsMessages[STATS_ND],
+  [STATS_MD]: {
+    full: defaultDefectsMessages[STATS_MD],
   },
   [STATS_TI]: {
     full: defaultDefectsMessages[STATS_TI],

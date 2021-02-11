@@ -171,11 +171,11 @@ export class HistoryTable extends Component {
               }
             }
           } else {
-            if((historyItem.statistics.defects.hasOwnProperty('no_defect'))
+            if((historyItem.statistics.defects.hasOwnProperty('minor_defect'))
               && (!historyItem.statistics.defects.hasOwnProperty('product_bug'))
               && (!historyItem.statistics.defects.hasOwnProperty('to_investigate'))
               && (!historyItem.statistics.defects.hasOwnProperty('system_issue'))
-              && (!historyItem.statistics.defects.hasOwnProperty('automation_bug'))) {
+              && (!historyItem.statistics.defects.hasOwnProperty('test_bug'))) {
                 historyItem.status = "PASSED";
             }
           }

@@ -56,21 +56,21 @@ export const state = {
               color: '#ffb743',
             },
           ],
-          NO_DEFECT: [
+          MINOR_DEFECT: [
             {
-              locator: 'ND001',
-              typeRef: 'NO_DEFECT',
-              longName: 'No Defect',
-              shortName: 'ND',
+              locator: 'MD001',
+              typeRef: 'MINOR_DEFECT',
+              longName: 'Minor Defect',
+              shortName: 'MD',
               color: '#777777',
             },
           ],
-          AUTOMATION_BUG: [
+          TEST_BUG: [
             {
-              locator: 'AB001',
-              typeRef: 'AUTOMATION_BUG',
-              longName: 'Automation Bug',
-              shortName: 'AB',
+              locator: 'TB001',
+              typeRef: 'TEST_BUG',
+              longName: 'Test Bug',
+              shortName: 'TB',
               color: '#f7d63e',
             },
           ],
@@ -173,12 +173,12 @@ export const mockData = {
   share: false,
   statistics: {
     defects: {
-      automation_bug: {
-        AB001: 11,
+      test_bug: {
+        TB001: 11,
         total: 11,
       },
-      no_defect: {
-        ND001: 0,
+      minor_defect: {
+        MD001: 0,
         total: 0,
       },
       product_bug: {

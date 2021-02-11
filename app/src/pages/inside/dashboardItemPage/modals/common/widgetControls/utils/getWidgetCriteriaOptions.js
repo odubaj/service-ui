@@ -21,18 +21,18 @@ import {
   STATS_PASSED,
   STATS_SKIPPED,
   STATS_UNTESTED,
-  STATS_AB_TOTAL,
-  STATS_ND_TOTAL,
+  STATS_TB_TOTAL,
+  STATS_MD_TOTAL,
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
 } from 'common/constants/statistics';
 import {
   PRODUCT_BUG,
-  AUTOMATION_BUG,
+  TEST_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
-  NO_DEFECT,
+  MINOR_DEFECT,
   DEFECT_TYPES_SEQUENCE,
 } from 'common/constants/defectTypes';
 import {
@@ -93,9 +93,9 @@ const messages = defineMessages({
     id: 'WidgetCriteriaOption.PRODUCT_BUG',
     defaultMessage: 'Product bug',
   },
-  [AUTOMATION_BUG]: {
-    id: 'WidgetCriteriaOption.AUTOMATION_BUG',
-    defaultMessage: 'Automation bug',
+  [TEST_BUG]: {
+    id: 'WidgetCriteriaOption.TEST_BUG',
+    defaultMessage: 'Test bug',
   },
   [SYSTEM_ISSUE]: {
     id: 'WidgetCriteriaOption.SYSTEM_ISSUE',
@@ -105,18 +105,18 @@ const messages = defineMessages({
     id: 'WidgetCriteriaOption.TO_INVESTIGATE',
     defaultMessage: 'To investigate',
   },
-  [NO_DEFECT]: {
-    id: 'WidgetCriteriaOption.NO_DEFECT',
-    defaultMessage: 'No defect',
+  [MINOR_DEFECT]: {
+    id: 'WidgetCriteriaOption.MINOR_DEFECT',
+    defaultMessage: 'Minor defect',
   },
 
   PRODUCT_BUG_TOTAL: {
     id: 'WidgetCriteriaOption.PRODUCT_BUG_TOTAL',
     defaultMessage: 'Total product bugs',
   },
-  AUTOMATION_BUG_TOTAL: {
-    id: 'WidgetCriteriaOption.AUTOMATION_BUG_TOTAL',
-    defaultMessage: 'Total automation bug',
+  TEST_BUG_TOTAL: {
+    id: 'WidgetCriteriaOption.TEST_BUG_TOTAL',
+    defaultMessage: 'Total test bug',
   },
   SYSTEM_ISSUE_TOTAL: {
     id: 'WidgetCriteriaOption.SYSTEM_ISSUE_TOTAL',
@@ -126,13 +126,13 @@ const messages = defineMessages({
     id: 'WidgetCriteriaOption.TO_INVESTIGATE_TOTAL',
     defaultMessage: 'Total to investigate',
   },
-  NO_DEFECT_TOTAL: {
-    id: 'WidgetCriteriaOption.NO_DEFECT_TOTAL',
-    defaultMessage: 'Total no defects',
+  MINOR_DEFECT_TOTAL: {
+    id: 'WidgetCriteriaOption.MINOR_DEFECT_TOTAL',
+    defaultMessage: 'Total minor defects',
   },
-  Defect_Type_AB001: {
-    id: 'WidgetCriteriaOption.Defect_Type_AB001',
-    defaultMessage: 'Automation bug',
+  Defect_Type_TB001: {
+    id: 'WidgetCriteriaOption.Defect_Type_TB001',
+    defaultMessage: 'Test bug',
   },
   Defect_Type_PB001: {
     id: 'WidgetCriteriaOption.Defect_Type_PB001',
@@ -146,9 +146,9 @@ const messages = defineMessages({
     id: 'WidgetCriteriaOption.Defect_Type_TI001',
     defaultMessage: 'To investigate',
   },
-  Defect_Type_ND001: {
-    id: 'WidgetCriteriaOption.Defect_Type_ND001',
-    defaultMessage: 'No defect',
+  Defect_Type_MD001: {
+    id: 'WidgetCriteriaOption.Defect_Type_MD001',
+    defaultMessage: 'Minor defect',
   },
 
   [START_LAUNCH]: {
@@ -265,9 +265,9 @@ const getPassedFailedLaunchesOptions = (formatMessage) => [
 
 const getDefectStatisticsOptions = (formatMessage) => [
   { value: STATS_PB_TOTAL, label: formatMessage(messages[PRODUCT_BUG]) },
-  { value: STATS_AB_TOTAL, label: formatMessage(messages[AUTOMATION_BUG]) },
+  { value: STATS_TB_TOTAL, label: formatMessage(messages[TEST_BUG]) },
   { value: STATS_SI_TOTAL, label: formatMessage(messages[SYSTEM_ISSUE]) },
-  { value: STATS_ND_TOTAL, label: formatMessage(messages[NO_DEFECT]) },
+  { value: STATS_MD_TOTAL, label: formatMessage(messages[MINOR_DEFECT]) },
 ];
 
 const getToInvestigateStatisticsOption = (formatMessage) => [
@@ -359,10 +359,10 @@ const getLaunchGridColumnsOptions = (formatMessage) => [
 
 const getDefectTypesGroupsOptions = (formatMessage) => [
   { value: PRODUCT_BUG, label: formatMessage(messages[PRODUCT_BUG]) },
-  { value: AUTOMATION_BUG, label: formatMessage(messages[AUTOMATION_BUG]) },
+  { value: TEST_BUG, label: formatMessage(messages[TEST_BUG]) },
   { value: SYSTEM_ISSUE, label: formatMessage(messages[SYSTEM_ISSUE]) },
   { value: TO_INVESTIGATE, label: formatMessage(messages[TO_INVESTIGATE]) },
-  { value: NO_DEFECT, label: formatMessage(messages[NO_DEFECT]) },
+  { value: MINOR_DEFECT, label: formatMessage(messages[MINOR_DEFECT]) },
 ];
 
 export const getWidgetCriteriaOptions = (optionGroups, formatMessage, meta) => {
@@ -398,7 +398,7 @@ export const getWidgetCriteriaOptions = (optionGroups, formatMessage, meta) => {
         break;
       case DEFECT_TYPES_GROUPS_OPTIONS:
         options = options.concat(
-          meta && meta.withoutNoDefect
+          meta && meta.withoutMinorDefect
             ? getDefectTypesGroupsOptions(formatMessage).slice(0, -1)
             : getDefectTypesGroupsOptions(formatMessage),
         );

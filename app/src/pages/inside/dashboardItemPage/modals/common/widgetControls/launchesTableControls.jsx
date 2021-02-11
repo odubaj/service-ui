@@ -24,10 +24,10 @@ import { injectIntl, defineMessages } from 'react-intl';
 import { defectTypesSelector } from 'controllers/project';
 import {
   PRODUCT_BUG,
-  AUTOMATION_BUG,
+  TEST_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
-  NO_DEFECT,
+  MINOR_DEFECT,
 } from 'common/constants/defectTypes';
 import { getWidgetCriteriaOptions } from './utils/getWidgetCriteriaOptions';
 import {
@@ -93,7 +93,7 @@ export class LaunchesTableControls extends Component {
     this.criteria = getWidgetCriteriaOptions(
       [LAUNCH_STATUSES_OPTIONS, DEFECT_TYPES_GROUPS_OPTIONS, LAUNCH_GRID_COLUMNS_OPTIONS],
       intl.formatMessage,
-      { withoutNoDefect: true },
+      { withoutMinorDefect: true },
     );
     initializeControlsForm({
       contentParameters: widgetSettings.contentParameters || {
@@ -119,7 +119,7 @@ export class LaunchesTableControls extends Component {
       criteries
         .map((criteria) => {
           const value = criteria.value || criteria;
-          return [PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE, TO_INVESTIGATE, NO_DEFECT].indexOf(
+          return [PRODUCT_BUG, TEST_BUG, SYSTEM_ISSUE, TO_INVESTIGATE, MINOR_DEFECT].indexOf(
             value,
           ) + 1
             ? this.props.defectTypes[value.toUpperCase()].map(

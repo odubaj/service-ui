@@ -45,17 +45,17 @@ const messages = defineMessages({
     id: 'LaunchesPage.launchIsProcessing',
     defaultMessage: 'Launch should not be processing by Auto analysis!',
   },
-  noDefectType: {
-    id: 'LaunchesPage.noDefectType',
+  minorDefectType: {
+    id: 'LaunchesPage.minorDefectType',
     defaultMessage: 'Item does not have defect type',
   },
-  noDefectTypeToLinkIssue: {
-    id: 'LaunchesPage.noDefectTypeToLinkIssue',
-    defaultMessage: "You can't link issue if item has no defect type",
+  minorDefectTypeToLinkIssue: {
+    id: 'LaunchesPage.minorDefectTypeToLinkIssue',
+    defaultMessage: "You can't link issue if item has minor defect type",
   },
-  noDefectTypeToPostIssue: {
-    id: 'LaunchesPage.noDefectTypeToPostIssue',
-    defaultMessage: "You can't post bug if item has no defect type",
+  minorDefectTypeToPostIssue: {
+    id: 'LaunchesPage.minorDefectTypeToPostIssue',
+    defaultMessage: "You can't post bug if item has minor defect type",
   },
   alreadyIgnored: {
     id: 'LaunchesPage.alreadyIgnored',

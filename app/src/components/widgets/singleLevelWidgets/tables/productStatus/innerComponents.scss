@@ -219,9 +219,9 @@
       }
     }
 
-    &.defect-no_defect {
+    &.defect-minor_defect {
       &:before {
-        background-color: $COLOR--no-defect;
+        background-color: $COLOR--minor-defect;
       }
     }
 
@@ -237,9 +237,9 @@
       }
     }
 
-    &.defect-automation_bug {
+    &.defect-test_bug {
       &:before {
-        background-color: $COLOR--automation-bug;
+        background-color: $COLOR--test-bug;
       }
     }
 

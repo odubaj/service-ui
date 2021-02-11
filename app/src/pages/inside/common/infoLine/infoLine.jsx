@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 import { injectIntl, defineMessages } from 'react-intl';
 import { connect } from 'react-redux';
 import classNames from 'classnames/bind';
-import { PRODUCT_BUG, AUTOMATION_BUG, SYSTEM_ISSUE } from 'common/constants/defectTypes';
+import { PRODUCT_BUG, TEST_BUG, SYSTEM_ISSUE, MINOR_DEFECT } from 'common/constants/defectTypes';
 import { StatisticsLink } from 'pages/inside/common/statisticsLink';
 import { isStepLevelSelector } from 'controllers/testItem';
 import { BarChart } from './barChart';
@@ -56,7 +56,7 @@ const normalizeExecutions = (executions) => ({
 });
 
 const normalizeDefects = (defects) => ({
-  no_defect: defects.no_defect.nd001 || 0,
+  minor_defect: defects.minor_defect.md001 || 0,
 });
 
 @connect((state) => ({
@@ -90,14 +90,15 @@ export class InfoLine extends Component {
     const defects = data.statistics.defects;
     const normalized_defects = normalizeDefects(data.statistics.defects);
     const executions = normalizeExecutions(data.statistics.executions);
-    const passed = ((executions.passed + normalized_defects.no_defect) / executions.total) * 100 || 0;
-    const failed = ((executions.failed - normalized_defects.no_defect) / executions.total) * 100 || 0;
+    const passed = ((executions.passed + normalized_defects.minor_defect) / executions.total) * 100 || 0;
+    const failed = ((executions.failed - normalized_defects.minor_defect) / executions.total) * 100 || 0;
     const untested = (executions.untested / executions.total) * 100 || 0;
     const skipped = (executions.skipped / executions.total) * 100 || 0;
     const tooltipEventsInfo = {
       [PRODUCT_BUG]: events.PB_TOOLTIP,
       [SYSTEM_ISSUE]: events.SI_TOOLTIP,
-      [AUTOMATION_BUG]: events.AB_TOOLTIP,
+      [TEST_BUG]: events.TB_TOOLTIP,
+      [MINOR_DEFECT]: events.MD_TOOLTIP,
     };
     return (
       <div className={cx('info-line', { 'detailed-view': detailedView })}>

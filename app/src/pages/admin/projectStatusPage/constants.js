@@ -22,7 +22,7 @@ export const WIDGETS_IDS = {
   lastLaunch: 'lastLaunch',
   issuesChart: 'issuesChart',
   systemIssues: 'systemIssues',
-  autoBugs: 'autoBugs',
+  testBugs: 'testBugs',
   launchStatistics: 'launchStatistics',
   activities: 'activities',
 };

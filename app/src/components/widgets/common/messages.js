@@ -16,12 +16,13 @@
 
 import { defineMessages } from 'react-intl';
 import {
-  AUTOMATION_BUG,
+  TEST_BUG,
   INVESTIGATED,
   LAUNCHES_QUANTITY,
   PRODUCT_BUG,
   SYSTEM_ISSUE,
   TO_INVESTIGATE,
+  MINOR_DEFECT,
 } from './constants';
 
 export const messages = defineMessages({
@@ -77,13 +78,17 @@ export const messages = defineMessages({
     id: `Chart.label.productBug`,
     defaultMessage: 'Product Bug',
   },
-  [AUTOMATION_BUG]: {
-    id: `Chart.label.automationBug`,
-    defaultMessage: 'Automation Bug',
+  [TEST_BUG]: {
+    id: `Chart.label.testBug`,
+    defaultMessage: 'Test Bug',
   },
   [SYSTEM_ISSUE]: {
     id: `Chart.label.systemIssue`,
     defaultMessage: 'System Issue',
+  },
+  [MINOR_DEFECT]: {
+    id: `Chart.label.minorDefect`,
+    defaultMessage: 'Minor Defect',
   },
   [LAUNCHES_QUANTITY]: {
     id: `Chart.label.launchesQuantity`,

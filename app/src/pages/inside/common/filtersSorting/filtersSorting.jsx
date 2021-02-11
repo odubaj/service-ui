@@ -25,10 +25,11 @@ import {
   STATS_PASSED,
   STATS_TOTAL,
   STATS_UNTESTED,
-  STATS_AB_TOTAL,
+  STATS_TB_TOTAL,
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
   STATS_TI_TOTAL,
+  STATS_MD_TOTAL,
 } from 'common/constants/statistics';
 import { SORTING_ASC } from 'controllers/sorting';
 import { ENTITY_START_TIME, ENTITY_NAME, ENTITY_NUMBER } from 'components/filterEntities/constants';
@@ -72,13 +73,17 @@ const messages = defineMessages({
     id: 'FilterSort.productBug',
     defaultMessage: 'Product Bug',
   },
-  [STATS_AB_TOTAL]: {
-    id: 'FilterSort.autoBug',
-    defaultMessage: 'Auto Bug',
+  [STATS_TB_TOTAL]: {
+    id: 'FilterSort.testBug',
+    defaultMessage: 'Test Bug',
   },
   [STATS_SI_TOTAL]: {
     id: 'FilterSort.systemIssue',
     defaultMessage: 'System Issue',
+  },
+  [STATS_MD_TOTAL]: {
+    id: 'FilterSort.minorDefect',
+    defaultMessage: 'Minor Defect',
   },
   [STATS_TI_TOTAL]: {
     id: 'FilterSort.toInvestigate',
@@ -94,8 +99,9 @@ const options = [
   STATS_UNTESTED,
   STATS_SKIPPED,
   STATS_PB_TOTAL,
-  STATS_AB_TOTAL,
+  STATS_TB_TOTAL,
   STATS_SI_TOTAL,
+  STATS_MD_TOTAL,
   STATS_TI_TOTAL,
 ];
 

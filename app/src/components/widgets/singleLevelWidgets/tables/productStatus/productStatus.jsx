@@ -30,7 +30,7 @@ import { ALL } from 'common/constants/reservedFilterIds';
 import { activeProjectSelector } from 'controllers/user';
 import { Grid } from 'components/main/grid';
 import { ScrollWrapper } from 'components/main/scrollWrapper';
-import { STATS_SI, STATS_PB, STATS_TI, STATS_ND, STATS_AB } from '../components/constants';
+import { STATS_SI, STATS_PB, STATS_TI, STATS_MD, STATS_TB } from '../components/constants';
 import {
   NAME,
   FILTER_NAME,
@@ -150,9 +150,9 @@ export class ProductStatus extends PureComponent {
       [STATS_FAILED]: STATISTICS_COLUMN_KEY,
       [STATS_SKIPPED]: STATISTICS_COLUMN_KEY,
       [STATS_PB]: DEFECT_COLUMN_KEY,
-      [STATS_AB]: DEFECT_COLUMN_KEY,
+      [STATS_TB]: DEFECT_COLUMN_KEY,
       [STATS_SI]: DEFECT_COLUMN_KEY,
-      [STATS_ND]: DEFECT_COLUMN_KEY,
+      [STATS_MD]: DEFECT_COLUMN_KEY,
       [STATS_TI]: DEFECT_COLUMN_KEY,
       [PASSING_RATE]: PASSING_RATE_COLUMN_KEY,
     };

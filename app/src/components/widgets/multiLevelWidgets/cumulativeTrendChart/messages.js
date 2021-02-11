@@ -45,13 +45,13 @@ export const messages = defineMessages({
     id: 'FilterNameById.statistics$defects$product_bug',
     defaultMessage: 'Product bug',
   },
-  statistics$defects$automation_bug: {
-    id: 'FilterNameById.statistics$defects$automation_bug',
-    defaultMessage: 'Automation bug',
+  statistics$defects$test_bug: {
+    id: 'FilterNameById.statistics$defects$test_bug',
+    defaultMessage: 'Test bug',
   },
-  statistics$defects$automation_bug$total: {
-    id: 'FilterNameById.statistics$defects$automation_bug',
-    defaultMessage: 'Automation bug',
+  statistics$defects$test_bug$total: {
+    id: 'FilterNameById.statistics$defects$test_bug',
+    defaultMessage: 'Test bug',
   },
   statistics$defects$system_issue: {
     id: 'FilterNameById.statistics$defects$system_issue',
@@ -61,13 +61,13 @@ export const messages = defineMessages({
     id: 'FilterNameById.statistics$defects$system_issue',
     defaultMessage: 'System issue',
   },
-  statistics$defects$no_defect: {
-    id: 'FilterNameById.statistics$defects$no_defect',
-    defaultMessage: 'No defect',
+  statistics$defects$minor_defect: {
+    id: 'FilterNameById.statistics$defects$minor_defect',
+    defaultMessage: 'Minor defect',
   },
-  statistics$defects$no_defect$total: {
-    id: 'FilterNameById.statistics$defects$no_defect',
-    defaultMessage: 'No defect',
+  statistics$defects$minor_defect$total: {
+    id: 'FilterNameById.statistics$defects$minor_defect',
+    defaultMessage: 'Minor defect',
   },
   statistics$defects$to_investigate: {
     id: 'FilterNameById.statistics$defects$to_investigate',

@@ -32,7 +32,7 @@ const LAUNCH_DATA = {
       conditions: [],
       orders: [
         {
-          sorting_column: 'statistics$defects$no_defect$nd001',
+          sorting_column: 'statistics$defects$minor_defect$md001',
           is_asc: false,
         },
       ],
@@ -88,9 +88,9 @@ const TIMELINE_DATA = {
     metadata_fields: ['name', 'number', 'start_time'],
     content_fields: [
       'statistics$defects$product_bug$total',
-      'statistics$defects$automation_bug$total',
+      'statistics$defects$test_bug$total',
       'statistics$defects$system_issue$total',
-      'statistics$defects$no_defect$total',
+      'statistics$defects$minor_defect$total',
       'statistics$defects$to_investigate$total',
     ],
     itemsCount: 50,
