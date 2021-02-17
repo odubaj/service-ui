@@ -24,4 +24,5 @@ export const STATS_TOTAL = 'statistics$executions$total';
 export const STATS_FAILED = 'statistics$executions$failed';
 export const STATS_PASSED = 'statistics$executions$passed';
 export const STATS_UNTESTED = 'statistics$executions$untested';
+export const STATS_RUNNING = 'statistics$executions$running';
 export const STATS_SKIPPED = 'statistics$executions$skipped';

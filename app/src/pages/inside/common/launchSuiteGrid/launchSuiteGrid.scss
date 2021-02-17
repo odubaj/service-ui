@@ -39,6 +39,7 @@
 .passed-col,
 .failed-col,
 .untested-col,
+.running-col,
 .skipped-col {
   width: 6.5%;
 }
@@ -55,6 +56,7 @@
   .passed-col,
   .failed-col,
   .untested-col,
+  .running-col,
   .skipped-col,
   .pb-col,
   .ab-col,

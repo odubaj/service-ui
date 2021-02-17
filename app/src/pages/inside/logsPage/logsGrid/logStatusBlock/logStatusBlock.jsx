@@ -28,6 +28,7 @@ import {
   WARN,
   INFO,
   UNTESTED,
+  RUNNING,
 } from 'common/constants/testStatuses';
 import { formatStatus } from 'common/utils/localizationUtils';
 import ArrowIcon from 'common/img/arrow-down-inline.svg';
@@ -46,6 +47,10 @@ const messages = defineMessages({
   [`status${UNTESTED}`]: {
     id: 'LogStatusBlock.statusUntested',
     defaultMessage: 'Untested',
+  },
+  [`status${RUNNING}`]: {
+    id: 'LogStatusBlock.statusRunning',
+    defaultMessage: 'Running',
   },
   [`status${SKIPPED}`]: {
     id: 'LogStatusBlock.statusSkipped',
@@ -111,7 +116,7 @@ export class LogStatusBlock extends Component {
 
   node = React.createRef();
 
-  statusArray = [PASSED, FAILED, SKIPPED, WARN, INFO, UNTESTED];
+  statusArray = [PASSED, FAILED, SKIPPED, WARN, INFO, UNTESTED, RUNNING];
 
   toggleDropdown = () => {
     this.setState((prevState) => ({

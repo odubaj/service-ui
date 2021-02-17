@@ -27,6 +27,7 @@ import {
   STATS_PASSED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
 } from 'common/constants/statistics';
 import { DEFECT_TYPES_SEQUENCE, MINOR_DEFECT } from 'common/constants/defectTypes';
 import {
@@ -95,6 +96,10 @@ const messages = defineMessages({
   UntestedTitle: {
     id: 'LaunchLevelEntities.UntestedTitle',
     defaultMessage: 'Untested',
+  },
+  RunningTitle: {
+    id: 'LaunchLevelEntities.RunningTitle',
+    defaultMessage: 'Running',
   },
   FailedTitle: {
     id: 'LaunchLevelEntities.FailedTitle',
@@ -332,6 +337,21 @@ export class LaunchLevelEntities extends Component {
         },
       },
       {
+        id: STATS_FAILED,
+        component: EntityInputConditional,
+        value: this.bindDefaultValue(STATS_FAILED, {
+          condition: CONDITION_GREATER_EQ,
+        }),
+        validationFunc: commonValidators.launchNumericEntity,
+        title: intl.formatMessage(messages.FailedTitle),
+        active: visibleFilters.includes(STATS_FAILED),
+        removable: true,
+        customProps: {
+          conditions: [CONDITION_GREATER_EQ, CONDITION_LESS_EQ, CONDITION_EQ],
+          placeholder: intl.formatMessage(messages.STATS_PLACEHOLDER),
+        },
+      },
+      {
         id: STATS_UNTESTED,
         component: EntityInputConditional,
         value: this.bindDefaultValue(STATS_UNTESTED, {
@@ -347,14 +367,14 @@ export class LaunchLevelEntities extends Component {
         },
       },
       {
-        id: STATS_FAILED,
+        id: STATS_RUNNING,
         component: EntityInputConditional,
-        value: this.bindDefaultValue(STATS_FAILED, {
+        value: this.bindDefaultValue(STATS_RUNNING, {
           condition: CONDITION_GREATER_EQ,
         }),
         validationFunc: commonValidators.launchNumericEntity,
-        title: intl.formatMessage(messages.FailedTitle),
-        active: visibleFilters.includes(STATS_FAILED),
+        title: intl.formatMessage(messages.RunningTitle),
+        active: visibleFilters.includes(STATS_RUNNING),
         removable: true,
         customProps: {
           conditions: [CONDITION_GREATER_EQ, CONDITION_LESS_EQ, CONDITION_EQ],

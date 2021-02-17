@@ -25,6 +25,9 @@ const issueTypes = {
   untested: (
     <FormattedMessage id="MostFailedTests.header.issueType.untested" defaultMessage="Untested" />
   ),
+  running: (
+    <FormattedMessage id="MostFailedTests.header.issueType.running" defaultMessage="Running" />
+  ),
   product_bug: (
     <FormattedMessage
       id="MostFailedTests.header.issueType.product_bug"

@@ -38,6 +38,10 @@ export const statusLocalization = defineMessages({
     id: 'TestStatuses.untested',
     defaultMessage: 'Untested',
   },
+  [statuses.RUNNING]: {
+    id: 'TestStatuses.running',
+    defaultMessage: 'Running',
+  },
   [statuses.SKIPPED]: {
     id: 'TestStatuses.skipped',
     defaultMessage: 'Skipped',

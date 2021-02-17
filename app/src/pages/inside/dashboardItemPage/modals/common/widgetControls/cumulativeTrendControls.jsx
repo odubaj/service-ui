@@ -32,6 +32,7 @@ import {
   STATS_PASSED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
 } from 'common/constants/statistics';
 import { FieldProvider } from 'components/fields/fieldProvider';
 import { DEFAULT_LAUNCHES_LIMIT } from 'controllers/testItem';
@@ -49,7 +50,7 @@ import styles from './widgetControls.scss';
 const cx = classNames.bind(styles);
 
 const MAX_ATTRIBUTES_AMOUNT = 2;
-const STATIC_CONTENT_FIELDS = [STATS_FAILED, STATS_SKIPPED, STATS_PASSED, STATS_UNTESTED];
+const STATIC_CONTENT_FIELDS = [STATS_FAILED, STATS_SKIPPED, STATS_PASSED, STATS_UNTESTED, STATS_RUNNING];
 
 const messages = defineMessages({
   CriteriaFieldLabel: {

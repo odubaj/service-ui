@@ -162,23 +162,28 @@ export class HistoryTable extends Component {
           };
           navigate(link(ownProps));
         };
-        if(historyItem.status != "PASSED") {
-          if(!historyItem.statistics.executions.hasOwnProperty('failed')) {
-            historyItem.status = "UNTESTED";
-            if(historyItem.statistics.executions.hasOwnProperty('skipped')) {
-              if(historyItem.statistics.executions.skipped == historyItem.statistics.executions.total) {
-                historyItem.status = "SKIPPED";
+        if(historyItem.status == "FAILED") {
+          if((historyItem.statistics.defects.hasOwnProperty('minor_defect'))
+            && (!historyItem.statistics.defects.hasOwnProperty('product_bug'))
+            && (!historyItem.statistics.defects.hasOwnProperty('system_issue'))
+            && (!historyItem.statistics.defects.hasOwnProperty('test_bug'))) {
+              historyItem.status = "PASSED";
+              if(historyItem.statistics.executions.hasOwnProperty('untested')) {
+                historyItem.status = "UNTESTED";
+              }
+              if(historyItem.statistics.executions.hasOwnProperty('running')) {
+                historyItem.status = "RUNNING";
+              }
+              if(historyItem.statistics.executions.hasOwnProperty('to_investigate')) {
+                if(!historyItem.statistics.executions.hasOwnProperty('untested')) {
+                  historyItem.status = "FAILED";
+                } else {
+                  if(historyItem.statistics.executions.untested < historyItem.statistics.defects.to_investigate.total) {
+                    historyItem.status = "FAILED";
+                  }
+                }
               }
             }
-          } else {
-            if((historyItem.statistics.defects.hasOwnProperty('minor_defect'))
-              && (!historyItem.statistics.defects.hasOwnProperty('product_bug'))
-              && (!historyItem.statistics.defects.hasOwnProperty('to_investigate'))
-              && (!historyItem.statistics.defects.hasOwnProperty('system_issue'))
-              && (!historyItem.statistics.defects.hasOwnProperty('test_bug'))) {
-                historyItem.status = "PASSED";
-            }
-          }
         }
         return (
           <HistoryCell

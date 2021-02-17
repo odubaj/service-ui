@@ -133,6 +133,7 @@ export class TestCasesGrowthTrendChart extends Component {
         STATUSES.SKIPPED,
         STATUSES.INTERRUPTED,
         STATUSES.UNTESTED,
+        STATUSES.RUNNING,
       ],
     });
     this.props.navigate(Object.assign(statisticsLink, defaultParams));

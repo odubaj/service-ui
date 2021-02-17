@@ -15,7 +15,7 @@
  */
 
 import { string, node, shape, arrayOf, bool, number, oneOf, oneOfType } from 'prop-types';
-import { FAILED, PASSED, SKIPPED, UNTESTED } from 'common/constants/launchStatuses';
+import { FAILED, PASSED, SKIPPED, UNTESTED, RUNNING } from 'common/constants/launchStatuses';
 
 export const PTLaunch = shape({
   id: string.isRequired,
@@ -29,6 +29,7 @@ export const PTStatus = oneOf([
   PASSED.toUpperCase(),
   SKIPPED.toUpperCase(),
   UNTESTED.toUpperCase(),
+  RUNNING.toUpperCase(),
 ]);
 
 export const PTTest = shape({

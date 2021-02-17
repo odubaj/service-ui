@@ -15,10 +15,11 @@
  */
 
 export const COLOR_FAILED = '#f36c4a';
-export const COLOR_FAILEDSKIPPEDUNTESTEDTOTAL = '#f36c4a';
+export const COLOR_FAILEDSKIPPEDUNTESTEDRUNNINGTOTAL = '#f36c4a';
 export const COLOR_PASSED = '#87b77b';
 export const COLOR_SKIPPED = '#bdc7cc';
 export const COLOR_UNTESTED = '#334fff';
+export const COLOR_RUNNING = '#c5cae9';
 export const COLOR_TOTAL = '#489beb';
 export const COLOR_TEST_BUG = '#f7d63e';
 export const COLOR_PRODUCT_BUG = '#ec3900';

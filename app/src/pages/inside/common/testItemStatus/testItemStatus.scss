@@ -46,6 +46,9 @@
   &.untested {
     background-color: $COLOR--untested;
   }
+  &.running {
+    background-color: $COLOR--running;
+  }
   &.interrupted,
   &.stopped {
     background-color: $COLOR--blush;

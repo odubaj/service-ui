@@ -116,6 +116,11 @@ export const LAUNCHES_PAGE_EVENTS = {
     action: getActionTableFilter('UNTESTED'),
     label: getDescriptionTableFilter(),
   },
+  RUNNING_FILTER: {
+    category: LAUNCHES_PAGE,
+    action: getActionTableFilter('RUNNING'),
+    label: getDescriptionTableFilter(),
+  },
   FAILED_FILTER: {
     category: LAUNCHES_PAGE,
     action: getActionTableFilter('FAILED'),

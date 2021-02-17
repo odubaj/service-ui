@@ -77,6 +77,12 @@ export const SIMPLE_COLUMNS = [
     align: ALIGN_CENTER,
     formatter: ({ untested }) => untested,
   },
+  {
+    id: 'running',
+    title: { full: 'running' },
+    align: ALIGN_CENTER,
+    formatter: ({ running }) => running,
+  },
 ];
 
 export const STEP_DATA = [

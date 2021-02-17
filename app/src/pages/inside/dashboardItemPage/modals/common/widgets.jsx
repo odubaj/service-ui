@@ -231,7 +231,7 @@ export const getWidgets = (formatMessage) => [
       <FormattedHTMLMessage
         id={'Widgets.Description.launchStatistics'}
         defaultMessage={
-          'Shows statistics of the last launch divided into 2 sections:</br> - Skipped, Passed, Failed, Untested </br> - Product Bug, System Issue, To Investigate, Test Bugs, Minor Defects.'
+          'Shows statistics of the last launch divided into 2 sections:</br> - Skipped, Passed, Failed, Untested, Running </br> - Product Bug, System Issue, To Investigate, Test Bugs, Minor Defects.'
         }
       />
     ),
@@ -339,7 +339,7 @@ export const getWidgets = (formatMessage) => [
       <FormattedMessage
         id={'Widgets.Description.notPassed'}
         defaultMessage={
-          'Shows the percent ratio of non-passed test cases (Failed + Skipped + Untested) to Total cases from run to run.'
+          'Shows the percent ratio of non-passed test cases (Failed + Skipped + Untested + Running) to Total cases from run to run.'
         }
       />
     ),

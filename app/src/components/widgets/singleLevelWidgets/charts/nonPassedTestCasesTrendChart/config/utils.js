@@ -26,6 +26,6 @@ export const calculateTooltipParams = (data, color, customProps) => {
     startTime: Number(startTime),
     itemCases: `${Number(value).toFixed(2)}%`,
     color: color(id),
-    issueStatNameProps: { itemName: formatMessage(messages.failedSkippedUntestedTotal) },
+    issueStatNameProps: { itemName: formatMessage(messages.failedSkippedUntestedRunningTotal) },
   };
 };

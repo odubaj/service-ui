@@ -25,7 +25,7 @@ import {
   TO_INVESTIGATE,
   MINOR_DEFECT,
 } from 'common/constants/defectTypes';
-import { FAILED, INTERRUPTED, PASSED, SKIPPED, UNTESTED } from 'common/constants/launchStatuses';
+import { FAILED, INTERRUPTED, PASSED, SKIPPED, UNTESTED, RUNNING } from 'common/constants/launchStatuses';
 import { COMMON_LOCALE_KEYS } from 'common/constants/localization';
 import { Grid } from 'components/main/grid';
 import { AbsRelTime } from 'components/main/absRelTime';
@@ -45,6 +45,7 @@ import {
   STATS_SKIPPED,
   STATS_PASSED,
   STATS_UNTESTED,
+  STATS_RUNNING,
   STATS_FAILED,
   STATS_TB_TOTAL,
   STATS_PB_TOTAL,
@@ -99,6 +100,7 @@ const TotalColumn = ({ className, ...rest }) => (
         SKIPPED.toUpperCase(),
         INTERRUPTED.toUpperCase(),
         UNTESTED.toUpperCase(),
+        RUNNING.toUpperCase(),
       ]}
     />
   </div>
@@ -146,6 +148,20 @@ const UntestedColumn = ({ className, ...rest }) => (
   </div>
 );
 UntestedColumn.propTypes = {
+  className: PropTypes.string.isRequired,
+};
+
+const RunningColumn = ({ className, ...rest }) => (
+  <div className={cx('running-col', className)}>
+    <ExecutionStatistics
+      itemId={rest.value.id}
+      title={rest.title}
+      value={rest.value.statistics.executions && rest.value.statistics.executions.running}
+      statuses={[RUNNING.toUpperCase()]}
+    />
+  </div>
+);
+RunningColumn.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
@@ -367,6 +383,18 @@ export class LaunchSuiteGrid extends PureComponent {
         sortingEventInfo: events.PASSED_SORTING,
       },
       {
+        id: STATS_FAILED,
+        title: {
+          full: 'failed',
+          short: 'fl',
+        },
+        component: FailedColumn,
+        sortable: true,
+        withFilter: true,
+        filterEventInfo: events.FAILED_FILTER,
+        sortingEventInfo: events.FAILED_SORTING,
+      },
+      {
         id: STATS_UNTESTED,
         title: {
           full: 'untested',
@@ -379,16 +407,16 @@ export class LaunchSuiteGrid extends PureComponent {
         sortingEventInfo: events.UNTESTED_SORTING,
       },
       {
-        id: STATS_FAILED,
+        id: STATS_RUNNING,
         title: {
-          full: 'failed',
-          short: 'fl',
+          full: 'running',
+          short: 'ru',
         },
-        component: FailedColumn,
+        component: RunningColumn,
         sortable: true,
         withFilter: true,
-        filterEventInfo: events.FAILED_FILTER,
-        sortingEventInfo: events.FAILED_SORTING,
+        filterEventInfo: events.RUNNING_FILTER,
+        sortingEventInfo: events.RUNNING_SORTING,
       },
       {
         id: STATS_SKIPPED,

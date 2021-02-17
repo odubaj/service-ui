@@ -194,6 +194,12 @@
       }
     }
 
+    &.statistics-running {
+      &:before {
+        background-color: $COLOR--running;
+      }
+    }
+
     &.statistics-total {
       &:before {
         background-color: $COLOR--windows-blue;

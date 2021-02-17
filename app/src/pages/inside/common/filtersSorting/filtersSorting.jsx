@@ -25,6 +25,7 @@ import {
   STATS_PASSED,
   STATS_TOTAL,
   STATS_UNTESTED,
+  STATS_RUNNING,
   STATS_TB_TOTAL,
   STATS_PB_TOTAL,
   STATS_SI_TOTAL,
@@ -69,6 +70,10 @@ const messages = defineMessages({
     id: 'FilterSort.untested',
     defaultMessage: 'Untested',
   },
+  [STATS_RUNNING]: {
+    id: 'FilterSort.running',
+    defaultMessage: 'Running',
+  },
   [STATS_PB_TOTAL]: {
     id: 'FilterSort.productBug',
     defaultMessage: 'Product Bug',
@@ -97,6 +102,7 @@ const options = [
   STATS_PASSED,
   STATS_FAILED,
   STATS_UNTESTED,
+  STATS_RUNNING,
   STATS_SKIPPED,
   STATS_PB_TOTAL,
   STATS_TB_TOTAL,

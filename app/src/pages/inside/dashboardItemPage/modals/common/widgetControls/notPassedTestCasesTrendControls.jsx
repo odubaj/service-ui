@@ -23,6 +23,7 @@ import {
   STATS_FAILED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
 } from 'common/constants/statistics';
 import { commonValidators } from 'common/utils/validation';
 import { ITEMS_INPUT_WIDTH } from './constants';
@@ -60,7 +61,7 @@ export class NotPassedTestCasesTrendControls extends Component {
     const { widgetSettings, initializeControlsForm } = props;
     initializeControlsForm({
       contentParameters: widgetSettings.contentParameters || {
-        contentFields: [STATS_FAILED, STATS_SKIPPED, STATS_TOTAL, STATS_UNTESTED],
+        contentFields: [STATS_FAILED, STATS_SKIPPED, STATS_TOTAL, STATS_UNTESTED, STATS_RUNNING],
         widgetOptions: {},
         itemsCount: DEFAULT_ITEMS_COUNT,
       },

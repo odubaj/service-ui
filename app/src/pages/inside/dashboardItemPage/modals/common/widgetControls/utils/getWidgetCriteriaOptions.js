@@ -21,6 +21,7 @@ import {
   STATS_PASSED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
   STATS_TB_TOTAL,
   STATS_MD_TOTAL,
   STATS_PB_TOTAL,
@@ -62,7 +63,7 @@ import {
   LAUNCH_GRID_COLUMNS_OPTIONS,
   DEFECT_TYPES_GROUPS_OPTIONS,
   DEFECT_STATISTICS_OPTIONS,
-  SKIPPED_FAILED_UNTESTED_LAUNCHES_OPTIONS,
+  SKIPPED_FAILED_UNTESTED_RUNNING_LAUNCHES_OPTIONS,
   PASSED_FAILED_LAUNCHES_OPTIONS,
   TO_INVESTIGATE_OPTION,
 } from '../constants';
@@ -83,6 +84,10 @@ const messages = defineMessages({
   CriteriaUntested: {
     id: 'WidgetCriteriaOption.CriteriaUntested',
     defaultMessage: 'Untested',
+  },
+  CriteriaRunning: {
+    id: 'WidgetCriteriaOption.CriteriaRunning',
+    defaultMessage: 'Running',
   },
   CriteriaSkipped: {
     id: 'WidgetCriteriaOption.CriteriaSkipped',
@@ -248,14 +253,16 @@ const getLaunchStatusesOptions = (formatMessage) => [
   { value: STATS_TOTAL, label: formatMessage(messages.CriteriaTotal) },
   { value: STATS_PASSED, label: formatMessage(messages.CriteriaPassed) },
   { value: STATS_UNTESTED, label: formatMessage(messages.CriteriaUntested) },
+  { value: STATS_RUNNING, label: formatMessage(messages.CriteriaRunning) },
   { value: STATS_FAILED, label: formatMessage(messages.CriteriaFailed) },
   { value: STATS_SKIPPED, label: formatMessage(messages.CriteriaSkipped) },
 ];
 
-const getSkippedFailedUntestedLaunchesOptions = (formatMessage) => [
+const getSkippedFailedUntestedRunningLaunchesOptions = (formatMessage) => [
   { value: STATS_FAILED, label: formatMessage(messages.CriteriaFailed) },
   { value: STATS_SKIPPED, label: formatMessage(messages.CriteriaSkipped) },
   { value: STATS_UNTESTED, label: formatMessage(messages.CriteriaUntested) },
+  { value: STATS_RUNNING, label: formatMessage(messages.CriteriaRunning) },
 ];
 
 const getPassedFailedLaunchesOptions = (formatMessage) => [
@@ -387,8 +394,8 @@ export const getWidgetCriteriaOptions = (optionGroups, formatMessage, meta) => {
       case DEFECT_STATISTICS_OPTIONS:
         options = options.concat(getDefectStatisticsOptions(formatMessage));
         break;
-      case SKIPPED_FAILED_UNTESTED_LAUNCHES_OPTIONS:
-        options = options.concat(getSkippedFailedUntestedLaunchesOptions(formatMessage));
+      case SKIPPED_FAILED_UNTESTED_RUNNING_LAUNCHES_OPTIONS:
+        options = options.concat(getSkippedFailedUntestedRunningLaunchesOptions(formatMessage));
         break;
       case PASSED_FAILED_LAUNCHES_OPTIONS:
         options = options.concat(getPassedFailedLaunchesOptions(formatMessage));

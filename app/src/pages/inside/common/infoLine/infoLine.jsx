@@ -53,6 +53,7 @@ const normalizeExecutions = (executions) => ({
   failed: executions.failed || 0,
   skipped: executions.skipped || 0,
   untested: executions.untested || 0,
+  running: executions.running || 0,
 });
 
 const normalizeDefects = (defects) => ({
@@ -93,6 +94,7 @@ export class InfoLine extends Component {
     const passed = ((executions.passed + normalized_defects.minor_defect) / executions.total) * 100 || 0;
     const failed = ((executions.failed - normalized_defects.minor_defect) / executions.total) * 100 || 0;
     const untested = (executions.untested / executions.total) * 100 || 0;
+    const running = (executions.running / executions.total) * 100 || 0;
     const skipped = (executions.skipped / executions.total) * 100 || 0;
     const tooltipEventsInfo = {
       [PRODUCT_BUG]: events.PB_TOOLTIP,
@@ -127,7 +129,7 @@ export class InfoLine extends Component {
           </div>
         )}
         <div className={cx('bar-chart-holder')}>
-          <BarChart passed={passed} failed={failed} skipped={skipped} untested={untested} />
+          <BarChart passed={passed} failed={failed} skipped={skipped} untested={untested} running={running}/>
         </div>
         <div className={cx('passed')}>
           {formatMessage(messages.passed, { value: passed.toFixed(2) })}

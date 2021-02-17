@@ -163,6 +163,7 @@ export class InvestigatedTrendChart extends Component {
             STATUSES.SKIPPED,
             STATUSES.INTERRUPTED,
             STATUSES.UNTESTED,
+            STATUSES.RUNNING,
           ],
         });
 

@@ -22,6 +22,7 @@ import {
   STATS_FAILED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
 } from 'common/constants/statistics';
 import {
   PRODUCT_BUG,
@@ -42,6 +43,8 @@ import {
   failedColumnFullTitle,
   untestedColumnShortTitle,
   untestedColumnFullTitle,
+  runningColumnShortTitle,
+  runningColumnFullTitle,
   totalColumnShortTitle,
 } from '../components/messages';
 import { END_TIME, NAME, START_TIME, STATUS } from './constants';
@@ -112,6 +115,10 @@ export const COLUMN_NAMES_MAP = {
   [STATS_UNTESTED]: {
     full: untestedColumnFullTitle,
     short: untestedColumnShortTitle,
+  },
+  [STATS_RUNNING]: {
+    full: runningColumnFullTitle,
+    short: runningColumnShortTitle,
   },
   [STATS_SKIPPED]: {
     full: skippedColumnFullTitle,

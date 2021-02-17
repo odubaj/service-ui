@@ -31,6 +31,7 @@ import {
   STATS_PASSED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
 } from 'common/constants/statistics';
 import { withModal, ModalLayout } from 'components/main/modal';
 import { SpinningPreloader } from 'components/preloaders/spinningPreloader';
@@ -54,6 +55,7 @@ const contentParameters = {
     STATS_FAILED,
     STATS_SKIPPED,
     STATS_UNTESTED,
+    STATS_RUNNING,
     STATS_PB_TOTAL,
     STATS_TB_TOTAL,
     STATS_SI_TOTAL,

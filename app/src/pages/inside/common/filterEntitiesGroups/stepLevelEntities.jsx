@@ -28,6 +28,7 @@ import {
   INTERRUPTED,
   IN_PROGRESS,
   UNTESTED,
+  RUNNING,
 } from 'common/constants/launchStatuses';
 import { DEFECT_TYPES_SEQUENCE } from 'common/constants/defectTypes';
 import {
@@ -189,6 +190,10 @@ const messages = defineMessages({
   LaunchStatusUntested: {
     id: 'StepLevelEntities.LaunchStatusUntested',
     defaultMessage: 'Untested',
+  },
+  LaunchStatusRunning: {
+    id: 'StepLevelEntities.LaunchStatusRunning',
+    defaultMessage: 'Running',
   },
   LaunchStatusInterrupted: {
     id: 'StepLevelEntities.LaunchStatusInterrupted',
@@ -538,6 +543,10 @@ export class StepLevelEntities extends Component {
             {
               label: intl.formatMessage(messages.LaunchStatusUntested),
               value: UNTESTED.toUpperCase(),
+            },
+            {
+              label: intl.formatMessage(messages.LaunchStatusRunning),
+              value: RUNNING.toUpperCase(),
             },
             {
               label: intl.formatMessage(messages.LaunchStatusSkipped),

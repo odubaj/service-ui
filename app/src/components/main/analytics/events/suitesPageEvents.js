@@ -139,6 +139,16 @@ export const SUITES_PAGE_EVENTS = {
     action: 'Click on icon "sorting" on Untested',
     label: 'Sort items by Untested',
   },
+  RUNNING_FILTER: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "filter" on Running',
+    label: 'Arises active "Running" input',
+  },
+  RUNNING_SORTING: {
+    category: SUITE_PAGE,
+    action: 'Click on icon "sorting" on Running',
+    label: 'Sort items by Running',
+  },
   FAILED_FILTER: {
     category: SUITE_PAGE,
     action: 'Click on icon "filter" on Failed',

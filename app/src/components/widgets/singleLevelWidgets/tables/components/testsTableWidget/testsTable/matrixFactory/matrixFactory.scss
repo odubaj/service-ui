@@ -43,6 +43,9 @@
       &.untested {
         background-color: $COLOR--untested;
       }
+      &.running {
+        background-color: $COLOR--running;
+      }
     }
   }
 }

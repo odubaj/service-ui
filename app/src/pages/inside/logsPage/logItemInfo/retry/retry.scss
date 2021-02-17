@@ -33,6 +33,10 @@
   &.status-untested {
     background-color: $COLOR--untested;
   }
+
+  &.status-running {
+    background-color: $COLOR--running;
+  }
 }
 
 .retry {

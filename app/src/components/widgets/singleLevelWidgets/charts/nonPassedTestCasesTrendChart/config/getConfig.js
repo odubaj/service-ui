@@ -15,7 +15,7 @@
  */
 
 import { defineMessages } from 'react-intl';
-import { COLOR_FAILEDSKIPPEDUNTESTEDTOTAL } from 'common/constants/colors';
+import { COLOR_FAILEDSKIPPEDUNTESTEDRUNNINGTOTAL } from 'common/constants/colors';
 import { createTooltipRenderer } from 'components/widgets/common/tooltip';
 import { getLaunchAxisTicks } from 'components/widgets/common/utils';
 import { IssueTypeStatTooltip } from '../../common/issueTypeStatTooltip';
@@ -27,7 +27,7 @@ const localMessages = defineMessages({
     defaultMessage: 'of non-passed cases',
   },
 });
-const FAILED_SKIPPED_UNTESTED_TOTAL = '% (Failed+Skipped+Untested)/Total';
+const FAILED_SKIPPED_UNTESTED_RUNNING_TOTAL = '% (Failed+Skipped+Untested+Running)/Total';
 
 export const getConfig = ({
   content,
@@ -41,7 +41,7 @@ export const getConfig = ({
   const itemsData = [];
 
   content.forEach((item) => {
-    const value = parseFloat(item.values[FAILED_SKIPPED_UNTESTED_TOTAL]);
+    const value = parseFloat(item.values[FAILED_SKIPPED_UNTESTED_RUNNING_TOTAL]);
     const { id, name, number, startTime } = item;
     itemsData.push({ id, name, number, startTime });
     chartData.push(value);
@@ -51,7 +51,7 @@ export const getConfig = ({
     data: {
       columns: [chartData],
       colors: {
-        notPassed: COLOR_FAILEDSKIPPEDUNTESTEDTOTAL,
+        notPassed: COLOR_FAILEDSKIPPEDUNTESTEDRUNNINGTOTAL,
       },
       onclick: isPreview ? undefined : onChartClick,
       itemsData,

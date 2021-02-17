@@ -22,6 +22,7 @@ import {
   STATS_FAILED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
 } from 'common/constants/statistics';
 import {
   PRODUCT_BUG,
@@ -49,6 +50,12 @@ export const untestedColumnFullTitle = (
 );
 export const untestedColumnShortTitle = (
   <FormattedMessage id={'TableWidgets.untestedColumnShort'} defaultMessage={'un'} />
+);
+export const runningColumnFullTitle = (
+  <FormattedMessage id={'TableWidgets.runningColumnFull'} defaultMessage={'Running'} />
+);
+export const runningColumnShortTitle = (
+  <FormattedMessage id={'TableWidgets.runningColumnShort'} defaultMessage={'ru'} />
 );
 export const failedColumnFullTitle = (
   <FormattedMessage id={'TableWidgets.failedColumnFull'} defaultMessage={'Failed'} />
@@ -82,4 +89,5 @@ export const defaultStatisticsMessages = {
   [STATS_FAILED]: failedColumnFullTitle,
   [STATS_SKIPPED]: skippedColumnFullTitle,
   [STATS_UNTESTED]: untestedColumnFullTitle,
+  [STATS_RUNNING]: runningColumnFullTitle,
 };

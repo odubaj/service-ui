@@ -46,6 +46,10 @@ export const messages = defineMessages({
     id: 'Charts.untested',
     defaultMessage: 'Untested',
   },
+  running: {
+    id: 'Charts.running',
+    defaultMessage: 'Running',
+  },
   notPassed: {
     id: 'Charts.notPassed',
     defaultMessage: 'Not passed',
@@ -62,9 +66,9 @@ export const messages = defineMessages({
     id: 'Charts.filterLabel',
     defaultMessage: 'Filter:',
   },
-  failedSkippedUntestedTotal: {
-    id: 'Charts.failedSkippedUntestedTotal',
-    defaultMessage: '% (Failed+Skipped+Untested)/Total',
+  failedSkippedUntestedRunningTotal: {
+    id: 'Charts.failedSkippedUntestedRunningTotal',
+    defaultMessage: '% (Failed+Skipped+Untested+Running)/Total',
   },
   [TO_INVESTIGATE]: {
     id: `Chart.label.toInvestigate`,

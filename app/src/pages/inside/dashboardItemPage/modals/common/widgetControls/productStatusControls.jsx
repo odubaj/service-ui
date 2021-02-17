@@ -27,6 +27,7 @@ import {
   STATS_FAILED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
 } from 'common/constants/statistics';
 import { ENTITY_START_TIME, ENTITY_STATUS } from 'components/filterEntities/constants';
 import { CHART_MODES, MODES_VALUES } from 'common/constants/chartModes';
@@ -85,6 +86,7 @@ const STATIC_BASE_COLUMNS = [
   STATS_FAILED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
 ];
 const BASE_COLUMNS_ORDER = [
   ENTITY_START_TIME,
@@ -94,6 +96,7 @@ const BASE_COLUMNS_ORDER = [
   STATS_FAILED,
   STATS_SKIPPED,
   STATS_UNTESTED,
+  STATS_RUNNING,
   PRODUCT_BUG,
   TEST_BUG,
   SYSTEM_ISSUE,
